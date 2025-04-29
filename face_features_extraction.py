@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 import pandas as pd
 from utils import crop_img, apply_kmeans, get_hsv_lab_colour, get_color_between_points
-
+from face_detection import face_detection_using_haar
 import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 
@@ -50,6 +50,8 @@ def extract_iris_colour(img, face_landmarks):
             (face_landmarks[473].x * img.shape[1], face_landmarks[473].y * img.shape[0]), 
             right_origin, segmented_img_ri
         )
+        cv2.imshow('segmented_img_li cfen', segmented_img_li)
+        cv2.imshow('segmented_img_ri cfen', segmented_img_ri)
         right_iris_colour = right_iris_centers[0] if np.all(right_pupil_colour == right_iris_centers[0]) else right_iris_centers[1]
         left_iris_colour = left_iris_centers[0] if np.all(left_pupil_colour == left_iris_centers[0]) else left_iris_centers[1]
 
@@ -88,6 +90,9 @@ def extract_hair_colour(img, face_landmarks):
         right_eyebrow_img, right_origin = crop_img(img, face_landmarks, right_eyebrow)
         left_eyebrow_centers, segmented_img_le = apply_kmeans(left_eyebrow_img, k=2)
         right_eyebrow_centers, segmented_img_re = apply_kmeans(right_eyebrow_img, k=2)
+
+        cv2.imshow('segmented_img_le', segmented_img_le)
+        cv2.imshow('segmented_img_re', segmented_img_re)
         left_eyebrow_colour = get_color_between_points(
             (face_landmarks[105].x * img.shape[1], face_landmarks[105].y * img.shape[0]), 
             (face_landmarks[65].x * img.shape[1], face_landmarks[65].y * img.shape[0]), 
@@ -103,7 +108,7 @@ def extract_hair_colour(img, face_landmarks):
     return eyebrow_colour
 
 def extract_lab_hsv_values_from_photo(image_path):
-    img = cv2.imread(image_path)
+    img = face_detection_using_haar(image_path)
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     FaceLandmarker, options = init_face_landmark(model_path)
@@ -121,7 +126,9 @@ skin_columns = [f"skin_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
 eyebrow_columns = [f"eyebrow_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
 columns = iris_columns + skin_columns + eyebrow_columns
 
-data = extract_lab_hsv_values_from_photo("OIP.jpg")
+data = extract_lab_hsv_values_from_photo("JLO.jpg")
 df = pd.DataFrame([data], columns=columns)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 print(df)
