@@ -50,8 +50,6 @@ def extract_iris_colour(img, face_landmarks):
             (face_landmarks[473].x * img.shape[1], face_landmarks[473].y * img.shape[0]), 
             right_origin, segmented_img_ri
         )
-        cv2.imshow('segmented_img_li cfen', segmented_img_li)
-        cv2.imshow('segmented_img_ri cfen', segmented_img_ri)
         right_iris_colour = right_iris_centers[0] if np.all(right_pupil_colour == right_iris_centers[0]) else right_iris_centers[1]
         left_iris_colour = left_iris_centers[0] if np.all(left_pupil_colour == left_iris_centers[0]) else left_iris_centers[1]
 
@@ -61,15 +59,10 @@ def extract_iris_colour(img, face_landmarks):
 
 
 def extract_skin_colour(img, face_landmarks):
-    cheek_indices = [111, 117, 118, 101, 36, 203, 165, 50, 205, 206, 92, 147, 187, 207, 216, 192, 214, 212, 340, 346, 347, 330, 266, 423, 280, 425, 426, 322, 411, 427, 436, 410, 432, 434, 416]
-    chin_indices = [202, 204, 194, 201, 200, 199, 421, 418, 424, 422, 262, 428, 32, 208]
-    nose_indices = [168, 6, 197, 195, 5, 4, 45, 275, 120, 100, 349, 329, 167, 164, 393]
-    forehead_indices = [103, 67, 109, 10, 338, 297, 332, 104, 69, 108, 151, 337, 299, 333, 9, 8]
-
-    all_indices = forehead_indices + cheek_indices + nose_indices + chin_indices
+    skin_extraction_landmarks = np.load("skin_extraction_landmarks.npy")
     skin_colours = []
     for face in face_landmarks:
-        for idx in all_indices:
+        for idx in skin_extraction_landmarks:
             if idx < len(face):
                 landmark = face[idx]
                 x = int(landmark.x * img.shape[1])
@@ -90,9 +83,6 @@ def extract_hair_colour(img, face_landmarks):
         right_eyebrow_img, right_origin = crop_img(img, face_landmarks, right_eyebrow)
         left_eyebrow_centers, segmented_img_le = apply_kmeans(left_eyebrow_img, k=2)
         right_eyebrow_centers, segmented_img_re = apply_kmeans(right_eyebrow_img, k=2)
-
-        cv2.imshow('segmented_img_le', segmented_img_le)
-        cv2.imshow('segmented_img_re', segmented_img_re)
         left_eyebrow_colour = get_color_between_points(
             (face_landmarks[105].x * img.shape[1], face_landmarks[105].y * img.shape[0]), 
             (face_landmarks[65].x * img.shape[1], face_landmarks[65].y * img.shape[0]), 
@@ -126,9 +116,6 @@ skin_columns = [f"skin_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
 eyebrow_columns = [f"eyebrow_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
 columns = iris_columns + skin_columns + eyebrow_columns
 
-data = extract_lab_hsv_values_from_photo("JLO.jpg")
+data = extract_lab_hsv_values_from_photo("OIP.jpg")
 df = pd.DataFrame([data], columns=columns)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-
 print(df)
