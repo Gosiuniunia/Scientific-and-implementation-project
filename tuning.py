@@ -8,31 +8,27 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 
 rskf = RepeatedStratifiedKFold(n_repeats=5, n_splits=2, random_state=100)
+X, y = load_iris(return_X_y=True)
 
-
-def tune_knn_params(metrics, weights, datasets, rskf):
+def tune_knn_params(metrics, weights, rskf):
     param_grid = list(itertools.product(metrics, weights))
-
-    n_datasets = len(datasets)
     n_param_combinations = len(param_grid)
     n_folds = rskf.get_n_splits()
 
-    accuracies = np.zeros((n_datasets, n_param_combinations, n_folds))
+    accuracies = np.zeros((n_param_combinations, n_folds))
     precisions = np.zeros_like(accuracies)
     recalls = np.zeros_like(accuracies)
     f1s = np.zeros_like(accuracies)
+    for param_idx, (metric, weight) in enumerate(param_grid):
+        for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
+            clf = KNeighborsClassifier(metric=metric, weights=weight)
+            clf.fit(X[train], y[train])
+            y_pred = clf.predict(X[test])
 
-    for dataset_idx, (X, y) in enumerate(datasets):
-        for param_idx, (metric, weight) in enumerate(param_grid):
-            for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
-                clf = KNeighborsClassifier(metric=metric, weights=weight)
-                clf.fit(X[train], y[train])
-                y_pred = clf.predict(X[test])
-
-                accuracies[dataset_idx, param_idx, fold_idx] = accuracy_score(y[test], y_pred)
-                precisions[dataset_idx, param_idx, fold_idx] = precision_score(y[test], y_pred, average='macro', zero_division=0)
-                recalls[dataset_idx, param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
-                f1s[dataset_idx, param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
+            accuracies[param_idx, fold_idx] = accuracy_score(y[test], y_pred)
+            precisions[param_idx, fold_idx] = precision_score(y[test], y_pred, average='macro', zero_division=0)
+            recalls[param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
+            f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
 
     # Zapis wyników
     np.save("knn_accuracies.npy", accuracies)
@@ -40,29 +36,26 @@ def tune_knn_params(metrics, weights, datasets, rskf):
     np.save("knn_recalls.npy", recalls)
     np.save("knn_f1s.npy", f1s)
 
-def tune_svm_params(kernels, Cs, gammas, datasets, rskf):
+def tune_svm_params(kernels, Cs, gammas, rskf):
     param_grid = list(itertools.product(kernels, Cs, gammas))
-
-    n_datasets = len(datasets)
     n_param_combinations = len(param_grid)
     n_folds = rskf.get_n_splits()
 
-    accuracies = np.zeros((n_datasets, n_param_combinations, n_folds))
+    accuracies = np.zeros((n_param_combinations, n_folds))
     precisions = np.zeros_like(accuracies)
     recalls = np.zeros_like(accuracies)
     f1s = np.zeros_like(accuracies)
 
-    for dataset_idx, (X, y) in enumerate(datasets):
-        for param_idx, (kernel, C, gamma) in enumerate(param_grid):
-            for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
-                clf = SVC(C=C, kernel=kernel, gamma=gamma)
-                clf.fit(X[train], y[train])
-                y_pred = clf.predict(X[test])
+    for param_idx, (kernel, C, gamma) in enumerate(param_grid):
+        for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
+            clf = SVC(C=C, kernel=kernel, gamma=gamma)
+            clf.fit(X[train], y[train])
+            y_pred = clf.predict(X[test])
 
-                accuracies[dataset_idx, param_idx, fold_idx] = accuracy_score(y[test], y_pred)
-                precisions[dataset_idx, param_idx, fold_idx] = precision_score(y[test], y_pred, average='macro', zero_division=0)
-                recalls[dataset_idx, param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
-                f1s[dataset_idx, param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
+            accuracies[param_idx, fold_idx] = accuracy_score(y[test], y_pred)
+            precisions[param_idx, fold_idx] = precision_score(y[test], y_pred, average='macro', zero_division=0)
+            recalls[param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
+            f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
 
     np.save("svm_accuracies.npy", accuracies)
     np.save("svm_precisions.npy", precisions)
@@ -70,27 +63,25 @@ def tune_svm_params(kernels, Cs, gammas, datasets, rskf):
     np.save("svm_f1s.npy", f1s)
 
 
-def tune_dt_params(max_depths, datasets, rskf):
-    n_datasets = len(datasets)
+def tune_dt_params(max_depths, rskf):
     n_param = len(max_depths)
     n_folds = rskf.get_n_splits()
 
-    accuracies = np.zeros((n_datasets, n_param, n_folds))
+    accuracies = np.zeros((n_param, n_folds))
     precisions = np.zeros_like(accuracies)
     recalls = np.zeros_like(accuracies)
     f1s = np.zeros_like(accuracies)
 
-    for dataset_idx, (X, y) in enumerate(datasets):
-        for param_idx, max_depth in enumerate(max_depths):
-            for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
-                clf = DecisionTreeClassifier(max_depth=max_depth)
-                clf.fit(X[train], y[train])
-                y_pred = clf.predict(X[test])
+    for param_idx, max_depth in enumerate(max_depths):
+        for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
+            clf = DecisionTreeClassifier(max_depth=max_depth)
+            clf.fit(X[train], y[train])
+            y_pred = clf.predict(X[test])
 
-                accuracies[dataset_idx, param_idx, fold_idx] = accuracy_score(y[test], y_pred)
-                precisions[dataset_idx, param_idx, fold_idx] = precision_score(y[test], y_pred, average='macro', zero_division=0)
-                recalls[dataset_idx, param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
-                f1s[dataset_idx, param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
+            accuracies[param_idx, fold_idx] = accuracy_score(y[test], y_pred)
+            precisions[param_idx, fold_idx] = precision_score(y[test], y_pred, average='macro', zero_division=0)
+            recalls[param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
+            f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
 
     np.save("dt_accuracies.npy", accuracies)
     np.save("dt_precisions.npy", precisions)
@@ -108,12 +99,8 @@ gammas = ['scale', 'auto']
 
 max_depths = list(range(2, 11))
 
-datasets = [
-    load_iris(return_X_y=True)
-]
+tune_knn_params(metrics, weights, rskf)
 
-tune_knn_params(metrics, weights, datasets, rskf)
+tune_svm_params(kernels, Cs, gammas, rskf)
 
-tune_svm_params(kernels, Cs, gammas, datasets, rskf)
-
-tune_dt_params(max_depths, datasets, rskf)
+tune_dt_params(max_depths, rskf)
