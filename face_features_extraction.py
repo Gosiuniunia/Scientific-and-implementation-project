@@ -7,8 +7,6 @@ import pandas as pd
 from utils import crop_img, apply_kmeans, get_hsv_lab_colour, get_color_between_points
 from face_detection import face_detection_using_haar
 import os
-os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
-
 
 model_path = r'C:/studia/P_nw/face_landmarker.task'
 image_path = 'OIP.jpg'
@@ -97,25 +95,40 @@ def extract_hair_colour(img, face_landmarks):
     eyebrow_colour = get_hsv_lab_colour([left_eyebrow_colour, right_eyebrow_colour])
     return eyebrow_colour
 
-def extract_lab_hsv_values_from_photo(image_path):
-    img = face_detection_using_haar(image_path)
+def extract_lab_hsv_values_from_photo(image_path, FaceLandmarker, options):
+    img = cv2.imread(image_path)
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
-    FaceLandmarker, options = init_face_landmark(model_path)
     face_landmarks = get_face_landmarks(FaceLandmarker, options, img_rgb)
 
     iris_colour = extract_iris_colour(img, face_landmarks)
     skin_colour = extract_skin_colour(img, face_landmarks)
     eyebrow_colour = extract_hair_colour(img, face_landmarks)
-    return np.concatenate([iris_colour, skin_colour, eyebrow_colour])
+    extracted_values = np.concatenate([iris_colour, skin_colour, eyebrow_colour]).tolist()
+    return extracted_values
 
 
 
-iris_columns = [f"iris_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
-skin_columns = [f"skin_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
-eyebrow_columns = [f"eyebrow_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
-columns = iris_columns + skin_columns + eyebrow_columns
+import os
 
-data = extract_lab_hsv_values_from_photo("OIP.jpg")
-df = pd.DataFrame([data], columns=columns)
-print(df)
+def extract_dataset_to_csv(root_dir):
+    FaceLandmarker, options = init_face_landmark(model_path)
+
+    iris_columns = [f"iris_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
+    skin_columns = [f"skin_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
+    eyebrow_columns = [f"eyebrow_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
+    all_columns = iris_columns + skin_columns + eyebrow_columns + ['label']
+    df = pd.DataFrame(columns=all_columns)
+
+    for label_name in os.listdir(root_dir):
+        class_dir = os.path.join(root_dir, label_name)
+        if os.path.isdir(class_dir):
+            for filename in os.listdir(class_dir):
+                full_path = os.path.join(class_dir, filename)
+                extracted_values = extract_lab_hsv_values_from_photo(full_path, FaceLandmarker, options)
+                row = extracted_values + [label_name]
+                df.loc[len(df)] = row
+    return df
+
+df = extract_dataset_to_csv("showmethecolourdataset")
+
+df.to_csv("showmethecolourdataset.csv")
