@@ -116,7 +116,7 @@ def extract_dataset_to_csv(root_dir):
     iris_columns = [f"iris_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
     skin_columns = [f"skin_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
     eyebrow_columns = [f"eyebrow_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
-    all_columns = iris_columns + skin_columns + eyebrow_columns + ['label']
+    all_columns = ['id'] + iris_columns + skin_columns + eyebrow_columns + ['label']
     df = pd.DataFrame(columns=all_columns)
 
     for label_name in os.listdir(root_dir):
@@ -125,7 +125,7 @@ def extract_dataset_to_csv(root_dir):
             for filename in os.listdir(class_dir):
                 full_path = os.path.join(class_dir, filename)
                 extracted_values = extract_lab_hsv_values_from_photo(full_path, FaceLandmarker, options)
-                row = extracted_values + [label_name]
+                row = [filename] + extracted_values + [label_name]
                 df.loc[len(df)] = row
     return df
 
