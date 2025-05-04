@@ -11,6 +11,21 @@ rskf = RepeatedStratifiedKFold(n_repeats=5, n_splits=2, random_state=100)
 X, y = load_iris(return_X_y=True)
 
 def tune_knn_params(metrics, weights, rskf):
+    """
+    Performs hyperparameter tuning for the K-Nearest Neighbors (KNN) classifier 
+    using repeated stratified K-fold cross-validation.
+
+    Args:
+        metrics (list[str]): Distance metrics to evaluate, e.g., ['euclidean', 'manhattan'].
+        weights (list[str]): Weight functions to evaluate, e.g., ['uniform', 'distance'].
+        rskf (RepeatedStratifiedKFold): Cross-validation splitting strategy.
+
+    Saves:
+        - 'knn_accuracies.npy': Accuracy scores for each parameter combination and fold.
+        - 'knn_precisions.npy': Precision scores for each parameter combination and fold.
+        - 'knn_recalls.npy': Recall scores for each parameter combination and fold.
+        - 'knn_f1s.npy': F1 scores for each parameter combination and fold.
+    """
     param_grid = list(itertools.product(metrics, weights))
     n_param_combinations = len(param_grid)
     n_folds = rskf.get_n_splits()
@@ -37,6 +52,23 @@ def tune_knn_params(metrics, weights, rskf):
     np.save("knn_f1s.npy", f1s)
 
 def tune_svm_params(kernels, Cs, gammas, rskf):
+    """
+    Performs hyperparameter tuning for the Support Vector Machine (SVM) classifier 
+    using repeated stratified K-fold cross-validation.
+
+    Args:
+        kernels (list[str]): SVM kernel types to test, e.g., ['linear', 'rbf'].
+        Cs (list[float]): Values for the regularization parameter C.
+        gammas (list[Union[float, str]]): Gamma values, or 'scale'/'auto'.
+        rskf (RepeatedStratifiedKFold): Cross-validation splitting strategy.
+
+    Saves:
+        - 'svm_accuracies.npy': Accuracy scores for each parameter combination and fold.
+        - 'svm_precisions.npy': Precision scores for each parameter combination and fold.
+        - 'svm_recalls.npy': Recall scores for each parameter combination and fold.
+        - 'svm_f1s.npy': F1 scores for each parameter combination and fold.
+    """
+
     param_grid = list(itertools.product(kernels, Cs, gammas))
     n_param_combinations = len(param_grid)
     n_folds = rskf.get_n_splits()
@@ -64,6 +96,20 @@ def tune_svm_params(kernels, Cs, gammas, rskf):
 
 
 def tune_dt_params(max_depths, rskf):
+    """
+    Performs hyperparameter tuning for the Decision Tree classifier 
+    using repeated stratified K-fold cross-validation.
+
+    Args:
+        max_depths (list[int]): Maximum tree depths to evaluate.
+        rskf (RepeatedStratifiedKFold): Cross-validation splitting strategy.
+
+    Saves:
+        - 'dt_accuracies.npy': Accuracy scores for each depth and fold.
+        - 'dt_precisions.npy': Precision scores for each depth and fold.
+        - 'dt_recalls.npy': Recall scores for each depth and fold.
+        - 'dt_f1s.npy': F1 scores for each depth and fold.
+    """
     n_param = len(max_depths)
     n_folds = rskf.get_n_splits()
 

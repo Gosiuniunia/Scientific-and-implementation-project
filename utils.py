@@ -9,6 +9,19 @@ def GrayworldeWB_algoritm(img):
 
 
 def crop_img(img, landmarks, indices):
+    """
+    Crops a region of the image based on facial landmarks.
+
+    Args:
+        img (np.ndarray): Input image in BGR format.
+        landmarks (List[NormalizedLandmark]): List of facial landmarks.
+        indices (List[int]): Indices of the landmarks to define the region.
+
+    Returns:
+        Tuple[np.ndarray, Tuple[int, int]]: 
+            - Cropped region of the image (np.ndarray).
+            - Origin (x, y) of the cropped region relative to the original image.
+    """
     h, w, _ = img.shape
     points = np.array(
         [[int(landmarks[i].x * w), int(landmarks[i].y * h)] for i in indices]
@@ -22,6 +35,18 @@ def crop_img(img, landmarks, indices):
 
 
 def apply_kmeans(img, k=4):
+    """
+    Applies K-Means clustering to segment colors in the image.
+
+    Args:
+        img (np.ndarray): Input image in BGR format.
+        k (int, optional): Number of clusters. Defaults to 4.
+
+    Returns:
+        Tuple[np.ndarray, np.ndarray]:
+            - Cluster centers (BGR colors) as np.ndarray of shape (k, 3).
+            - Segmented image with colors replaced by their cluster center.
+    """
     img_data = img.reshape((-1, 3))
     img_data = np.float32(img_data)
     criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 100, 0.2)
@@ -35,6 +60,15 @@ def apply_kmeans(img, k=4):
 
 
 def get_hsv_lab_colour(bgr_array):
+    """
+    Converts a list of BGR colors to LAB and HSV representations.
+
+    Args:
+        bgr_array (List[np.ndarray] or np.ndarray): List or array of BGR colors.
+
+    Returns:
+        np.ndarray: Concatenated LAB and HSV average values (length 6).
+    """
     avg_bgr = np.mean(bgr_array, axis=0).astype(np.uint8)
     avg_bgr_reshaped = avg_bgr.reshape((1, 1, 3))
     avg_lab = cv2.cvtColor(avg_bgr_reshaped, cv2.COLOR_BGR2Lab)[0, 0]
@@ -43,6 +77,18 @@ def get_hsv_lab_colour(bgr_array):
 
 
 def get_color_between_points(p1, p2, crop_origin, segmented_img):
+    """
+    Gets the color from the segmented image at the midpoint between two points.
+
+    Args:
+        p1 (Tuple[float, float]): First point (x, y).
+        p2 (Tuple[float, float]): Second point (x, y).
+        crop_origin (Tuple[int, int]): Origin (x, y) of the crop in original image.
+        segmented_img (np.ndarray): Segmented image (from KMeans).
+
+    Returns:
+        np.ndarray: BGR color at the midpoint between p1 and p2.
+    """
     cx = int((p1[0] + p2[0]) / 2) - crop_origin[0]
     cy = int((p1[1] + p2[1]) / 2) - crop_origin[1]
 
