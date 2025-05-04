@@ -1,5 +1,11 @@
 import numpy as np
 import cv2
+from white_balancing.classes import WBsRGB as wb_srgb
+
+def white_balance(img):
+  wbModel = wb_srgb.WBsRGB()
+  wb_img = wbModel.correctImage(img)
+  return wb_img
 
 
 def GrayworldeWB_algoritm(img):
