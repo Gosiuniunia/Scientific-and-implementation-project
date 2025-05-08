@@ -7,7 +7,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 
-rskf = RepeatedStratifiedKFold(n_repeats=5, n_splits=2, random_state=100)
+rskf = RepeatedStratifiedKFold(n_repeats=5, n_splits=5, random_state=100)
 X, y = load_iris(return_X_y=True)
 
 def tune_knn_params(metrics, weights, rskf):
