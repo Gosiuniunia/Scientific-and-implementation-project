@@ -6,9 +6,14 @@ import itertools
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
+import pandas as pd
 
 rskf = RepeatedStratifiedKFold(n_repeats=5, n_splits=5, random_state=100)
-X, y = load_iris(return_X_y=True)
+df = pd.read_csv("deep_armocromia.csv")
+df = df.iloc[:, 2:]
+
+X = df.drop("label", axis=1).to_numpy()
+y = df["label"].to_numpy()
 
 def tune_knn_params(metrics, weights, rskf):
     """
@@ -44,7 +49,7 @@ def tune_knn_params(metrics, weights, rskf):
             precisions[param_idx, fold_idx] = precision_score(y[test], y_pred, average='macro', zero_division=0)
             recalls[param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
             f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
-
+    print(accuracies)
     # Zapis wyników
     np.save("knn_accuracies.npy", accuracies)
     np.save("knn_precisions.npy", precisions)
