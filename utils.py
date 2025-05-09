@@ -3,15 +3,20 @@ import cv2
 from white_balancing.classes import WBsRGB as wb_srgb
 
 def white_balance(img):
+  """
+  Performs white-balancing of the image
+    Ref: Afifi, Mahmoud, et al. "When color constancy goes wrong: Correcting improperly white-balanced images." 
+    Proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 2019.
+
+  Args:
+        img (np.ndarray): Input image in BGR format.
+
+  Returns:
+        wb_img (np.ndarray): White-balanced image in RGB format.
+  """
   wbModel = wb_srgb.WBsRGB()
   wb_img = wbModel.correctImage(img)
   return wb_img
-
-
-def GrayworldeWB_algoritm(img):
-    wb = cv2.xphoto.createGrayworldWB()
-    wb_img = wb.balanceWhite(img)
-    return wb_img
 
 
 def crop_img(img, landmarks, indices):
