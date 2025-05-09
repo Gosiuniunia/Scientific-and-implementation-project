@@ -4,9 +4,11 @@ from mediapipe.tasks.python import vision
 import cv2
 import numpy as np
 import pandas as pd
-from utils import crop_img, apply_kmeans, get_hsv_lab_colour, get_color_between_points
+from utils import white_balance, crop_img, apply_kmeans, get_hsv_lab_colour, get_color_between_points
 import os
 
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 model_path = r"C:/studia/P_nw/face_landmarker.task"
 image_path = "OIP.jpg"
 
@@ -131,7 +133,6 @@ def extract_skin_colour(img, face_landmarks):
                 if 0 <= x < img.shape[1] and 0 <= y < img.shape[0]:
                     color = img[y, x]
                     skin_colours.append(color)
-
     skin_colour = get_hsv_lab_colour(skin_colours)
 
     return skin_colour
@@ -194,6 +195,8 @@ def extract_lab_hsv_values_from_photo(image_path, FaceLandmarker, options):
         list: A flattened list of LAB and HSV color features from iris, skin, and eyebrow.
     """
     img = cv2.imread(image_path)
+    balanced_img = white_balance(img)
+    img = (balanced_img * 255).astype(np.uint8)
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     face_landmarks = get_face_landmarks(FaceLandmarker, options, img_rgb)
 
@@ -206,7 +209,7 @@ def extract_lab_hsv_values_from_photo(image_path, FaceLandmarker, options):
     return extracted_values
 
 
-def extract_dataset_to_csv(root_dir):
+def extract_showmeyour_colour_dataset_to_csv(root_dir):
     """ 
     Processes all labeled images in a directory structure and builds a dataset of facial color features.
 
@@ -236,8 +239,66 @@ def extract_dataset_to_csv(root_dir):
                 df.loc[len(df)] = row
     return df
 
+def extract_depp_armocromia_to_csv(root_dir):
+    """ 
+    Processes all labeled images in a directory structure and builds a dataset of facial color features.
 
-df = extract_dataset_to_csv("showmethecolourdataset")
+    Args:
+        root_dir (str): Root directory containing labeled subdirectories of images.
+
+    Returns:
+        pd.DataFrame: A DataFrame where each row contains extracted features and a label.
+    """
+    seasons_translation = {
+    "primavera": "spring",
+    "estate": "summer",
+    "autunno": "autumn",
+    "inverno": "winter"
+    }
+    
+    FaceLandmarker, options = init_face_landmark(model_path)
+
+    iris_columns = [f"iris_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
+    skin_columns = [f"skin_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
+    eyebrow_columns = [f"eyebrow_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
+    all_columns = ["id"] + iris_columns + skin_columns + eyebrow_columns + ["label"]
+    df = pd.DataFrame(columns=all_columns)
+
+    for root, dirs, files in os.walk(root_dir):
+        for file in files:
+            if file.lower().endswith((".jpg", ".png", ".jpeg")):
+                full_path = os.path.join(root, file)
+                print(full_path)
+                label_name = seasons_translation[full_path.replace("\\", "/").split("/")[2]]
+                extracted_values = extract_lab_hsv_values_from_photo(
+                    full_path, FaceLandmarker, options
+                )
+                row = [file] + extracted_values + [label_name]
+                df.loc[len(df)] = row
+
+    return df
+
+# primavera
+
+df = extract_depp_armocromia_to_csv("ORIGINAL_RGB_NOT_PROCESSED/test")
+
+# df = extract_depp_armocromia_to_csv("ORIGINAL_RGB_NOT_PROCESSED")
+
+df.to_csv("deep_armocromia.csv")
 
 
-df.to_csv("showmethecolourdataset.csv")
+
+'''
+ORIGINAL_RGB_NOT_PROCESSED\test\autunno\deep\21655.png
+ORIGINAL_RGB_NOT_PROCESSED\test\estate\soft\8895.png
+ORIGINAL_RGB_NOT_PROCESSED\test\inverno\cool\11055.png
+
+
+ORIGINAL_RGB_NOT_PROCESSED\train\autunno\warm\21849.png
+ORIGINAL_RGB_NOT_PROCESSED/train/estate\cool\images-33_0.png
+ORIGINAL_RGB_NOT_PROCESSED/train/inverno\deep\3795.png
+ORIGINAL_RGB_NOT_PROCESSED/train/primavera\bright\10054.png
+ORIGINAL_RGB_NOT_PROCESSED/train/primavera\light\gillian anderson25.png
+ORIGINAL_RGB_NOT_PROCESSED/train/primavera\light\gillian anderson43.png
+ORIGINAL_RGB_NOT_PROCESSED/train/primavera/warm\damian lewis6.png
+'''
