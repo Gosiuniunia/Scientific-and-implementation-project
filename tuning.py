@@ -49,7 +49,7 @@ def tune_knn_params(metrics, weights, rskf):
             precisions[param_idx, fold_idx] = precision_score(y[test], y_pred, average='macro', zero_division=0)
             recalls[param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
             f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
-    print(accuracies)
+    
     # Zapis wyników
     np.save("knn_accuracies.npy", accuracies)
     np.save("knn_precisions.npy", precisions)
