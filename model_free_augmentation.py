@@ -1,7 +1,6 @@
 import albumentations as A
 import cv2
 import os
-import numpy as np
 
 TARGET_SIZE = 224
 BASE_DATA_PATH = rf'C:\Users\wdomc\Documents\personal_color_analysis'

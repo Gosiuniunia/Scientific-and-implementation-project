@@ -4,12 +4,11 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.applications import VGG16
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Dense
-
 import cv2
 import numpy as np
 import os
-import matplotlib.pyplot as plt
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import classification_report
+from data_operations import load_images_from_folder_armocromia, load_images_from_folder_showme
 
 # dataset1: Korean one
 TEST_IMAGES_PATH_1 = fr"C:\Users\wdomc\Documents\personal_color_analysis\ShowMeTheColor\res\test"
@@ -19,40 +18,6 @@ TRAIN_IMAGES_PATH_1 = rf"C:\Users\wdomc\Documents\personal_color_analysis\ShowMe
 IMAGES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\raw_face_pictures"
 TRAIN_IMAGES_PATH_2 = rf"{IMAGES_PATH}\train"
 TEST_IMAGES_PATH_2 = rf"{IMAGES_PATH}\test"
-
-def load_images_from_folder_showme(folder_path, class_map):
-    X = []
-    y = []
-    for color_type_class_name in os.listdir(folder_path):
-        color_type_path = os.path.join(folder_path, color_type_class_name)
-        label = class_map[color_type_class_name]
-        for img_filename in os.listdir(color_type_path):
-            img_path = os.path.join(color_type_path, img_filename)
-            img = cv2.imread(img_path)
-            if img is not None:
-                img = cv2.resize(img, (224, 224))
-                X.append(img)
-                y.append(label)
-    return np.array(X), to_categorical(np.array(y), num_classes=4)
-
-def load_images_from_folder_armocromia(folder_path, class_map):
-    X = []
-    y = []
-    for color_type_class_name in os.listdir(folder_path):
-        color_type_path = os.path.join(folder_path, color_type_class_name)
-        for subclass_name in os.listdir(color_type_path):
-            subclass_folder = os.path.join(color_type_path, subclass_name)
-            if os.path.isdir(subclass_folder):
-                label = class_map[color_type_class_name]
-                for img_file in os.listdir(subclass_folder):
-                    img_path = os.path.join(subclass_folder, img_file)
-                    img = cv2.imread(img_path)
-                    if img is not None:
-                        img = cv2.resize(img, (224, 224))
-                        X.append(img)
-                        y.append(label)
-    return np.array(X), to_categorical(np.array(y), num_classes=4)
-
 
 # Parameters
 input_shape = (224, 224, 3)
@@ -71,7 +36,6 @@ model.compile(optimizer=Adam(learning_rate=0.001),
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
-
 class_map_1 = {'fall': 0, 'spring': 1, 'summer': 2, 'winter': 3}
 class_map_2 = {'primavera': 0, 'estate': 1, 'autunno': 2, 'inverno': 3}
 
@@ -83,7 +47,7 @@ class_map_2 = {'primavera': 0, 'estate': 1, 'autunno': 2, 'inverno': 3}
 #     verbose=True,
 #     shuffle=True)
 #
-# model.save(rf'model_weights\basic_vgg16.keras')
+# model.save(rf'C:\Users\wdomc\Documents\personal_color_analysis\model_weights\basic_vgg16.keras')
 
 test_model = keras.models.load_model(rf"C:\Users\wdomc\Documents\personal_color_analysis\model_weights\basic_vgg16.keras")
 X_test, y_test = load_images_from_folder_armocromia(TEST_IMAGES_PATH_2, class_map_2)
