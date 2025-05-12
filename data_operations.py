@@ -1,6 +1,8 @@
 import os
 import shutil
-
+import numpy as np
+import cv2
+from tensorflow.keras.utils import to_categorical
 # dataset1: Korean one
 TEST_IMAGES_PATH_1 = fr"C:\Users\wdomc\Documents\personal_color_analysis\ShowMeTheColor\res\test"
 TRAIN_IMAGES_PATH_1 = rf"C:\Users\wdomc\Documents\personal_color_analysis\ShowMeTheColor\res\train"
