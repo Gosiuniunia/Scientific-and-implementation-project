@@ -122,7 +122,7 @@ def extract_skin_colour(img, face_landmarks):
     Returns:
         np.ndarray: A combined LAB and HSV color vector representing the skin tone.
     """
-    skin_extraction_landmarks = np.load("skin_extraction_landmarks.npy")
+    skin_extraction_landmarks = [195, 5]
     skin_colours = []
     for face in face_landmarks:
         for idx in skin_extraction_landmarks:
