@@ -45,7 +45,7 @@ def crop_img(img, landmarks, indices):
     return cropped_img, (x, y)
 
 
-def apply_kmeans(img, k=4):
+def apply_kmeans(img, k=5):
     """
     Applies K-Means clustering to segment colors in the image.
 
@@ -67,12 +67,12 @@ def apply_kmeans(img, k=4):
     centers = np.uint8(centers)
     segmented_img = centers[labels.flatten()]
     segmented_img = segmented_img.reshape(img.shape)
-    return (centers, segmented_img)
+    return segmented_img
 
 
 def get_hsv_lab_colour(bgr_array):
     """
-    Converts a list of BGR colors to LAB and HSV representations.
+    Converts a list of BGR colors to average LAB and HSV colour representations.
 
     Args:
         bgr_array (List[np.ndarray] or np.ndarray): List or array of BGR colors.
@@ -89,7 +89,7 @@ def get_hsv_lab_colour(bgr_array):
 
 def get_color_between_points(p1, p2, crop_origin, segmented_img):
     """
-    Gets the color from the segmented image at the midpoint between two points.
+    Gets the color from the image at the midpoint between two points: p1 and p2.
 
     Args:
         p1 (Tuple[float, float]): First point (x, y).

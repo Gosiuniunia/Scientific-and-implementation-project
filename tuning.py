@@ -1,5 +1,4 @@
 import numpy as np
-from sklearn.datasets import load_iris
 from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import itertools
@@ -7,8 +6,13 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+
 
 rskf = RepeatedStratifiedKFold(n_repeats=5, n_splits=5, random_state=100)
+scaler = StandardScaler()
+
 df = pd.read_csv("deep_armocromia.csv")
 df = df.iloc[:, 2:]
 
@@ -41,6 +45,8 @@ def tune_knn_params(metrics, weights, rskf):
     f1s = np.zeros_like(accuracies)
     for param_idx, (metric, weight) in enumerate(param_grid):
         for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
+            X_train = scaler.transform(X[train])
+            X_test = scaler.transform(X[test])
             clf = KNeighborsClassifier(metric=metric, weights=weight)
             clf.fit(X[train], y[train])
             y_pred = clf.predict(X[test])
@@ -77,7 +83,7 @@ def tune_svm_params(kernels, Cs, gammas, rskf):
     param_grid = list(itertools.product(kernels, Cs, gammas))
     n_param_combinations = len(param_grid)
     n_folds = rskf.get_n_splits()
-
+    
     accuracies = np.zeros((n_param_combinations, n_folds))
     precisions = np.zeros_like(accuracies)
     recalls = np.zeros_like(accuracies)
@@ -85,6 +91,8 @@ def tune_svm_params(kernels, Cs, gammas, rskf):
 
     for param_idx, (kernel, C, gamma) in enumerate(param_grid):
         for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
+            X_train = scaler.transform(X[train])
+            X_test = scaler.transform(X[test])
             clf = SVC(C=C, kernel=kernel, gamma=gamma)
             clf.fit(X[train], y[train])
             y_pred = clf.predict(X[test])

@@ -1,6 +1,4 @@
 import mediapipe as mp
-from mediapipe.tasks import python
-from mediapipe.tasks.python import vision
 import cv2
 import numpy as np
 import pandas as pd
@@ -55,7 +53,7 @@ def get_face_landmarks(FaceLandmarker, options, img_rgb):
 
 def extract_iris_colour(img, face_landmarks):
     """
-    Extracts the dominant iris color (left and right eyes) from the image using facial landmarks.
+    Extracts the iris color from the image using facial landmarks.
 
     Args:
         img (np.ndarray): The original image in BGR format.
@@ -70,41 +68,31 @@ def extract_iris_colour(img, face_landmarks):
     for face_landmarks in face_landmarks:
         left_iris_img, left_origin = crop_img(img, face_landmarks, left_iris_indices)
         right_iris_img, right_origin = crop_img(img, face_landmarks, right_iris_indices)
-        left_iris_centers, segmented_img_li = apply_kmeans(left_iris_img, k=2)
-        right_iris_centers, segmented_img_ri = apply_kmeans(right_iris_img, k=2)
-        left_pupil_colour = get_color_between_points(
+        segmented_img_li = apply_kmeans(left_iris_img)
+        segmented_img_ri = apply_kmeans(right_iris_img)
+        left_iris_colour = get_color_between_points(
             (
-                face_landmarks[468].x * img.shape[1],
-                face_landmarks[468].y * img.shape[0],
+                face_landmarks[469].x * img.shape[1],
+                face_landmarks[469].y * img.shape[0],
             ),
             (
-                face_landmarks[468].x * img.shape[1],
-                face_landmarks[468].y * img.shape[0],
+                face_landmarks[145].x * img.shape[1],
+                face_landmarks[145].y * img.shape[0],
             ),
             left_origin,
             segmented_img_li,
         )
-        right_pupil_colour = get_color_between_points(
+        right_iris_colour = get_color_between_points(
             (
-                face_landmarks[473].x * img.shape[1],
-                face_landmarks[473].y * img.shape[0],
+                face_landmarks[374].x * img.shape[1],
+                face_landmarks[374].y * img.shape[0],
             ),
             (
-                face_landmarks[473].x * img.shape[1],
-                face_landmarks[473].y * img.shape[0],
+                face_landmarks[476].x * img.shape[1],
+                face_landmarks[476].y * img.shape[0],
             ),
             right_origin,
             segmented_img_ri,
-        )
-        right_iris_colour = (
-            right_iris_centers[0]
-            if np.all(right_pupil_colour == right_iris_centers[0])
-            else right_iris_centers[1]
-        )
-        left_iris_colour = (
-            left_iris_centers[0]
-            if np.all(left_pupil_colour == left_iris_centers[0])
-            else left_iris_centers[1]
         )
 
         iris_colour = get_hsv_lab_colour([right_iris_colour, left_iris_colour])
@@ -140,7 +128,7 @@ def extract_skin_colour(img, face_landmarks):
 
 def extract_hair_colour(img, face_landmarks):
     """
-    Extracts eyebrow (hair) color by analyzing regions around the left and right eyebrows.
+    Extracts eyebrow (hair) color using facial landmarks.
 
     Args:
         img (np.ndarray): The original image in BGR format.
@@ -154,8 +142,8 @@ def extract_hair_colour(img, face_landmarks):
     for face_landmarks in face_landmarks:
         left_eyebrow_img, left_origin = crop_img(img, face_landmarks, left_eyebrow)
         right_eyebrow_img, right_origin = crop_img(img, face_landmarks, right_eyebrow)
-        left_eyebrow_centers, segmented_img_le = apply_kmeans(left_eyebrow_img, k=2)
-        right_eyebrow_centers, segmented_img_re = apply_kmeans(right_eyebrow_img, k=2)
+        segmented_img_le = apply_kmeans(left_eyebrow_img)
+        segmented_img_re = apply_kmeans(right_eyebrow_img)
         left_eyebrow_colour = get_color_between_points(
             (
                 face_landmarks[105].x * img.shape[1],
@@ -209,9 +197,10 @@ def extract_lab_hsv_values_from_photo(image_path, FaceLandmarker, options):
     return extracted_values
 
 
-def extract_showmeyour_colour_dataset_to_csv(root_dir):
+def extract_dataset_to_csv(root_dir):
     """ 
-    Processes all labeled images in a directory structure and builds a dataset of facial color features.
+    Extracts color features (in HSV and LAB color spaces) from images located in subdirectories of the root folder.
+    Each subdirectory is treated as a separate class label. The final CSV file will be named after the root folder.
 
     Args:
         root_dir (str): Root directory containing labeled subdirectories of images.
@@ -237,68 +226,8 @@ def extract_showmeyour_colour_dataset_to_csv(root_dir):
                 )
                 row = [filename] + extracted_values + [label_name]
                 df.loc[len(df)] = row
-    return df
-
-def extract_depp_armocromia_to_csv(root_dir):
-    """ 
-    Processes all labeled images in a directory structure and builds a dataset of facial color features.
-
-    Args:
-        root_dir (str): Root directory containing labeled subdirectories of images.
-
-    Returns:
-        pd.DataFrame: A DataFrame where each row contains extracted features and a label.
-    """
-    seasons_translation = {
-    "primavera": "spring",
-    "estate": "summer",
-    "autunno": "autumn",
-    "inverno": "winter"
-    }
-    
-    FaceLandmarker, options = init_face_landmark(model_path)
-
-    iris_columns = [f"iris_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
-    skin_columns = [f"skin_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
-    eyebrow_columns = [f"eyebrow_{ch}" for ch in ["L", "a", "b", "H", "S", "V"]]
-    all_columns = ["id"] + iris_columns + skin_columns + eyebrow_columns + ["label"]
-    df = pd.DataFrame(columns=all_columns)
-
-    for root, dirs, files in os.walk(root_dir):
-        for file in files:
-            if file.lower().endswith((".jpg", ".png", ".jpeg")):
-                full_path = os.path.join(root, file)
-                print(full_path)
-                label_name = seasons_translation[full_path.replace("\\", "/").split("/")[2]]
-                extracted_values = extract_lab_hsv_values_from_photo(
-                    full_path, FaceLandmarker, options
-                )
-                row = [file] + extracted_values + [label_name]
-                df.loc[len(df)] = row
-
-    return df
+    df.to_csv(root_dir + ".csv")
 
 # primavera
 
-df = extract_depp_armocromia_to_csv("ORIGINAL_RGB_NOT_PROCESSED/test")
-
-# df = extract_depp_armocromia_to_csv("ORIGINAL_RGB_NOT_PROCESSED")
-
-df.to_csv("deep_armocromia.csv")
-
-
-
-'''
-ORIGINAL_RGB_NOT_PROCESSED\test\autunno\deep\21655.png
-ORIGINAL_RGB_NOT_PROCESSED\test\estate\soft\8895.png
-ORIGINAL_RGB_NOT_PROCESSED\test\inverno\cool\11055.png
-
-
-ORIGINAL_RGB_NOT_PROCESSED\train\autunno\warm\21849.png
-ORIGINAL_RGB_NOT_PROCESSED/train/estate\cool\images-33_0.png
-ORIGINAL_RGB_NOT_PROCESSED/train/inverno\deep\3795.png
-ORIGINAL_RGB_NOT_PROCESSED/train/primavera\bright\10054.png
-ORIGINAL_RGB_NOT_PROCESSED/train/primavera\light\gillian anderson25.png
-ORIGINAL_RGB_NOT_PROCESSED/train/primavera\light\gillian anderson43.png
-ORIGINAL_RGB_NOT_PROCESSED/train/primavera/warm\damian lewis6.png
-'''
+df = extract_dataset_to_csv("test")
