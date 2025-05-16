@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-from white_balancing.classes import WBsRGB as wb_srgb
+from utils.white_balancing.classes import WBsRGB as wb_srgb
 
 def white_balance(img):
   """

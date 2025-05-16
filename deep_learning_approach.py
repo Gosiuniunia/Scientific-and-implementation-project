@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 import os
 from sklearn.metrics import classification_report
-from data_operations import load_images_from_folder_armocromia, load_images_from_folder_showme
+from utils.data_operations import load_images_from_folder_armocromia, load_images_from_folder_showme
 
 # dataset1: Korean one
 TEST_IMAGES_PATH_1 = fr"C:\Users\wdomc\Documents\personal_color_analysis\ShowMeTheColor\res\test"
