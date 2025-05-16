@@ -1,0 +1,4789 @@
+filename,label,kfold
+10.jpg,fall,0
+10491.jpg,fall,0
+10552.jpg,fall,0
+1069.jpg,fall,0
+10748.jpg,fall,0
+11102.jpg,fall,0
+11144.jpg,fall,0
+11540.jpg,fall,0
+11564.jpg,fall,0
+11726.jpg,fall,0
+11823.jpg,fall,0
+11962.jpg,fall,0
+12109.jpg,fall,0
+12243.jpg,fall,0
+12795.jpg,fall,0
+12845.jpg,fall,0
+13081.jpg,fall,0
+13112.jpg,fall,0
+1346.jpg,fall,0
+13685.jpg,fall,0
+13700.jpg,fall,0
+13716.jpg,fall,0
+14.jpg,fall,0
+1402.jpg,fall,0
+14542.jpg,fall,0
+14839.jpg,fall,0
+14891.jpg,fall,0
+14916.jpg,fall,0
+14920.jpg,fall,0
+15027.jpg,fall,0
+15102.jpg,fall,0
+15172.jpg,fall,0
+15701.jpg,fall,0
+15868.jpg,fall,0
+16006.jpg,fall,0
+16295.jpg,fall,0
+16347.jpg,fall,0
+16358.jpg,fall,0
+16378.jpg,fall,0
+16836.jpg,fall,0
+1692.jpg,fall,0
+16962.jpg,fall,0
+17217.jpg,fall,0
+1737.jpg,fall,0
+17684.jpg,fall,0
+17695.jpg,fall,0
+17696.jpg,fall,0
+17876.jpg,fall,0
+18122.jpg,fall,0
+18176.jpg,fall,0
+18226.jpg,fall,0
+18449.jpg,fall,0
+18495.jpg,fall,0
+18551.jpg,fall,0
+18567.jpg,fall,0
+19169.jpg,fall,0
+19183.jpg,fall,0
+19294.jpg,fall,0
+19413.jpg,fall,0
+19442.jpg,fall,0
+19990.jpg,fall,0
+20115.jpg,fall,0
+20431.jpg,fall,0
+20643.jpg,fall,0
+20804.jpg,fall,0
+21244.jpg,fall,0
+21356.jpg,fall,0
+21434.jpg,fall,0
+21455.jpg,fall,0
+21518.jpg,fall,0
+21657.jpg,fall,0
+21702.jpg,fall,0
+21731.jpg,fall,0
+21905.jpg,fall,0
+22290.jpg,fall,0
+22516.jpg,fall,0
+22821.jpg,fall,0
+22942.jpg,fall,0
+23232.jpg,fall,0
+23341.jpg,fall,0
+23612.jpg,fall,0
+24055.jpg,fall,0
+24549.jpg,fall,0
+24577.jpg,fall,0
+24908.jpg,fall,0
+24982.jpg,fall,0
+2528.jpg,fall,0
+25386.jpg,fall,0
+25422.jpg,fall,0
+25464.jpg,fall,0
+25498.jpg,fall,0
+26143.jpg,fall,0
+26377.jpg,fall,0
+26390.jpg,fall,0
+26425.jpg,fall,0
+26438.jpg,fall,0
+26583.jpg,fall,0
+26740.jpg,fall,0
+26893.jpg,fall,0
+27124.jpg,fall,0
+27425.jpg,fall,0
+27429.jpg,fall,0
+27673.jpg,fall,0
+28003.jpg,fall,0
+28327.jpg,fall,0
+28335.jpg,fall,0
+28360.jpg,fall,0
+28593.jpg,fall,0
+28769.jpg,fall,0
+28885.jpg,fall,0
+28955.jpg,fall,0
+29014.jpg,fall,0
+29047.jpg,fall,0
+29258.jpg,fall,0
+29336.jpg,fall,0
+2957.jpg,fall,0
+3450.jpg,fall,0
+3608.jpg,fall,0
+3924.jpg,fall,0
+4079.jpg,fall,0
+4092.jpg,fall,0
+4570.jpg,fall,0
+4688.jpg,fall,0
+4770.jpg,fall,0
+5259.jpg,fall,0
+5385.jpg,fall,0
+5409.jpg,fall,0
+5418.jpg,fall,0
+5537.jpg,fall,0
+5562.jpg,fall,0
+5891.jpg,fall,0
+5989.jpg,fall,0
+6067.jpg,fall,0
+6892.jpg,fall,0
+7322.jpg,fall,0
+7484.jpg,fall,0
+7530.jpg,fall,0
+7615.jpg,fall,0
+7897.jpg,fall,0
+8.jpg,fall,0
+8376.jpg,fall,0
+8641.jpg,fall,0
+8807.jpg,fall,0
+8843.jpg,fall,0
+9288.jpg,fall,0
+9293.jpg,fall,0
+9420.jpg,fall,0
+9450.jpg,fall,0
+9563.jpg,fall,0
+9686.jpg,fall,0
+9969.jpg,fall,0
+9981.jpg,fall,0
+Alessandra Ambrosio 4.png,fall,0
+Alessandra Ambrosio 5.png,fall,0
+ana de armas 1.png,fall,0
+Ana de Armas 12.png,fall,0
+Ana de Armas 4.png,fall,0
+Annalisa 2_0.png,fall,0
+Annalisa 2_1.png,fall,0
+annalisa 6.png,fall,0
+annalisa 9.png,fall,0
+Ashley Olsen 3_1.png,fall,0
+Ashley Olsen 5.png,fall,0
+Ashley Olsen 6.png,fall,0
+beyonce 5.png,fall,0
+beyonce 8.png,fall,0
+calista flockhart 2.png,fall,0
+Calista Flockhart 3.png,fall,0
+Calista Flockhart 4.png,fall,0
+Calista Flockhart 6.png,fall,0
+Calista Flockhart 7.png,fall,0
+Camilla Boniardi 2.png,fall,0
+cindy crawford 8.png,fall,0
+cindy crawford 9.png,fall,0
+cristina-parodi 6.png,fall,0
+David Beckham 1_0.png,fall,0
+David Beckham 3.png,fall,0
+Debra Messing 1.png,fall,0
+debra-messing 8.png,fall,0
+Drew Barrymore 12.png,fall,0
+Drew Barrymore 2.png,fall,0
+Drew Barrymore 6.png,fall,0
+Eliana Miglio 3.png,fall,0
+Eliana Miglio Autunno Soft.png,fall,0
+ElisabettaCanalis1.png,fall,0
+elodie 10.png,fall,0
+elodie 5.png,fall,0
+emily ratajkowski  3.png,fall,0
+emily ratajkowski  7.png,fall,0
+emma watson 10.png,fall,0
+emma watson 4.png,fall,0
+emma watson 5.png,fall,0
+Emma-Watson1.png,fall,0
+emmawatson 6.png,fall,0
+evan-peters 1.png,fall,0
+Eva_Mendes 6.png,fall,0
+fall (12).jpg,fall,0
+fall (13).jpg,fall,0
+fall (25).jpg,fall,0
+fall (28).JPG,fall,0
+fall (38).jpg,fall,0
+fall (7).PNG,fall,0
+"Felicity Jones, 4.png",fall,0
+felicity-jones 2.png,fall,0
+Gal Gadot 2.png,fall,0
+gigi hadid 2_1.png,fall,0
+Halle berry 5.png,fall,0
+jen.JPG,fall,0
+Jennifer garner 1.png,fall,0
+Jennifer garner 3.png,fall,0
+jennifer lopez 3.png,fall,0
+Jennifer Lopez.png,fall,0
+Jennifer-Garner 2.png,fall,0
+jessica alba 3.png,fall,0
+jessica alba 5.png,fall,0
+Julia Roberts 2_1.png,fall,0
+julia roberts 3_1.png,fall,0
+kaia gerber 3.png,fall,0
+kaia-gerber 5.png,fall,0
+Kaya Gerber.png,fall,0
+Kaya Gerber1.png,fall,0
+ko1.jpg,fall,0
+Lorena Cesarini.png,fall,0
+Lorena Cesarini1.png,fall,0
+meghan markle 6.png,fall,0
+Meghan Markle.png,fall,0
+melissa satta 7.png,fall,0
+melissa satta 8.png,fall,0
+mila kunis 3.png,fall,0
+mila kunis 8.png,fall,0
+rachel zoe 2.png,fall,0
+Robert Pattinson 9.png,fall,0
+"Robert Pattinson,8.png",fall,0
+Ryan Gosling 2.png,fall,0
+Sarah Hyland 6.png,fall,0
+Sarah Hyland 8.png,fall,0
+serena rossi  5.png,fall,0
+serena rossi 6.png,fall,0
+Serena Rossi1.png,fall,0
+shay mitchell 10.png,fall,0
+Shay Mitchell AUTUNNO DEEP.png,fall,0
+Sonia Grispo 1.png,fall,0
+susan sarandon 10.png,fall,0
+susan sarandon 12.png,fall,0
+susan sarandon 9.png,fall,0
+theo james 3.png,fall,0
+tyra banks 1.png,fall,0
+"Tyra Banks, 5.png",fall,0
+Vanessa Incontrada 2_0.png,fall,0
+Vanessa Incontrada 2_1.png,fall,0
+Veronica-Ferraro 3.png,fall,0
+zendaya 8.png,fall,0
+Zendaya.png,fall,0
+10093.jpg,spring,0
+10143.jpg,spring,0
+10361.jpg,spring,0
+10611.jpg,spring,0
+10786.jpg,spring,0
+10799.jpg,spring,0
+11000.jpg,spring,0
+11016.jpg,spring,0
+11162.jpg,spring,0
+11304.jpg,spring,0
+11800.jpg,spring,0
+12293.jpg,spring,0
+1246.jpg,spring,0
+125.jpg,spring,0
+12923.jpg,spring,0
+13126.jpg,spring,0
+1318.jpg,spring,0
+1328.jpg,spring,0
+13539.jpg,spring,0
+13736.jpg,spring,0
+13847.jpg,spring,0
+13901.jpg,spring,0
+14668.jpg,spring,0
+14754.jpg,spring,0
+14938.jpg,spring,0
+14949.jpg,spring,0
+15089.jpg,spring,0
+15331.jpg,spring,0
+1544.jpg,spring,0
+15565.jpg,spring,0
+15970.jpg,spring,0
+16105.jpg,spring,0
+16124.jpg,spring,0
+16393.jpg,spring,0
+16950.jpg,spring,0
+17369.jpg,spring,0
+17673.jpg,spring,0
+18371.jpg,spring,0
+1888.jpg,spring,0
+18997.jpg,spring,0
+19312.jpg,spring,0
+19465.jpg,spring,0
+19576.jpg,spring,0
+19724.jpg,spring,0
+20041.jpg,spring,0
+20382.jpg,spring,0
+20571.jpg,spring,0
+20775.jpg,spring,0
+2102.jpg,spring,0
+21486.jpg,spring,0
+21837.jpg,spring,0
+2194.jpg,spring,0
+21968.jpg,spring,0
+22334.jpg,spring,0
+22420.jpg,spring,0
+22863.jpg,spring,0
+22927.jpg,spring,0
+22999.jpg,spring,0
+23272.jpg,spring,0
+23456.jpg,spring,0
+2366.jpg,spring,0
+2373.jpg,spring,0
+23730.jpg,spring,0
+23964.jpg,spring,0
+23974.jpg,spring,0
+24674.jpg,spring,0
+24958.jpg,spring,0
+24973.jpg,spring,0
+25262.jpg,spring,0
+25291.jpg,spring,0
+25306.jpg,spring,0
+25325.jpg,spring,0
+25650.jpg,spring,0
+26845.jpg,spring,0
+27171.jpg,spring,0
+27242.jpg,spring,0
+27254.jpg,spring,0
+27415.jpg,spring,0
+27557.jpg,spring,0
+27917.jpg,spring,0
+28214.jpg,spring,0
+28404.jpg,spring,0
+29021.jpg,spring,0
+29145.jpg,spring,0
+29621.jpg,spring,0
+29653.jpg,spring,0
+29793.jpg,spring,0
+3008.jpg,spring,0
+3040.jpg,spring,0
+3244.jpg,spring,0
+3613.jpg,spring,0
+3786.jpg,spring,0
+3922.jpg,spring,0
+3936.jpg,spring,0
+3986.jpg,spring,0
+4184.jpg,spring,0
+4206.jpg,spring,0
+4301.jpg,spring,0
+5324.jpg,spring,0
+5452.jpg,spring,0
+5638.jpg,spring,0
+5914.jpg,spring,0
+6161.jpg,spring,0
+6698.jpg,spring,0
+6741.jpg,spring,0
+7523.jpg,spring,0
+7971.jpg,spring,0
+8423.jpg,spring,0
+8526.jpg,spring,0
+8779.jpg,spring,0
+8933.jpg,spring,0
+9144.jpg,spring,0
+9242.jpg,spring,0
+9404.jpg,spring,0
+9610.jpg,spring,0
+9827.jpg,spring,0
+Adriana Lima 3.png,spring,0
+Adriana Lima.png,spring,0
+Alessandra Ambrosio PRIMAVERA BRIGHTjpeg.png,spring,0
+alexa chung.png,spring,0
+alexa chung26.png,spring,0
+alexa chung27.png,spring,0
+alexa chung32.png,spring,0
+alexa chung6.png,spring,0
+aleza chang-primavera bright.png,spring,0
+Angelina Jolie 1.png,spring,0
+angelina jolie11.png,spring,0
+angelina jolie12.png,spring,0
+angelina jolie14.png,spring,0
+Angelina Jolie2.png,spring,0
+angelina jolie29.png,spring,0
+Angelina Jolie3.png,spring,0
+Angelina Jolie7.png,spring,0
+bradley cooper2.png,spring,0
+bradley cooper4.png,spring,0
+Cara Delevigne 2.png,spring,0
+Cara Delevigne4.png,spring,0
+Cara Delevigne9.png,spring,0
+cate blanchett10.png,spring,0
+cate blanchett12.png,spring,0
+Charlotte Casiraghi5.png,spring,0
+Charlotte Casiraghi6.png,spring,0
+Charlotte Casiraghi9.png,spring,0
+Chiara Ferragni10.png,spring,0
+chloe sevigny- primavera light.png,spring,0
+clio zammatteo.png,spring,0
+clio zammatteo1.png,spring,0
+clio zammatteo4.png,spring,0
+clio zammatteo5.png,spring,0
+clio zammatteo6.png,spring,0
+cristiana capotondi11.png,spring,0
+cristiana capotondi12.png,spring,0
+cristiana capotondi18.png,spring,0
+cristiana capotondi21.png,spring,0
+cristiana capotondi25.png,spring,0
+cristiana capotondi32.png,spring,0
+Cristiana Capotondi4.png,spring,0
+Cynthia Nixon1.png,spring,0
+cynthia nixon5.png,spring,0
+damian lewis7.png,spring,0
+doutzen kroes1.png,spring,0
+elettra lamborghini-primavera bright.png,spring,0
+emma corrin14.png,spring,0
+emma corrin2.png,spring,0
+emma corrin6.png,spring,0
+emma corrin7.png,spring,0
+Emma Stone 1.png,spring,0
+Emma Stone.png,spring,0
+Emma Stone1.png,spring,0
+gillian anderson15.png,spring,0
+gillian anderson17.png,spring,0
+gillian anderson18.png,spring,0
+gillian anderson20.png,spring,0
+gillian anderson22.png,spring,0
+gillian anderson23.png,spring,0
+gillian anderson28.png,spring,0
+gillian anderson33.png,spring,0
+gillian anderson42.png,spring,0
+gillian anderson46.png,spring,0
+gillian anderson7.png,spring,0
+Ilary Blasi.png,spring,0
+irene grandi.png,spring,0
+irene grandi1.png,spring,0
+Jessica Chastain.png,spring,0
+jessica chastain13.png,spring,0
+jessica chastain15.png,spring,0
+jessica chastain22.png,spring,0
+jessica chastain23.png,spring,0
+jessica chastain25.png,spring,0
+jessica chastain34.png,spring,0
+kevin mckidd-primavera light.png,spring,0
+Lindsay Lohan 2.png,spring,0
+Lindsay Lohan 3.png,spring,0
+Lindsay Lohan2.png,spring,0
+Lindssey Lohan 1.png,spring,0
+marco verratti-primavera bright.png,spring,0
+Margot Robbie.png,spring,0
+Margot Robbie5.png,spring,0
+Margot Robbie6.png,spring,0
+Miriam Leone 2.png,spring,0
+Miriam Leone.png,spring,0
+Miriam Leone9.png,spring,0
+Nicole Kidman.png,spring,0
+Nicole Kidman1.png,spring,0
+Nicole Kidman15.png,spring,0
+Nicole Kidman16.png,spring,0
+Nicole Kidman3.png,spring,0
+Nicole Kidman7.png,spring,0
+Nikole Kidman 2.png,spring,0
+nikole kidman- primavera light.png,spring,0
+Noemi3.png,spring,0
+Noemi5.png,spring,0
+sadie lavello- primavera bright.png,spring,0
+Sara Sampaio.png,spring,0
+Sara Sampaio1.png,spring,0
+simon baker.png,spring,0
+simon baker4.png,spring,0
+spr (12).PNG,spring,0
+spr (13).PNG,spring,0
+spr (15).jpg,spring,0
+spr (17).jpg,spring,0
+spr (21).jpg,spring,0
+spr (29).jpg,spring,0
+spr (31).JPG,spring,0
+spr (32).JPG,spring,0
+spr (35).JPG,spring,0
+spr (37).JPG,spring,0
+spr (41).jpg,spring,0
+valentina ferragni.png,spring,0
+valentina ferragni11.png,spring,0
+valentina ferragni14.png,spring,0
+valentina ferragni15.png,spring,0
+valentina leporati- primavera bright.png,spring,0
+Vittoria Puccini6.png,spring,0
+1.png,summer,0
+10029.jpg,summer,0
+10220.jpg,summer,0
+11024.jpg,summer,0
+11053.jpg,summer,0
+11157.jpg,summer,0
+1122.jpg,summer,0
+11482.jpg,summer,0
+11941.jpg,summer,0
+12414.jpg,summer,0
+12559.jpg,summer,0
+12698.jpg,summer,0
+13076.jpg,summer,0
+13117.jpg,summer,0
+13300.jpg,summer,0
+13340.jpg,summer,0
+13367.jpg,summer,0
+14125.jpg,summer,0
+1432.jpg,summer,0
+14395.jpg,summer,0
+1469.jpg,summer,0
+14798.jpg,summer,0
+14845.jpg,summer,0
+14919.jpg,summer,0
+15032.jpg,summer,0
+15472.jpg,summer,0
+1563.jpg,summer,0
+15789.jpg,summer,0
+15971.jpg,summer,0
+16264.jpg,summer,0
+17753.jpg,summer,0
+18165.jpg,summer,0
+18253.jpg,summer,0
+18386.jpg,summer,0
+18540.jpg,summer,0
+18581.jpg,summer,0
+18619.jpg,summer,0
+18673.jpg,summer,0
+19028.jpg,summer,0
+19164.jpg,summer,0
+19391.jpg,summer,0
+19611.jpg,summer,0
+19912.jpg,summer,0
+19952.jpg,summer,0
+20005.jpg,summer,0
+20101.jpg,summer,0
+20533.jpg,summer,0
+20581.jpg,summer,0
+20657.jpg,summer,0
+20970.jpg,summer,0
+2138.jpg,summer,0
+21417.jpg,summer,0
+21424.jpg,summer,0
+21755.jpg,summer,0
+22262.jpg,summer,0
+22914.jpg,summer,0
+22977.jpg,summer,0
+23068.jpg,summer,0
+23124.jpg,summer,0
+23583.jpg,summer,0
+23638.jpg,summer,0
+2405.jpg,summer,0
+24645.jpg,summer,0
+24704.jpg,summer,0
+24873.jpg,summer,0
+25158.jpg,summer,0
+25254.jpg,summer,0
+25354.jpg,summer,0
+2536.jpg,summer,0
+25365.jpg,summer,0
+25461.jpg,summer,0
+2550.jpg,summer,0
+25610.jpg,summer,0
+25835.jpg,summer,0
+25860.jpg,summer,0
+25909.jpg,summer,0
+26159.jpg,summer,0
+26322.jpg,summer,0
+26539.jpg,summer,0
+26703.jpg,summer,0
+2698.jpg,summer,0
+2786.jpg,summer,0
+28248.jpg,summer,0
+28547.jpg,summer,0
+28626.jpg,summer,0
+28761.jpg,summer,0
+2895.jpg,summer,0
+29346.jpg,summer,0
+29503.jpg,summer,0
+29580.jpg,summer,0
+3.jpg,summer,0
+3056.jpg,summer,0
+3105.jpg,summer,0
+3496.jpg,summer,0
+3524.jpg,summer,0
+3562.jpg,summer,0
+3709.jpg,summer,0
+4887.jpg,summer,0
+4980.jpg,summer,0
+539.jpg,summer,0
+5917.jpg,summer,0
+6355.jpg,summer,0
+6429.jpg,summer,0
+6735.jpg,summer,0
+7402.jpg,summer,0
+7622.jpg,summer,0
+7920.jpg,summer,0
+7935.jpg,summer,0
+8044.jpg,summer,0
+8261.jpg,summer,0
+8684.jpg,summer,0
+886.jpg,summer,0
+9232.jpg,summer,0
+9486.jpg,summer,0
+9911.jpg,summer,0
+Bianca Balti 1.png,summer,0
+carmen-chaplin-SOFT SUMMER.png,summer,0
+Claire Foy1 COOL SUMMER.png,summer,0
+Emily Deschanel1 COOL SUMMER.png,summer,0
+Eva Herzigova 2.png,summer,0
+Federica Pellegrini ESTATE SOFT.png,summer,0
+images-107_1.png,summer,0
+images-10_1.png,summer,0
+images-111_0.png,summer,0
+images-113_0.png,summer,0
+images-113_1.png,summer,0
+images-116_1.png,summer,0
+images-11_2.png,summer,0
+images-120_1.png,summer,0
+images-133.png,summer,0
+images-135.png,summer,0
+images-13_1.png,summer,0
+images-13_2.png,summer,0
+images-140.png,summer,0
+images-143.png,summer,0
+images-145.png,summer,0
+images-148.png,summer,0
+images-14_1.png,summer,0
+images-153.png,summer,0
+images-156.png,summer,0
+images-163.png,summer,0
+images-165.png,summer,0
+images-168.png,summer,0
+images-180.png,summer,0
+images-19_2.png,summer,0
+images-1_0.png,summer,0
+images-1_2.png,summer,0
+images-21_0.png,summer,0
+images-28_1.png,summer,0
+images-32_2.png,summer,0
+images-33_1.png,summer,0
+images-33_2.png,summer,0
+images-34_1.png,summer,0
+images-35_1.png,summer,0
+images-36_0.png,summer,0
+images-38_0.png,summer,0
+images-38_1.png,summer,0
+images-38_2.png,summer,0
+images-40_2.png,summer,0
+images-41_2.png,summer,0
+images-42_0.png,summer,0
+images-42_1.png,summer,0
+images-44_0.png,summer,0
+images-44_1.png,summer,0
+images-48_1.png,summer,0
+images-49_2.png,summer,0
+images-4_2.png,summer,0
+images-51_1.png,summer,0
+images-51_2.png,summer,0
+images-52_1.png,summer,0
+images-56_0.png,summer,0
+images-57_1.png,summer,0
+images-60_0.png,summer,0
+images-60_1.png,summer,0
+images-61_2.png,summer,0
+images-62_1.png,summer,0
+images-63_0.png,summer,0
+images-64_2.png,summer,0
+images-65_0.png,summer,0
+images-70_0.png,summer,0
+images-71_0.png,summer,0
+images-72_2.png,summer,0
+images-74_0.png,summer,0
+images-75_1.png,summer,0
+images-77_2.png,summer,0
+images-7_0.png,summer,0
+images-85_0.png,summer,0
+images-86_0.png,summer,0
+images-87_2.png,summer,0
+images-88_2.png,summer,0
+images-89_0.png,summer,0
+images-89_2.png,summer,0
+images-90_2.png,summer,0
+images-92_0.png,summer,0
+images-92_1.png,summer,0
+images-96_1.png,summer,0
+images-97_1.png,summer,0
+images-99_1.png,summer,0
+images-9_0.png,summer,0
+images-9_1.png,summer,0
+images.png,summer,0
+january-jones-LIGHT SUMMER.png,summer,0
+Jennifer Aniston 3.png,summer,0
+jodie-foster-LIGHT SUMMER.png,summer,0
+Kate Moss 1.png,summer,0
+Kimberly Williams1 COOL SUMMER.png,summer,0
+Laetitia Casta 1.png,summer,0
+Laetitia Casta 2.png,summer,0
+Lea Seydoux 1.png,summer,0
+Lea Seydoux LIGHT SUMMER.png,summer,0
+marion cotillard-SOFT SUMMER.png,summer,0
+Matt Bomer COOL SUMMER.png,summer,0
+paola turani-ESTATE SOFT.png,summer,0
+smr (1).jpg,summer,0
+smr (1).png,summer,0
+smr (10).PNG,summer,0
+smr (13).jpg,summer,0
+smr (19).jpg,summer,0
+smr (2).png,summer,0
+smr (29).JPG,summer,0
+smr (4).jpg,summer,0
+smrs.JPG,summer,0
+Tom Felton 2.png,summer,0
+Tom Felton 3.png,summer,0
+valentina ferragni-ESTARE LIGHT.png,summer,0
+10284.jpg,winter,0
+10327.jpg,winter,0
+10348.jpg,winter,0
+10388.jpg,winter,0
+10425.jpg,winter,0
+10457.jpg,winter,0
+10576.jpg,winter,0
+10731.jpg,winter,0
+11261.jpg,winter,0
+11313.jpg,winter,0
+11466.jpg,winter,0
+12042.jpg,winter,0
+12284.jpg,winter,0
+12376.jpg,winter,0
+12382.jpg,winter,0
+12675.jpg,winter,0
+12757.jpg,winter,0
+13598.jpg,winter,0
+13726.jpg,winter,0
+14232.jpg,winter,0
+14275.jpg,winter,0
+14376.jpg,winter,0
+14485.jpg,winter,0
+14488.jpg,winter,0
+14634.jpg,winter,0
+1470.jpg,winter,0
+1507.jpg,winter,0
+15085.jpg,winter,0
+15236.jpg,winter,0
+15406.jpg,winter,0
+15859.jpg,winter,0
+16053.jpg,winter,0
+16569.jpg,winter,0
+16824.jpg,winter,0
+1706.jpg,winter,0
+17300.jpg,winter,0
+17420.jpg,winter,0
+17718.jpg,winter,0
+17768.jpg,winter,0
+17987.jpg,winter,0
+1908.jpg,winter,0
+19090.jpg,winter,0
+19120.jpg,winter,0
+19250.jpg,winter,0
+19280.jpg,winter,0
+19315.jpg,winter,0
+19325.jpg,winter,0
+19467.jpg,winter,0
+19851.jpg,winter,0
+19855.jpg,winter,0
+20026.jpg,winter,0
+20082.jpg,winter,0
+20093.jpg,winter,0
+20366.jpg,winter,0
+20442.jpg,winter,0
+20484.jpg,winter,0
+20519.jpg,winter,0
+20527.jpg,winter,0
+20528.jpg,winter,0
+20904.jpg,winter,0
+20936.jpg,winter,0
+20968.jpg,winter,0
+21085.jpg,winter,0
+21253.jpg,winter,0
+21318.jpg,winter,0
+21494.jpg,winter,0
+21504.jpg,winter,0
+21646.jpg,winter,0
+21748.jpg,winter,0
+21805.jpg,winter,0
+21842.jpg,winter,0
+220.jpg,winter,0
+22101.jpg,winter,0
+22135.jpg,winter,0
+22252.jpg,winter,0
+22267.jpg,winter,0
+22286.jpg,winter,0
+22316.jpg,winter,0
+22989.jpg,winter,0
+2305.jpg,winter,0
+23445.jpg,winter,0
+23606.jpg,winter,0
+23695.jpg,winter,0
+23708.jpg,winter,0
+23765.jpg,winter,0
+23809.jpg,winter,0
+2410.jpg,winter,0
+24773.jpg,winter,0
+24832.jpg,winter,0
+25771.jpg,winter,0
+25868.jpg,winter,0
+25895.jpg,winter,0
+25946.jpg,winter,0
+26086.jpg,winter,0
+26205.jpg,winter,0
+26213.jpg,winter,0
+26339.jpg,winter,0
+27354.jpg,winter,0
+27550.jpg,winter,0
+27786.jpg,winter,0
+27798.jpg,winter,0
+27833.jpg,winter,0
+27938.jpg,winter,0
+27955.jpg,winter,0
+28228.jpg,winter,0
+28302.jpg,winter,0
+28883.jpg,winter,0
+2940.jpg,winter,0
+29415.jpg,winter,0
+29913.jpg,winter,0
+29930.jpg,winter,0
+3190.jpg,winter,0
+3304.jpg,winter,0
+4107.jpg,winter,0
+443.jpg,winter,0
+445.jpg,winter,0
+4566.jpg,winter,0
+4631.jpg,winter,0
+4749.jpg,winter,0
+484.jpg,winter,0
+5592.jpg,winter,0
+5807.jpg,winter,0
+5910.jpg,winter,0
+6.jpeg,winter,0
+6118.jpg,winter,0
+6119.jpg,winter,0
+7037.jpg,winter,0
+7160.jpg,winter,0
+7276.jpg,winter,0
+7306.jpg,winter,0
+7456.jpg,winter,0
+768.jpg,winter,0
+7890.jpg,winter,0
+8135.jpg,winter,0
+8566.jpg,winter,0
+8628.jpg,winter,0
+8653.jpg,winter,0
+8954.jpg,winter,0
+9073.jpg,winter,0
+9101.jpg,winter,0
+9582.jpg,winter,0
+9774.jpg,winter,0
+9786.jpg,winter,0
+9799.jpg,winter,0
+9922.jpg,winter,0
+Alexandria_Ocasio-Cortez 1.png,winter,0
+Anna Valle5.png,winter,0
+Anne Hathaway1.png,winter,0
+anne hathaway20.png,winter,0
+Anne Hathaway3.png,winter,0
+annie mazzola 2.png,winter,0
+Audrey Hepburn.png,winter,0
+Chiara-Biasi1.png,winter,0
+demi moore 9.png,winter,0
+drian brody.png,winter,0
+elisa maino 4.png,winter,0
+elisa-maino 1.png,winter,0
+elisa1.png,winter,0
+elisa2.png,winter,0
+elizabeth taylor 2.png,winter,0
+Emma Marrone1.png,winter,0
+fotini peluso-inverno bright.png,winter,0
+GEORGE CLOONEY 1.png,winter,0
+giula de lellis 1.png,winter,0
+giulia de lellis 5.png,winter,0
+Giulia Torelli WINTER COOL.png,winter,0
+giulia valentina-inverno bright.png,winter,0
+giuliadelellis 2.png,winter,0
+gwen stefani3.png,winter,0
+gweni stefani.png,winter,0
+heny golding-inverno bright.png,winter,0
+IAN SOMERHALDER 2.png,winter,0
+IAN SOMERHALDER 3.png,winter,0
+Irene Colzi WINTER COOL.png,winter,0
+jenna-ortega-DEEP WINTER.png,winter,0
+Katy Perry_(1)_0.png,winter,0
+Katy Perry__0.png,winter,0
+KEANU REEVES 1.png,winter,0
+KEANU REEVES DEEP WINTER.png,winter,0
+kendall jenner 2.png,winter,0
+kendall jenner 4.png,winter,0
+kendall jenner1.png,winter,0
+kendall-jenner 3.png,winter,0
+kety perry 2.png,winter,0
+kim kardashian 3.png,winter,0
+kim kardashian 7.png,winter,0
+Laura Pausini WINTER COOL.png,winter,0
+levante 1.png,winter,0
+levante 5.png,winter,0
+Lily Collins WINTER COOL.png,winter,0
+lily collins22.png,winter,0
+liv tyler.png,winter,0
+liv tyler6.png,winter,0
+lizzo 5.png,winter,0
+Lucy Hale WINTER COOL.png,winter,0
+lupita nyong_o 4.png,winter,0
+lupita nyong_o 5.png,winter,0
+maria grazia cucinotta 1.png,winter,0
+mariagrazia cucinotta  5.png,winter,0
+MEGAN FOX 1_1.png,winter,0
+MEGAN FOX 3.png,winter,0
+Megan Fox_(1)_0.png,winter,0
+megan gale 2.png,winter,0
+megan-gale 1.png,winter,0
+monica bellucci1.png,winter,0
+"Monica_Bellucci,_DEEP WINTER.png",winter,0
+NATALIE PORTMAN 3.png,winter,0
+Natalie Portman1.png,winter,0
+natalie portman11.png,winter,0
+natalie portman19.png,winter,0
+olivia munn-inverno bright.png,winter,0
+paola turani10.png,winter,0
+paola turani19.png,winter,0
+paola turani2.png,winter,0
+paola turani22.png,winter,0
+paola turani25.png,winter,0
+paola turani35.png,winter,0
+paola turani37.png,winter,0
+paola turani39.png,winter,0
+paola turani42.png,winter,0
+paola turani44.png,winter,0
+paola turani47.png,winter,0
+paola turani48.png,winter,0
+paola turani49.png,winter,0
+paola turani50.png,winter,0
+paola turani51.png,winter,0
+paola turani9.png,winter,0
+penelope cruz 5.png,winter,0
+penelope-cruz 2.png,winter,0
+sabrina ferilli 6.png,winter,0
+SALMA HAYEK 1_0.png,winter,0
+salma hayek 1_1.png,winter,0
+shakira14.png,winter,0
+Shakira2.png,winter,0
+victoria beckham2.png,winter,0
+wnt (1).jpg,winter,0
+wnt (10).PNG,winter,0
+wnt (20).jpg,winter,0
+wnt (24).jpg,winter,0
+wnt (29).JPG,winter,0
+wnt (3).PNG,winter,0
+wnt (32).JPG,winter,0
+wnt (36).jpg,winter,0
+wnt (38).JPG,winter,0
+wnt (39).jpg,winter,0
+wnt (5).PNG,winter,0
+10063.jpg,fall,1
+10306.jpg,fall,1
+10711.jpg,fall,1
+10888.jpg,fall,1
+11195.jpg,fall,1
+11409.jpg,fall,1
+11438.jpg,fall,1
+11566.jpg,fall,1
+11576.jpg,fall,1
+11727.jpg,fall,1
+12016.jpg,fall,1
+12486.jpg,fall,1
+13209.jpg,fall,1
+13254.jpg,fall,1
+13349.jpg,fall,1
+13479.jpg,fall,1
+13531.jpg,fall,1
+13697.jpg,fall,1
+13903.jpg,fall,1
+14325.jpg,fall,1
+14515.jpg,fall,1
+14618.jpg,fall,1
+14841.jpg,fall,1
+14852.jpg,fall,1
+14880.jpg,fall,1
+14951.jpg,fall,1
+14989.jpg,fall,1
+15000.jpg,fall,1
+15270.jpg,fall,1
+15420.jpg,fall,1
+15844.jpg,fall,1
+16195.jpg,fall,1
+16411.jpg,fall,1
+16468.jpg,fall,1
+16613.jpg,fall,1
+16972.jpg,fall,1
+17018.jpg,fall,1
+17294.jpg,fall,1
+17504.jpg,fall,1
+17708.jpg,fall,1
+17712.jpg,fall,1
+17857.jpg,fall,1
+17866.jpg,fall,1
+18299.jpg,fall,1
+18389.jpg,fall,1
+18566.jpg,fall,1
+1860.jpg,fall,1
+18644.jpg,fall,1
+18803.jpg,fall,1
+18880.jpg,fall,1
+18882.jpg,fall,1
+18910.jpg,fall,1
+19226.jpg,fall,1
+19406.jpg,fall,1
+19653.jpg,fall,1
+1974.jpg,fall,1
+19762.jpg,fall,1
+19908.jpg,fall,1
+19987.jpg,fall,1
+20118.jpg,fall,1
+20296.jpg,fall,1
+20525.jpg,fall,1
+20841.jpg,fall,1
+21021.jpg,fall,1
+21432.jpg,fall,1
+21563.jpg,fall,1
+21977.jpg,fall,1
+22111.jpg,fall,1
+22230.jpg,fall,1
+22915.jpg,fall,1
+23030.jpg,fall,1
+2342.jpg,fall,1
+24219.jpg,fall,1
+24247.jpg,fall,1
+24259.jpg,fall,1
+24598.jpg,fall,1
+2489.jpg,fall,1
+24975.jpg,fall,1
+24993.jpg,fall,1
+25266.jpg,fall,1
+25267.jpg,fall,1
+25398.jpg,fall,1
+25988.jpg,fall,1
+26168.jpg,fall,1
+26514.jpg,fall,1
+2661.jpg,fall,1
+27029.jpg,fall,1
+27092.jpg,fall,1
+27343.jpg,fall,1
+27423.jpg,fall,1
+27656.jpg,fall,1
+27671.jpg,fall,1
+27758.jpg,fall,1
+27838.jpg,fall,1
+28119.jpg,fall,1
+28148.jpg,fall,1
+28163.jpg,fall,1
+28451.jpg,fall,1
+28490.jpg,fall,1
+28680.jpg,fall,1
+28747.jpg,fall,1
+2880.jpg,fall,1
+28808.jpg,fall,1
+28976.jpg,fall,1
+2901.jpg,fall,1
+29422.jpg,fall,1
+29535.jpg,fall,1
+29550.jpg,fall,1
+29658.jpg,fall,1
+2979.jpg,fall,1
+2981.jpg,fall,1
+29879.jpg,fall,1
+3.jpg,fall,1
+3059.jpg,fall,1
+3289.jpg,fall,1
+3314.jpg,fall,1
+3775.jpg,fall,1
+3821.jpg,fall,1
+4260.jpg,fall,1
+4344.jpg,fall,1
+4608.jpg,fall,1
+4759.jpg,fall,1
+4769.jpg,fall,1
+4780.jpg,fall,1
+4788.jpg,fall,1
+4797.jpg,fall,1
+4849.jpg,fall,1
+4886.jpg,fall,1
+5057.jpg,fall,1
+5113.jpg,fall,1
+5640.jpg,fall,1
+5729.jpg,fall,1
+6312.jpg,fall,1
+6507.jpg,fall,1
+6722.jpg,fall,1
+6803.jpg,fall,1
+6832.jpg,fall,1
+6904.jpg,fall,1
+6972.jpg,fall,1
+7165.jpg,fall,1
+7852.jpg,fall,1
+7941.jpg,fall,1
+8179.jpg,fall,1
+8529.jpg,fall,1
+881.jpg,fall,1
+9043.jpg,fall,1
+9058.jpg,fall,1
+9223.jpg,fall,1
+9408.jpg,fall,1
+9462.jpg,fall,1
+9749.jpg,fall,1
+adele 1.png,fall,1
+Adele3.png,fall,1
+Alessandra Ambrosio.png,fall,1
+Ana de Armas 6.png,fall,1
+Ana de Armas 9.png,fall,1
+annalisa 4.png,fall,1
+Ashley Graham 5.png,fall,1
+ashley olsen 1_1.png,fall,1
+Ashley Olsen 2_0.png,fall,1
+ashley olsen 2_1.png,fall,1
+belen rodriguez  3.png,fall,1
+belen rodriguez  4.png,fall,1
+belen rodriguez  9.png,fall,1
+Belen-Rodriguez 10.png,fall,1
+beyonce 13.png,fall,1
+beyonce 2.png,fall,1
+beyonce 3.png,fall,1
+beyonce 4.png,fall,1
+Beyonce AUTUNNO WARM.png,fall,1
+Calista Flockhart Autunno Soft.png,fall,1
+Cecilia Rodriguez1.png,fall,1
+cindy crawford 7.png,fall,1
+cristina parodi 8.png,fall,1
+cristina-parodi 2.png,fall,1
+David beckham  6.png,fall,1
+David Beckham 1_1.png,fall,1
+David Beckham 2_0.png,fall,1
+Debra Messing 2.png,fall,1
+Drew Barrymore 10.png,fall,1
+Drew Barrymore 5.png,fall,1
+Drew Barrymore 8.png,fall,1
+Emma Watson 2_0.png,fall,1
+emma watson 3_1.png,fall,1
+emma watson 6.png,fall,1
+eva mendes 4.png,fall,1
+Eva Mendes.png,fall,1
+Evan peters 4.png,fall,1
+Evan peters 7.png,fall,1
+fall (1).jpg,fall,1
+fall (1).png,fall,1
+fall (15).jpg,fall,1
+fall (18).jpg,fall,1
+fall (19).jpg,fall,1
+fall (24).jpg,fall,1
+fall (30).JPG,fall,1
+fall (32).JPG,fall,1
+fall (33).JPG,fall,1
+fall (34).JPG,fall,1
+fall (4).PNG,fall,1
+"Felicity Jones, 7.png",fall,1
+"Felicity Jones, 8.png",fall,1
+felicity-jones 1.png,fall,1
+gabrielle caunesil 4.png,fall,1
+Gal Gadot 1.png,fall,1
+gigi hadid 12.png,fall,1
+Gigi Hadid 3.png,fall,1
+Gigi Hadid 5.png,fall,1
+Gigi Hadid 7.png,fall,1
+Halle berry 1.png,fall,1
+Halle berry 4.png,fall,1
+jennifer lopez  6.png,fall,1
+jessica alba 9.png,fall,1
+Jessica Alba.png,fall,1
+Johnny Depp AUTUNNO WARM.png,fall,1
+julia roberts 10.png,fall,1
+julia roberts 4.png,fall,1
+Julianne_Moore 1.png,fall,1
+kaia gerber 9.png,fall,1
+lorena cesarini 12.png,fall,1
+Lorena-Cesarini 6.png,fall,1
+meghan markle 9.png,fall,1
+melissa satta 6.png,fall,1
+Melissa Satta.png,fall,1
+mila kunis 7.png,fall,1
+mila kunis 9.png,fall,1
+Nicole Richie 1_0.png,fall,1
+Nicole Richie 7.png,fall,1
+"Robert Pattinson, 7.png",fall,1
+Rossella Migliaccio1.png,fall,1
+"Ryan Gosling, 6.png",fall,1
+"Ryan Gosling, 8.png",fall,1
+ryan-gosling 3.png,fall,1
+Sara Hyland 2.png,fall,1
+Sarah Hyland 3.png,fall,1
+Sarah Hyland 5.png,fall,1
+serena rossi  3.png,fall,1
+serena rossi 10.png,fall,1
+shay mitchell 7.png,fall,1
+shay mitchell 8.png,fall,1
+Shay Mitchell.png,fall,1
+Sonia Grispo Auttuno Soft.png,fall,1
+Susan Saradon 2.png,fall,1
+susan sarandon 4.png,fall,1
+susan sarandon 5.png,fall,1
+Susan-Sarandon1.png,fall,1
+Theo James1.png,fall,1
+Tyra Banks 3.png,fall,1
+Vanessa Incontrada 1_1.png,fall,1
+Veronica Ferraro 1.png,fall,1
+veronica ferraro 2.png,fall,1
+zendaya 3.png,fall,1
+zendaya 9.png,fall,1
+1008.jpg,spring,1
+1013.jpg,spring,1
+10447.jpg,spring,1
+10710.jpg,spring,1
+10897.jpg,spring,1
+10954.jpg,spring,1
+11761.jpg,spring,1
+12434.jpg,spring,1
+12469.jpg,spring,1
+12481.jpg,spring,1
+12983.jpg,spring,1
+13324.jpg,spring,1
+13546.jpg,spring,1
+13568.jpg,spring,1
+13577.jpg,spring,1
+1362.jpg,spring,1
+13657.jpg,spring,1
+14242.jpg,spring,1
+14569.jpg,spring,1
+14674.jpg,spring,1
+14950.jpg,spring,1
+14976.jpg,spring,1
+15023.jpg,spring,1
+15068.jpg,spring,1
+15257.jpg,spring,1
+15488.jpg,spring,1
+1560.jpg,spring,1
+15726.jpg,spring,1
+15898.jpg,spring,1
+15913.jpg,spring,1
+15988.jpg,spring,1
+16178.jpg,spring,1
+16180.jpg,spring,1
+16469.jpg,spring,1
+16792.jpg,spring,1
+16910.jpg,spring,1
+1712.jpg,spring,1
+1728.jpg,spring,1
+17464.jpg,spring,1
+17757.jpg,spring,1
+17957.jpg,spring,1
+18312.jpg,spring,1
+18865.jpg,spring,1
+18965.jpg,spring,1
+19048.jpg,spring,1
+19220.jpg,spring,1
+19786.jpg,spring,1
+2.jpg,spring,1
+20117.jpg,spring,1
+20405.jpg,spring,1
+20680.jpg,spring,1
+20977.jpg,spring,1
+21117.jpg,spring,1
+21205.jpg,spring,1
+21764.jpg,spring,1
+21801.jpg,spring,1
+21882.jpg,spring,1
+22444.jpg,spring,1
+22834.jpg,spring,1
+22844.jpg,spring,1
+22870.jpg,spring,1
+22961.jpg,spring,1
+23855.jpg,spring,1
+23859.jpg,spring,1
+24433.jpg,spring,1
+24527.jpg,spring,1
+2464.jpg,spring,1
+24741.jpg,spring,1
+25164.jpg,spring,1
+25353.jpg,spring,1
+25414.jpg,spring,1
+25428.jpg,spring,1
+25471.jpg,spring,1
+2551.jpg,spring,1
+25625.jpg,spring,1
+25681.jpg,spring,1
+26407.jpg,spring,1
+26471.jpg,spring,1
+26560.jpg,spring,1
+26687.jpg,spring,1
+26766.jpg,spring,1
+26779.jpg,spring,1
+26876.jpg,spring,1
+2701.jpg,spring,1
+27206.jpg,spring,1
+27374.jpg,spring,1
+27406.jpg,spring,1
+27663.jpg,spring,1
+27862.jpg,spring,1
+27983.jpg,spring,1
+28002.jpg,spring,1
+28068.jpg,spring,1
+28173.jpg,spring,1
+28251.jpg,spring,1
+28259.jpg,spring,1
+2861.jpg,spring,1
+28966.jpg,spring,1
+29323.jpg,spring,1
+29357.jpg,spring,1
+29561.jpg,spring,1
+29846.jpg,spring,1
+3623.jpg,spring,1
+3624.jpg,spring,1
+3652.jpg,spring,1
+3947.jpg,spring,1
+4.jpeg,spring,1
+4119.jpg,spring,1
+4356.jpg,spring,1
+4423.jpg,spring,1
+4513.jpg,spring,1
+5.jpg,spring,1
+511.jpg,spring,1
+5163.jpg,spring,1
+5245.jpg,spring,1
+5626.jpg,spring,1
+5791.jpg,spring,1
+5886.jpg,spring,1
+6.jpg,spring,1
+6288.jpg,spring,1
+6464.jpg,spring,1
+6482.jpg,spring,1
+6573.jpg,spring,1
+6581.jpg,spring,1
+6714.jpg,spring,1
+6814.jpg,spring,1
+6862.jpg,spring,1
+7.jpg,spring,1
+7704.jpg,spring,1
+7928.jpg,spring,1
+8089.jpg,spring,1
+842.jpg,spring,1
+8660.jpg,spring,1
+8755.jpg,spring,1
+8875.jpg,spring,1
+9347.jpg,spring,1
+9656.jpg,spring,1
+Adriana Lima 1.png,spring,1
+alexa chung11.png,spring,1
+alexa chung28.png,spring,1
+alexa chung7.png,spring,1
+Angelina Jolie 2.png,spring,1
+Angelina Jolie 3.png,spring,1
+angelina jolie10.png,spring,1
+angelina jolie22.png,spring,1
+angelina jolie26.png,spring,1
+angelina jolie28.png,spring,1
+Angelina Jolie8.png,spring,1
+Ashley Olsen WARM SPRING.png,spring,1
+bradley cooper9.png,spring,1
+Cameron Diaz.png,spring,1
+Cameron Diaz6.png,spring,1
+Cara Delevigne 3.png,spring,1
+Cara Delevigne8.png,spring,1
+cate blanchett4.png,spring,1
+cate blanchett6.png,spring,1
+cate blanchett9.png,spring,1
+Charlize Theron3.png,spring,1
+Charlotte Casiraghi3.png,spring,1
+Charlotte Casiraghi4.png,spring,1
+Chiara Ferragni.png,spring,1
+Chiara Ferragni2.png,spring,1
+Chiara Ferragni9.png,spring,1
+claudia camillo2.png,spring,1
+cristiana capotondi14.png,spring,1
+Cristiana Capotondi2.png,spring,1
+cristiana capotondi27.png,spring,1
+cristiana capotondi28.png,spring,1
+cristiana capotondi9.png,spring,1
+cynthia nixon3.png,spring,1
+damian lewis4.png,spring,1
+doutzen kroes.png,spring,1
+doutzen kroes11.png,spring,1
+doutzen kroes15.png,spring,1
+doutzen kroes8.png,spring,1
+Elettra Lamborghini 2.png,spring,1
+Elettra Lamborghini4.png,spring,1
+Emma Corrin.png,spring,1
+emma corrin13.png,spring,1
+emma corrin3.png,spring,1
+emma corrin9.png,spring,1
+Emma Stone4.png,spring,1
+Emma Stone9.png,spring,1
+gillian anderson-primavera light.png,spring,1
+gillian anderson10.png,spring,1
+gillian anderson11.png,spring,1
+gillian anderson12.png,spring,1
+gillian anderson48.png,spring,1
+gillian anderson6.png,spring,1
+irene grandi3.png,spring,1
+irene grandi6.png,spring,1
+jessica chastain10.png,spring,1
+jessica chastain14.png,spring,1
+jessica chastain16.png,spring,1
+jessica chastain17.png,spring,1
+jessica chastain2.png,spring,1
+jessica chastain29.png,spring,1
+jessica chastain33.png,spring,1
+jessica chastain7.png,spring,1
+jessica chastain9.png,spring,1
+lindsay lohan- primavera bright.png,spring,1
+Margot Robbie 1.png,spring,1
+Margot Robbie3.png,spring,1
+Miranda Kerr 3.png,spring,1
+Miriam Leone11.png,spring,1
+Miriam Leone3.png,spring,1
+Nicole Kidman13.png,spring,1
+Nicole Kidman20.png,spring,1
+Nicole Kidman8.png,spring,1
+Nicole Richie PRIMAVERA BRIGHT.png,spring,1
+Noemi2.png,spring,1
+ornella muti.png,spring,1
+ornella muti3.png,spring,1
+ornella muti4.png,spring,1
+Sara Sampaio2.png,spring,1
+Sara Sampaio3.png,spring,1
+Simon Baker 2.png,spring,1
+simon baker1.png,spring,1
+simon baker2.png,spring,1
+spr (1).JPG,spring,1
+spr (10).jpg,spring,1
+spr (11).PNG,spring,1
+spr (20).jpg,spring,1
+spr (30).JPG,spring,1
+spr (33).JPG,spring,1
+spr (34).JPG,spring,1
+spr (39).JPG,spring,1
+spr (4).PNG,spring,1
+spr (40).jpg,spring,1
+spr (42).jpg,spring,1
+spr (46).jpg,spring,1
+spr (5).PNG,spring,1
+valentina ferragni13.png,spring,1
+valentina ferragni2.png,spring,1
+valentina ferragni9.png,spring,1
+10.jpg,summer,1
+10141.jpg,summer,1
+10155.jpg,summer,1
+1052.jpg,summer,1
+10644.jpg,summer,1
+10831.jpg,summer,1
+11030.jpg,summer,1
+11123.jpg,summer,1
+11200.jpg,summer,1
+11286.jpg,summer,1
+11401.jpg,summer,1
+11723.jpg,summer,1
+1195.jpg,summer,1
+12628.jpg,summer,1
+12639.jpg,summer,1
+13092.jpg,summer,1
+13165.jpg,summer,1
+13526.jpg,summer,1
+14407.jpg,summer,1
+14439.jpg,summer,1
+1500.jpg,summer,1
+15218.jpg,summer,1
+15298.jpg,summer,1
+15467.jpg,summer,1
+15493.jpg,summer,1
+15546.jpg,summer,1
+15569.jpg,summer,1
+15765.jpg,summer,1
+1584.jpg,summer,1
+16036.jpg,summer,1
+16081.jpg,summer,1
+16112.jpg,summer,1
+16115.jpg,summer,1
+16360.jpg,summer,1
+16410.jpg,summer,1
+16522.jpg,summer,1
+16773.jpg,summer,1
+17116.jpg,summer,1
+17451.jpg,summer,1
+17465.jpg,summer,1
+17692.jpg,summer,1
+17829.jpg,summer,1
+18345.jpg,summer,1
+18544.jpg,summer,1
+18622.jpg,summer,1
+18653.jpg,summer,1
+18903.jpg,summer,1
+19385.jpg,summer,1
+19738.jpg,summer,1
+2.png,summer,1
+20835.jpg,summer,1
+20980.jpg,summer,1
+21086.jpg,summer,1
+21301.jpg,summer,1
+21786.jpg,summer,1
+21939.jpg,summer,1
+22110.jpg,summer,1
+22967.jpg,summer,1
+22982.jpg,summer,1
+23027.jpg,summer,1
+23125.jpg,summer,1
+23310.jpg,summer,1
+23557.jpg,summer,1
+23587.jpg,summer,1
+23616.jpg,summer,1
+23667.jpg,summer,1
+23991.jpg,summer,1
+24616.jpg,summer,1
+25244.jpg,summer,1
+26116.jpg,summer,1
+26154.jpg,summer,1
+26181.jpg,summer,1
+26378.jpg,summer,1
+26527.jpg,summer,1
+26668.jpg,summer,1
+26708.jpg,summer,1
+26794.jpg,summer,1
+26863.jpg,summer,1
+26898.jpg,summer,1
+27336.jpg,summer,1
+27760.jpg,summer,1
+28839.jpg,summer,1
+28913.jpg,summer,1
+29106.jpg,summer,1
+29192.jpg,summer,1
+29279.jpg,summer,1
+2974.jpg,summer,1
+29944.jpg,summer,1
+3101.jpg,summer,1
+3248.jpg,summer,1
+3260.jpg,summer,1
+3297.jpg,summer,1
+3493.jpg,summer,1
+3528.jpg,summer,1
+4.jpg,summer,1
+46.jpg,summer,1
+4944.jpg,summer,1
+5.PNG,summer,1
+5948.jpg,summer,1
+6.PNG,summer,1
+60.jpg,summer,1
+6252.jpg,summer,1
+6477.jpg,summer,1
+6771.jpg,summer,1
+7012.jpg,summer,1
+711.jpg,summer,1
+7586.jpg,summer,1
+8.PNG,summer,1
+8158.jpg,summer,1
+8215.jpg,summer,1
+8336.jpg,summer,1
+8353.jpg,summer,1
+874.jpg,summer,1
+8745.jpg,summer,1
+9406.jpg,summer,1
+Anderson-Cooper-LIGHT SUMMER.png,summer,1
+Bianca Balti 3.png,summer,1
+Carmen Electra COOL SUMMER.png,summer,1
+Elle Fanning 3.png,summer,1
+Emily Blunt1 COOL SUMMER.png,summer,1
+Eva Herzigova 1 .png,summer,1
+images-105_0.png,summer,1
+images-106_0.png,summer,1
+images-108_0.png,summer,1
+images-110_0.png,summer,1
+images-112_1.png,summer,1
+images-114_1.png,summer,1
+images-115_1.png,summer,1
+images-117_0.png,summer,1
+images-118_1.png,summer,1
+images-121_1.png,summer,1
+images-123.png,summer,1
+images-125.png,summer,1
+images-127.png,summer,1
+images-12_1.png,summer,1
+images-130.png,summer,1
+images-132.png,summer,1
+images-137.png,summer,1
+images-13_0.png,summer,1
+images-141.png,summer,1
+images-146.png,summer,1
+images-14_0.png,summer,1
+images-152.png,summer,1
+images-158.png,summer,1
+images-15_0.png,summer,1
+images-169.png,summer,1
+images-175.png,summer,1
+images-179.png,summer,1
+images-18_1.png,summer,1
+images-19_0.png,summer,1
+images-20_1.png,summer,1
+images-22_2.png,summer,1
+images-23_1.png,summer,1
+images-23_2.png,summer,1
+images-24_0.png,summer,1
+images-25_1.png,summer,1
+images-27_1.png,summer,1
+images-29_0.png,summer,1
+images-29_1.png,summer,1
+images-30_0.png,summer,1
+images-30_2.png,summer,1
+images-34_0.png,summer,1
+images-37_0.png,summer,1
+images-3_1.png,summer,1
+images-40_1.png,summer,1
+images-43_2.png,summer,1
+images-45_1.png,summer,1
+images-47_0.png,summer,1
+images-48_0.png,summer,1
+images-48_2.png,summer,1
+images-50_0.png,summer,1
+images-55_2.png,summer,1
+images-57_0.png,summer,1
+images-57_2.png,summer,1
+images-58_2.png,summer,1
+images-59_2.png,summer,1
+images-6_0.png,summer,1
+images-6_1.png,summer,1
+images-75_0.png,summer,1
+images-75_2.png,summer,1
+images-76_0.png,summer,1
+images-76_1.png,summer,1
+images-76_2.png,summer,1
+images-79_0.png,summer,1
+images-7_1.png,summer,1
+images-80_2.png,summer,1
+images-81_1.png,summer,1
+images-83_0.png,summer,1
+images-83_1.png,summer,1
+images-83_2.png,summer,1
+images-84_0.png,summer,1
+images-84_1.png,summer,1
+images-84_2.png,summer,1
+images-87_1.png,summer,1
+images-8_1.png,summer,1
+images-8_2.png,summer,1
+images-90_0.png,summer,1
+images-94_0.png,summer,1
+images-98_1.png,summer,1
+images-99_0.png,summer,1
+irina-shayk-SOFT SUMMER.png,summer,1
+Jennifer Aniston 1.png,summer,1
+Joey King2 COOL SUMMER.png,summer,1
+jude low-ESTATE COOL.png,summer,1
+Kate Moss 2.png,summer,1
+Kate Winslet 3.png,summer,1
+Kristen Stewart SOFT SUMMER.png,summer,1
+Lady Diana LIGHT SUMMER.png,summer,1
+Lara Stone 1.png,summer,1
+Lea Seydoux 2.png,summer,1
+Michelle Hunziker SOFT SUMMER.png,summer,1
+Rami Malek SOFT SUMMER.png,summer,1
+simon baker-ESTATE SOFT.png,summer,1
+smr (15).jpg,summer,1
+smr (17).jpg,summer,1
+smr (23).jpg,summer,1
+smr (25).JPG,summer,1
+smr (28).JPG,summer,1
+smr (32).JPG,summer,1
+smr (38).JPG,summer,1
+smr (7).PNG,summer,1
+smr (8).jpg,summer,1
+smr (9).PNG,summer,1
+smr.jpg,summer,1
+smr1.JPG,summer,1
+10043.jpg,winter,1
+10087.jpg,winter,1
+10239.jpg,winter,1
+10368.jpg,winter,1
+10396.jpg,winter,1
+10564.jpg,winter,1
+11069.jpg,winter,1
+11343.jpg,winter,1
+11477.jpg,winter,1
+11656.jpg,winter,1
+11745.jpg,winter,1
+12461.jpg,winter,1
+12888.jpg,winter,1
+12996.jpg,winter,1
+13354.jpg,winter,1
+1370.jpg,winter,1
+14003.jpg,winter,1
+14116.jpg,winter,1
+1477.jpg,winter,1
+15022.jpg,winter,1
+15162.jpg,winter,1
+15249.jpg,winter,1
+15579.jpg,winter,1
+15878.jpg,winter,1
+16240.jpg,winter,1
+16259.jpg,winter,1
+16517.jpg,winter,1
+16706.jpg,winter,1
+17127.jpg,winter,1
+17242.jpg,winter,1
+17344.jpg,winter,1
+17363.jpg,winter,1
+17466.jpg,winter,1
+17653.jpg,winter,1
+17814.jpg,winter,1
+18027.jpg,winter,1
+18073.jpg,winter,1
+18121.jpg,winter,1
+18186.jpg,winter,1
+18264.jpg,winter,1
+18325.jpg,winter,1
+18791.jpg,winter,1
+18825.jpg,winter,1
+19215.jpg,winter,1
+19230.jpg,winter,1
+19393.jpg,winter,1
+194 (2).png,winter,1
+1944.jpg,winter,1
+19708.jpg,winter,1
+19860.jpg,winter,1
+19970.jpg,winter,1
+2.PNG,winter,1
+20342.jpg,winter,1
+20353.jpg,winter,1
+20412.jpg,winter,1
+20875.jpg,winter,1
+20897.jpg,winter,1
+20969.jpg,winter,1
+21625.jpg,winter,1
+21728.jpg,winter,1
+21778.jpg,winter,1
+21779.jpg,winter,1
+21974.jpg,winter,1
+22049.jpg,winter,1
+22345.jpg,winter,1
+22457.jpg,winter,1
+22489.jpg,winter,1
+22837.jpg,winter,1
+23016.jpg,winter,1
+23062.jpg,winter,1
+23228.jpg,winter,1
+23258.jpg,winter,1
+23312.jpg,winter,1
+23634.jpg,winter,1
+23774.jpg,winter,1
+23951.jpg,winter,1
+24151.jpg,winter,1
+24191.jpg,winter,1
+24243.jpg,winter,1
+24374.jpg,winter,1
+2447.jpg,winter,1
+24922.jpg,winter,1
+24948.jpg,winter,1
+24964.jpg,winter,1
+25372.jpg,winter,1
+25396.jpg,winter,1
+25454.jpg,winter,1
+25542.jpg,winter,1
+25777.jpg,winter,1
+26017.jpg,winter,1
+26035.jpg,winter,1
+26596.jpg,winter,1
+26601.jpg,winter,1
+26775.jpg,winter,1
+26809.jpg,winter,1
+26846.jpg,winter,1
+27001.jpg,winter,1
+2710.jpg,winter,1
+27177.jpg,winter,1
+27407.jpg,winter,1
+27440.jpg,winter,1
+27676.jpg,winter,1
+27818.jpg,winter,1
+27860.jpg,winter,1
+27905.jpg,winter,1
+27992.jpg,winter,1
+28210.jpg,winter,1
+28284.jpg,winter,1
+28330.jpg,winter,1
+28410.jpg,winter,1
+29630.jpg,winter,1
+29703.jpg,winter,1
+29749.jpg,winter,1
+29805.jpg,winter,1
+29839.jpg,winter,1
+317.jpg,winter,1
+4.jpg,winter,1
+4145.jpg,winter,1
+5061.jpg,winter,1
+5255.jpg,winter,1
+5270.jpg,winter,1
+5321.jpg,winter,1
+5781.jpg,winter,1
+5869.jpg,winter,1
+6019.jpg,winter,1
+6265.jpg,winter,1
+6388.jpg,winter,1
+6412.jpg,winter,1
+6478.jpg,winter,1
+6728.jpg,winter,1
+7329.jpg,winter,1
+7361.jpg,winter,1
+7490.jpg,winter,1
+7538.jpg,winter,1
+803.jpg,winter,1
+8283.jpg,winter,1
+8313.jpg,winter,1
+8379.jpg,winter,1
+851.jpg,winter,1
+853.jpg,winter,1
+8953.jpg,winter,1
+9.jpg,winter,1
+9434.jpg,winter,1
+948.jpg,winter,1
+9754.jpg,winter,1
+alexandria ocasio-cortez 4.png,winter,1
+alice-basso1.png,winter,1
+Anna Valle1.png,winter,1
+ANNE HATHAWAY 3.png,winter,1
+anne hathaway16.png,winter,1
+anne hathaway17.png,winter,1
+anne hathaway19.png,winter,1
+Anne Hathaway4.png,winter,1
+audrey coyne 2.png,winter,1
+Audrey Hepburn1.png,winter,1
+chiara biasi 5.png,winter,1
+courtney cox-inverno bright.png,winter,1
+demi moore 3.png,winter,1
+Demi-Moore 7.png,winter,1
+elisa3.png,winter,1
+elisa5.png,winter,1
+elisa6.png,winter,1
+elisa7.png,winter,1
+Emma Marrone.png,winter,1
+eva green 1.png,winter,1
+eva green 2.png,winter,1
+eva green-inverno bright.png,winter,1
+eva longoria 3_0.png,winter,1
+EVA LONGORIA 3_1.png,winter,1
+eva-longoria 8.png,winter,1
+Eva-Longoriam2.png,winter,1
+fotini peluso1.png,winter,1
+gwen stefani1.png,winter,1
+gwen stefani5.png,winter,1
+jennifer connelly 1.png,winter,1
+kim kardashian 4.png,winter,1
+Kristin Davis.png,winter,1
+kylie jenner 1.png,winter,1
+kylie jenner3.png,winter,1
+kylie-jenner 4.png,winter,1
+laura graham 1.png,winter,1
+Laura Pausini1.png,winter,1
+lauren graham-inverno bright.png,winter,1
+levante 7.png,winter,1
+LILY COLLINS 2.png,winter,1
+Lily Collins.png,winter,1
+Lily Collins1.png,winter,1
+lily collins14.png,winter,1
+lily collins21.png,winter,1
+liv tyler2.png,winter,1
+liv tyler5.png,winter,1
+Liv_Tyler 1.png,winter,1
+lizzo 6.png,winter,1
+lizzo 8.png,winter,1
+lizzo 9.png,winter,1
+lizzo3.png,winter,1
+lupita nyong_o 10.png,winter,1
+lupita nyong_o 8.png,winter,1
+mariagrazia cucinotta  3.png,winter,1
+mariagrazia cucinotta  6.png,winter,1
+marion cotillard 1_1.png,winter,1
+megan fox 1_0.png,winter,1
+megan fox 2_1.png,winter,1
+Megan Fox_(2).png,winter,1
+Megan Fox__2.png,winter,1
+monica bellucci 4.png,winter,1
+monica bellucci 6.png,winter,1
+NATALIE PORTMAN 1.png,winter,1
+natalie portman16.png,winter,1
+natalie portman5.png,winter,1
+natalie portman8.png,winter,1
+nicole mazzocato 1.png,winter,1
+nicole mazzocato 2.png,winter,1
+paola turani 1.png,winter,1
+paola turani 2.png,winter,1
+paola turani1.png,winter,1
+paola turani11.png,winter,1
+paola turani15.png,winter,1
+paola turani16.png,winter,1
+paola turani24.png,winter,1
+paola turani3.png,winter,1
+paola turani32.png,winter,1
+paola turani4.png,winter,1
+paola turani43.png,winter,1
+paola turani52.png,winter,1
+paola turani6.png,winter,1
+paola turani60.png,winter,1
+paola turani61.png,winter,1
+penelope cruz 1_1.png,winter,1
+penelope cuz 10.png,winter,1
+penelope-cruz 5.png,winter,1
+sabrina ferilli 5.png,winter,1
+SALMA HAYEK 3.png,winter,1
+shakira10.png,winter,1
+shakira6.png,winter,1
+shakira9.png,winter,1
+Sofia Coppola.png,winter,1
+tom cruise.png,winter,1
+vanessa hudgens 4.png,winter,1
+victoria beckham 1.png,winter,1
+wnt (13).jpg,winter,1
+wnt (23).jpg,winter,1
+wnt (27).JPG,winter,1
+wnt (3).jpg,winter,1
+wnt (40).jpg,winter,1
+zooey deschanel 2.png,winter,1
+1.jpg,fall,2
+10072.jpg,fall,2
+10340.jpg,fall,2
+10528.jpg,fall,2
+10602.jpg,fall,2
+10973.jpg,fall,2
+11058.jpg,fall,2
+11090.jpg,fall,2
+11174.jpg,fall,2
+11255.jpg,fall,2
+11397.jpg,fall,2
+11707.jpg,fall,2
+11984.jpg,fall,2
+12178.jpg,fall,2
+12411.jpg,fall,2
+12796.jpg,fall,2
+12848.jpg,fall,2
+12887.jpg,fall,2
+12962.jpg,fall,2
+13072.jpg,fall,2
+13232.jpg,fall,2
+13339.jpg,fall,2
+13533.jpg,fall,2
+13768.jpg,fall,2
+14183.jpg,fall,2
+14343.jpg,fall,2
+14453.jpg,fall,2
+14833.jpg,fall,2
+15320.jpg,fall,2
+15503.jpg,fall,2
+15683.jpg,fall,2
+15778.jpg,fall,2
+15882.jpg,fall,2
+15924.jpg,fall,2
+16085.jpg,fall,2
+16246.jpg,fall,2
+16417.jpg,fall,2
+16444.jpg,fall,2
+16472.jpg,fall,2
+17091.jpg,fall,2
+17164.jpg,fall,2
+17203.jpg,fall,2
+18018.jpg,fall,2
+18390.jpg,fall,2
+18425.jpg,fall,2
+18712.jpg,fall,2
+18716.jpg,fall,2
+18717.jpg,fall,2
+18731.jpg,fall,2
+18750.jpg,fall,2
+18826.jpg,fall,2
+18930.jpg,fall,2
+19000.jpg,fall,2
+19284.jpg,fall,2
+19308.jpg,fall,2
+19324.jpg,fall,2
+19453.jpg,fall,2
+19572.jpg,fall,2
+19953.jpg,fall,2
+20008.jpg,fall,2
+2002.jpg,fall,2
+20045.jpg,fall,2
+20256.jpg,fall,2
+203.jpg,fall,2
+20349.jpg,fall,2
+20541.jpg,fall,2
+20701.jpg,fall,2
+21062.jpg,fall,2
+21295.jpg,fall,2
+21324.jpg,fall,2
+21578.jpg,fall,2
+21621.jpg,fall,2
+22246.jpg,fall,2
+22270.jpg,fall,2
+2258.jpg,fall,2
+22662.jpg,fall,2
+22684.jpg,fall,2
+22848.jpg,fall,2
+22889.jpg,fall,2
+23032.jpg,fall,2
+23105.jpg,fall,2
+23235.jpg,fall,2
+23298.jpg,fall,2
+23839.jpg,fall,2
+24345.jpg,fall,2
+24518.jpg,fall,2
+24573.jpg,fall,2
+24692.jpg,fall,2
+24703.jpg,fall,2
+24753.jpg,fall,2
+24759.jpg,fall,2
+2483.jpg,fall,2
+25119.jpg,fall,2
+25270.jpg,fall,2
+26082.jpg,fall,2
+26155.jpg,fall,2
+26330.jpg,fall,2
+26459.jpg,fall,2
+26801.jpg,fall,2
+26962.jpg,fall,2
+26969.jpg,fall,2
+27851.jpg,fall,2
+27871.jpg,fall,2
+28000.jpg,fall,2
+28053.jpg,fall,2
+2855.jpg,fall,2
+28620.jpg,fall,2
+28778.jpg,fall,2
+2886.jpg,fall,2
+29129.jpg,fall,2
+29175.jpg,fall,2
+29206.jpg,fall,2
+29259.jpg,fall,2
+29542.jpg,fall,2
+29751.jpg,fall,2
+3003.jpg,fall,2
+3172.jpg,fall,2
+3191.jpg,fall,2
+3305.jpg,fall,2
+3457.jpg,fall,2
+3489.jpg,fall,2
+39.jpg,fall,2
+4.jpg,fall,2
+4051.jpg,fall,2
+4205.jpg,fall,2
+4244.jpg,fall,2
+4404.jpg,fall,2
+4892.jpg,fall,2
+4956.jpg,fall,2
+5047.jpg,fall,2
+5099.jpg,fall,2
+5141.jpg,fall,2
+5183.jpg,fall,2
+5360.jpg,fall,2
+5749.jpg,fall,2
+5809.jpg,fall,2
+5844.jpg,fall,2
+5850.jpg,fall,2
+6.jpg,fall,2
+6040.jpg,fall,2
+632.jpg,fall,2
+6539.jpg,fall,2
+659.jpg,fall,2
+6970.jpg,fall,2
+7472.jpg,fall,2
+7591.jpg,fall,2
+7691.jpg,fall,2
+7695.jpg,fall,2
+7933.jpg,fall,2
+8163.jpg,fall,2
+8345.jpg,fall,2
+8733.jpg,fall,2
+8862.jpg,fall,2
+9.jpg,fall,2
+9063.jpg,fall,2
+9295.jpg,fall,2
+9417.jpg,fall,2
+9688.jpg,fall,2
+9980.jpg,fall,2
+Adele 6.png,fall,2
+Adele 7.png,fall,2
+Alessandra Ambrosio 3.png,fall,2
+Alessandra Ambrosio1.png,fall,2
+Ana de Armas 11.png,fall,2
+Andrew Garfield AUTUNNO WARM.png,fall,2
+Ashley Graham 3.png,fall,2
+Ashley Olsen 3_0.png,fall,2
+belen rodriguez  8.png,fall,2
+Belen Rodriguez1.png,fall,2
+calista flockhart 1.png,fall,2
+camilla boniardi 6.png,fall,2
+cindy crawford 3.png,fall,2
+cindy-crawford 11.png,fall,2
+cristina parodi  3.png,fall,2
+Cristina-Parodi 1.png,fall,2
+David beckham  5.png,fall,2
+debra messing 6.png,fall,2
+Drew Barrymore 1.png,fall,2
+Drew Barrymore 3_0.png,fall,2
+Drew Barrymore 4.png,fall,2
+Drew-Barrymore 1.png,fall,2
+drew-barrymore 2.png,fall,2
+elisabetta canalis 4.png,fall,2
+elisabetta canalis 6.png,fall,2
+Elisabetta-Canalis 9.png,fall,2
+elodie 3.png,fall,2
+Elodie1.png,fall,2
+emily ratajkowski  8.png,fall,2
+Emily Ratajkowski AUTUNNO WARM.png,fall,2
+Emily Ratajkowski1.png,fall,2
+Emma Watson 1.png,fall,2
+emma watson 8.png,fall,2
+eva mendes 6.png,fall,2
+Evan Peters 2.png,fall,2
+Evan peters 3_1.png,fall,2
+Evan peters 8.png,fall,2
+fall (10).jpg,fall,2
+fall (14).jpg,fall,2
+fall (16).jpg,fall,2
+fall (27).jpg,fall,2
+fall (40).JPG,fall,2
+fall (9).PNG,fall,2
+"Felicity Jones, 6.png",fall,2
+gabrielle caunesil 3.png,fall,2
+gabrielle caunesil 5.png,fall,2
+Gabrielle Caunesil1.png,fall,2
+Gigi Hadid 10.png,fall,2
+Gigi Hadid 8.png,fall,2
+Halle berry2.png,fall,2
+Heath Ledger Autunno Soft.png,fall,2
+Jeffrey Dean Morgan AUTUNNO DEEP.png,fall,2
+jenn.JPG,fall,2
+Jennifer garner 6.png,fall,2
+jennifer lopez  8.png,fall,2
+jenny.JPG,fall,2
+jessica alba 6.png,fall,2
+Jessica Alba1.png,fall,2
+Julia Roberts 1_1.png,fall,2
+julia roberts 5.png,fall,2
+julia roberts 6.png,fall,2
+julia roberts 7.png,fall,2
+julia roberts 8.png,fall,2
+julianne moore 4.png,fall,2
+julianne-moore 2.png,fall,2
+kaia gerber 5.png,fall,2
+Kerry washington 2.png,fall,2
+kirby griffin 1.png,fall,2
+kirby griffin 2.png,fall,2
+ko.JPG,fall,2
+Lorena Cesarini AUTUNNO DEEP.png,fall,2
+lorena-cesarini5.png,fall,2
+Mary kate olsen.png,fall,2
+Mary-Kate Olsen Autunno Soft.png,fall,2
+meghan markle 4.png,fall,2
+meghan markle 8.png,fall,2
+melissa satta 10.png,fall,2
+melissa satta 3.png,fall,2
+melissa satta 4.png,fall,2
+Mischa Barton Autunno Soft.png,fall,2
+Nicole Richie 2_0.png,fall,2
+Nicole Richie 6.png,fall,2
+"Robert Pattinson, 4.png",fall,2
+"Ryan Gosling,  4.png",fall,2
+serena rossi 9.png,fall,2
+shay mitchell 6.png,fall,2
+shay mitchell 9.png,fall,2
+Sonia Grispo 4.png,fall,2
+susan sarandon 3.png,fall,2
+Tyra Banks 6.png,fall,2
+vanessa incontrada 6.png,fall,2
+vanessa incotrada 3.png,fall,2
+vanessa-incontrada 4.png,fall,2
+zendaya 5.png,fall,2
+10.jpg,spring,2
+10427.jpg,spring,2
+10555.jpg,spring,2
+10713.jpg,spring,2
+116.jpg,spring,2
+11850.jpg,spring,2
+1201.jpg,spring,2
+12151.jpg,spring,2
+12925.jpg,spring,2
+1300.jpg,spring,2
+13040.jpg,spring,2
+13068.jpg,spring,2
+14117.jpg,spring,2
+14354.jpg,spring,2
+14662.jpg,spring,2
+1475.jpg,spring,2
+14973.jpg,spring,2
+1515.jpg,spring,2
+15294.jpg,spring,2
+15301.jpg,spring,2
+1551.jpg,spring,2
+16239.jpg,spring,2
+16268.jpg,spring,2
+1633.jpg,spring,2
+16368.jpg,spring,2
+16440.jpg,spring,2
+16545.jpg,spring,2
+169.jpg,spring,2
+17022.jpg,spring,2
+17135.jpg,spring,2
+17167.jpg,spring,2
+17291.jpg,spring,2
+1756.jpg,spring,2
+17572.jpg,spring,2
+17859.jpg,spring,2
+17993.jpg,spring,2
+18290.jpg,spring,2
+18623.jpg,spring,2
+19030.jpg,spring,2
+19112.jpg,spring,2
+19281.jpg,spring,2
+19440.jpg,spring,2
+19696.jpg,spring,2
+1993.jpg,spring,2
+20371.jpg,spring,2
+20396.jpg,spring,2
+20497.jpg,spring,2
+20516.jpg,spring,2
+20556.jpg,spring,2
+20592.jpg,spring,2
+20939.jpg,spring,2
+20945.jpg,spring,2
+20951.jpg,spring,2
+21823.jpg,spring,2
+22020.jpg,spring,2
+22044.jpg,spring,2
+22908.jpg,spring,2
+23328.jpg,spring,2
+234.jpg,spring,2
+23909.jpg,spring,2
+24114.jpg,spring,2
+24425.jpg,spring,2
+24512.jpg,spring,2
+24625.jpg,spring,2
+24744.jpg,spring,2
+2479.jpg,spring,2
+25159.jpg,spring,2
+25161.jpg,spring,2
+2556.jpg,spring,2
+25947.jpg,spring,2
+26270.jpg,spring,2
+26477.jpg,spring,2
+26537.jpg,spring,2
+2662.jpg,spring,2
+26769.jpg,spring,2
+26864.jpg,spring,2
+26882.jpg,spring,2
+27591.jpg,spring,2
+2768.jpg,spring,2
+2770.jpg,spring,2
+27719.jpg,spring,2
+27785.jpg,spring,2
+27870.jpg,spring,2
+28132.jpg,spring,2
+28310.jpg,spring,2
+28450.jpg,spring,2
+28793.jpg,spring,2
+28895.jpg,spring,2
+29718.jpg,spring,2
+3029.jpg,spring,2
+3318.jpg,spring,2
+3387.jpg,spring,2
+3639.jpg,spring,2
+3644.jpg,spring,2
+3829.jpg,spring,2
+3857.jpg,spring,2
+3882.jpg,spring,2
+3997.jpg,spring,2
+4177.jpg,spring,2
+4638.jpg,spring,2
+4862.jpg,spring,2
+5040.jpg,spring,2
+5221.jpg,spring,2
+5314.jpg,spring,2
+5425.jpg,spring,2
+5552.jpg,spring,2
+5716.jpg,spring,2
+6106.jpg,spring,2
+6719.jpg,spring,2
+7240.jpg,spring,2
+7269.jpg,spring,2
+7270.jpg,spring,2
+7415.jpg,spring,2
+7577.jpg,spring,2
+8249.jpg,spring,2
+8452.jpg,spring,2
+8942.jpg,spring,2
+9.jpg,spring,2
+9062.jpg,spring,2
+9141.jpg,spring,2
+9555.jpg,spring,2
+9583.jpg,spring,2
+9604.jpg,spring,2
+9848.jpg,spring,2
+9883.jpg,spring,2
+9887.jpg,spring,2
+Adriana Lima3.png,spring,2
+alexa chung1.png,spring,2
+alexa chung19.png,spring,2
+alexa chung22.png,spring,2
+alexa chung24.png,spring,2
+alexa chung29.png,spring,2
+alexa chung33.png,spring,2
+alexa chung8.png,spring,2
+alexa chung9.png,spring,2
+angelina jolie21.png,spring,2
+angelina jolie23.png,spring,2
+angelina jolie24.png,spring,2
+angelina jolie27.png,spring,2
+Angelina Jolie4.png,spring,2
+Bradley Cooper 1.png,spring,2
+Bradley Cooper 2.png,spring,2
+Bradley Cooper 3.png,spring,2
+bradley cooper1.png,spring,2
+cameron diaz-primavera light.png,spring,2
+Cameron Diaz2.png,spring,2
+Cameron Diaz3.png,spring,2
+Cara Delevigne.png,spring,2
+Cara Delevigne1.png,spring,2
+Cara Delevigne2.png,spring,2
+Cara Delevigne6.png,spring,2
+Cara Delevigne7.png,spring,2
+cate blanchett13.png,spring,2
+cate blanchett3.png,spring,2
+cate blanchett7.png,spring,2
+Charlize Theron 1.png,spring,2
+Charlize Theron 2.png,spring,2
+Charlize Theron4.png,spring,2
+Chiara Ferragni5.png,spring,2
+clio zammatteo2.png,spring,2
+cristiana capotondi15.png,spring,2
+cristiana capotondi19.png,spring,2
+cristiana capotondi20.png,spring,2
+cristiana capotondi24.png,spring,2
+cristiana capotondi34.png,spring,2
+Cristiana Capotondi5.png,spring,2
+cristiana capotondi6.png,spring,2
+cynthia nixon4.png,spring,2
+damian lewis3.png,spring,2
+Debra Messing.png,spring,2
+doutzen kroes6.png,spring,2
+Elettra Lamborghini 3.png,spring,2
+Elettra Lamborghini.png,spring,2
+Elettra Lamborghini2.png,spring,2
+emma corrin10.png,spring,2
+emma corrin15.png,spring,2
+emma corrin4.png,spring,2
+Emma Stone 3.png,spring,2
+Emma Stone10.png,spring,2
+Emma Stone2.png,spring,2
+Emma Stone5.png,spring,2
+Emma Stone6.png,spring,2
+gillian anderson.png,spring,2
+gillian anderson14.png,spring,2
+gillian anderson16.png,spring,2
+gillian anderson19.png,spring,2
+gillian anderson26.png,spring,2
+gillian anderson37.png,spring,2
+gillian anderson39.png,spring,2
+gillian anderson40.png,spring,2
+gillian anderson41.png,spring,2
+gillian anderson49.png,spring,2
+irene grandi4.png,spring,2
+Jessica Chastain1.png,spring,2
+jessica chastain20.png,spring,2
+jessica chastain26.png,spring,2
+jessica chastain36.png,spring,2
+jessica chastain37.png,spring,2
+jessica chastain39.png,spring,2
+jiulie andrews-PRIMAVERA WARM .png,spring,2
+Julianne Moore PRIMAVERA WARM.png,spring,2
+Kate Middleton2.png,spring,2
+Margot Robbie9.png,spring,2
+Miranda Kerr 2.png,spring,2
+Miranda_Kerr_primavera bright.png,spring,2
+Miriam Leone 1.png,spring,2
+Miriam Leone10.png,spring,2
+Miriam Leone12.png,spring,2
+mirim leone- primavera bright.png,spring,2
+Nicole Kidman10.png,spring,2
+Nicole Kidman14.png,spring,2
+Nicole Kidman17.png,spring,2
+Nicole Kidman4.png,spring,2
+Nicole Kidman6.png,spring,2
+noemi- primavera bright.png,spring,2
+owen wilson-primavera light.png,spring,2
+sam heugan-primavera BRIGHT.png,spring,2
+Sara Sampaio4.png,spring,2
+Sara Sampaio6.png,spring,2
+scarlet johansson-primavera WARM.png,spring,2
+Scarlett Johansson1.png,spring,2
+Scarlett Johansson5.png,spring,2
+Simon Baker 1.png,spring,2
+spr (10).PNG,spring,2
+spr (19).jpg,spring,2
+spr (23).jpg,spring,2
+spr (28).jpg,spring,2
+spr (36).JPG,spring,2
+spr (43).jpg,spring,2
+valentina ferragni4.png,spring,2
+valentina ferragni6.png,spring,2
+valentina ferragni7.png,spring,2
+Vittoria Puccini2.png,spring,2
+1005.jpg,summer,2
+1045.jpg,summer,2
+10527.jpg,summer,2
+10548.jpg,summer,2
+10882.jpg,summer,2
+11212.jpg,summer,2
+11408.jpg,summer,2
+11804.jpg,summer,2
+11874.jpg,summer,2
+12361.jpg,summer,2
+12669.jpg,summer,2
+13042.jpg,summer,2
+13485.jpg,summer,2
+13683.jpg,summer,2
+13722.jpg,summer,2
+13778.jpg,summer,2
+139.jpg,summer,2
+13972.jpg,summer,2
+14179.jpg,summer,2
+14198.jpg,summer,2
+14261.jpg,summer,2
+14279.jpg,summer,2
+14366.jpg,summer,2
+14779.jpg,summer,2
+14924.jpg,summer,2
+15297.jpg,summer,2
+15689.jpg,summer,2
+16253.jpg,summer,2
+16269.jpg,summer,2
+1629.jpg,summer,2
+16621.jpg,summer,2
+16722.jpg,summer,2
+17075.jpg,summer,2
+17144.jpg,summer,2
+17209.jpg,summer,2
+17631.jpg,summer,2
+17646.jpg,summer,2
+18227.jpg,summer,2
+1831.jpg,summer,2
+18586.jpg,summer,2
+18617.jpg,summer,2
+18845.jpg,summer,2
+18971.jpg,summer,2
+19289.jpg,summer,2
+20235.jpg,summer,2
+20488.jpg,summer,2
+20763.jpg,summer,2
+20817.jpg,summer,2
+20881.jpg,summer,2
+21349.jpg,summer,2
+21409.jpg,summer,2
+21475.jpg,summer,2
+21721.jpg,summer,2
+22082.jpg,summer,2
+221.jpg,summer,2
+22153.jpg,summer,2
+2223.jpg,summer,2
+22236.jpg,summer,2
+2232.jpg,summer,2
+22996.jpg,summer,2
+23270.jpg,summer,2
+23438.jpg,summer,2
+23464.jpg,summer,2
+23512.jpg,summer,2
+23714.jpg,summer,2
+23731.jpg,summer,2
+23987.jpg,summer,2
+24571.jpg,summer,2
+25002.jpg,summer,2
+25009.jpg,summer,2
+25034.jpg,summer,2
+25140.jpg,summer,2
+25226.jpg,summer,2
+25604.jpg,summer,2
+26359.jpg,summer,2
+26386.jpg,summer,2
+26899.jpg,summer,2
+27032.jpg,summer,2
+27047.jpg,summer,2
+27146.jpg,summer,2
+2727.jpg,summer,2
+27298.jpg,summer,2
+27383.jpg,summer,2
+27496.jpg,summer,2
+28386.jpg,summer,2
+28876.jpg,summer,2
+2896.jpg,summer,2
+29002.jpg,summer,2
+2907.jpg,summer,2
+29354.jpg,summer,2
+29359.jpg,summer,2
+29459.jpg,summer,2
+29637.jpg,summer,2
+29719.jpg,summer,2
+3320.jpg,summer,2
+4249.jpg,summer,2
+4547.jpg,summer,2
+4687.jpg,summer,2
+5011.jpg,summer,2
+5133.jpg,summer,2
+5185.jpg,summer,2
+560.jpg,summer,2
+5953.jpg,summer,2
+5965.jpg,summer,2
+6308.jpg,summer,2
+6705.jpg,summer,2
+677.jpg,summer,2
+7.jpg,summer,2
+7215.jpg,summer,2
+7424.jpg,summer,2
+7445.jpg,summer,2
+773.jpg,summer,2
+7898.jpg,summer,2
+802.jpg,summer,2
+8513.jpg,summer,2
+8515.jpg,summer,2
+8601.jpg,summer,2
+8726.jpg,summer,2
+8927.jpg,summer,2
+8994.jpg,summer,2
+Amy_Poehler_LIGHT SUMMER.png,summer,2
+Bella Hadid 2.png,summer,2
+Bella Heathcote COOL SUMMER.png,summer,2
+Bianca Balti 2.png,summer,2
+Brad Pitt 2.png,summer,2
+chiara-ferragni ESTATE LIGHT .png,summer,2
+Elle Fanning 1.png,summer,2
+Emily DiDonato1 COOL SUMMER.png,summer,2
+Georgina Chapman2 COOL SUMMER.png,summer,2
+Gwyneth-Paltrow-LIGHT SUMMER.png,summer,2
+images-101_1.png,summer,2
+images-103_1.png,summer,2
+images-108_1.png,summer,2
+images-109_0.png,summer,2
+images-10_2.png,summer,2
+images-110_1.png,summer,2
+images-114_0.png,summer,2
+images-117_1.png,summer,2
+images-118_0.png,summer,2
+images-119_1.png,summer,2
+images-11_0.png,summer,2
+images-12_2.png,summer,2
+images-136.png,summer,2
+images-144.png,summer,2
+images-147.png,summer,2
+images-157.png,summer,2
+images-161.png,summer,2
+images-162.png,summer,2
+images-16_0.png,summer,2
+images-16_1.png,summer,2
+images-172.png,summer,2
+images-174.png,summer,2
+images-177.png,summer,2
+images-181.png,summer,2
+images-18_2.png,summer,2
+images-20_2.png,summer,2
+images-21_2.png,summer,2
+images-23_0.png,summer,2
+images-24_2.png,summer,2
+images-25_2.png,summer,2
+images-28_0.png,summer,2
+images-28_2.png,summer,2
+images-30_1.png,summer,2
+images-31_0.png,summer,2
+images-31_2.png,summer,2
+images-32_0.png,summer,2
+images-32_1.png,summer,2
+images-35_0.png,summer,2
+images-39_2.png,summer,2
+images-3_2.png,summer,2
+images-40_0.png,summer,2
+images-42_2.png,summer,2
+images-46_2.png,summer,2
+images-49_0.png,summer,2
+images-49_1.png,summer,2
+images-50_2.png,summer,2
+images-53_1.png,summer,2
+images-54_2.png,summer,2
+images-55_0.png,summer,2
+images-59_0.png,summer,2
+images-59_1.png,summer,2
+images-5_0.png,summer,2
+images-60_2.png,summer,2
+images-63_1.png,summer,2
+images-63_2.png,summer,2
+images-64_0.png,summer,2
+images-65_1.png,summer,2
+images-66_2.png,summer,2
+images-68_1.png,summer,2
+images-68_2.png,summer,2
+images-70_2.png,summer,2
+images-71_1.png,summer,2
+images-72_0.png,summer,2
+images-73_0.png,summer,2
+images-78_1.png,summer,2
+images-79_2.png,summer,2
+images-81_0.png,summer,2
+images-82_2.png,summer,2
+images-86_2.png,summer,2
+images-8_0.png,summer,2
+images-90_1.png,summer,2
+images-91_1.png,summer,2
+images-95_1.png,summer,2
+images-96_0.png,summer,2
+images-98_0.png,summer,2
+images-9_2.png,summer,2
+Kate Moss 3.png,summer,2
+Kirsten Dunst LIGHT SUMMER.png,summer,2
+Lara Stone 3.png,summer,2
+Lea Seydoux 3.png,summer,2
+Lili-Reinhart LIGHT SUMMER.png,summer,2
+Maggie Gyllenhall SOFT SUMMER.png,summer,2
+Margot Robbie LIGHT SUMMER.png,summer,2
+prad pitt estate cool.png,summer,2
+Reese Witherspoon LIGHT SUMMER.png,summer,2
+Rihanna SOFT SUMMER.png,summer,2
+Sarah Jessica Parker SOFT SUMMER.png,summer,2
+smr (14).jpg,summer,2
+smr (24).jpg,summer,2
+smr (3).jpg,summer,2
+smr (33).jpg,summer,2
+smr (34).jpg,summer,2
+smr (37).jpg,summer,2
+smr (5).jpg,summer,2
+smr (8).PNG,summer,2
+1044.jpg,winter,2
+10693.jpg,winter,2
+10762.jpg,winter,2
+11591.jpg,winter,2
+12013.jpg,winter,2
+12108.jpg,winter,2
+12222.jpg,winter,2
+1249.jpg,winter,2
+12550.jpg,winter,2
+12601.jpg,winter,2
+12720.jpg,winter,2
+12909.jpg,winter,2
+12919.jpg,winter,2
+13103.jpg,winter,2
+13143.jpg,winter,2
+13184.jpg,winter,2
+13394.jpg,winter,2
+13604.jpg,winter,2
+14174.jpg,winter,2
+14233.jpg,winter,2
+14476.jpg,winter,2
+14530.jpg,winter,2
+14628.jpg,winter,2
+14993.jpg,winter,2
+15025.jpg,winter,2
+15066.jpg,winter,2
+15149.jpg,winter,2
+15268.jpg,winter,2
+15643.jpg,winter,2
+15933.jpg,winter,2
+16016.jpg,winter,2
+16071.jpg,winter,2
+16191.jpg,winter,2
+16242.jpg,winter,2
+16335.jpg,winter,2
+16398.jpg,winter,2
+16498.jpg,winter,2
+16622.jpg,winter,2
+16808.jpg,winter,2
+16833.jpg,winter,2
+16934.jpg,winter,2
+17107.jpg,winter,2
+17473.jpg,winter,2
+17651.jpg,winter,2
+17751.jpg,winter,2
+17918.jpg,winter,2
+18034.jpg,winter,2
+18182.jpg,winter,2
+18588.jpg,winter,2
+19100.jpg,winter,2
+19181.jpg,winter,2
+19225.jpg,winter,2
+19248.jpg,winter,2
+19302.jpg,winter,2
+19347.jpg,winter,2
+19789.jpg,winter,2
+20246.jpg,winter,2
+20394.jpg,winter,2
+20540.jpg,winter,2
+20573.jpg,winter,2
+21173.jpg,winter,2
+2125.jpg,winter,2
+21679.jpg,winter,2
+21690.jpg,winter,2
+21917.jpg,winter,2
+22146.jpg,winter,2
+22288.jpg,winter,2
+22727.jpg,winter,2
+22851.jpg,winter,2
+23010.jpg,winter,2
+231.jpg,winter,2
+23423.jpg,winter,2
+23581.jpg,winter,2
+23916.jpg,winter,2
+24009.jpg,winter,2
+24035.jpg,winter,2
+24190.jpg,winter,2
+2427.jpg,winter,2
+24500.jpg,winter,2
+246.jpg,winter,2
+24688.jpg,winter,2
+2500.jpg,winter,2
+25323.jpg,winter,2
+25458.jpg,winter,2
+25541.jpg,winter,2
+25856.jpg,winter,2
+25858.jpg,winter,2
+25870.jpg,winter,2
+2630.jpg,winter,2
+26530.jpg,winter,2
+26642.jpg,winter,2
+26733.jpg,winter,2
+26986.jpg,winter,2
+27182.jpg,winter,2
+27340.jpg,winter,2
+27364.jpg,winter,2
+27369.jpg,winter,2
+27491.jpg,winter,2
+27494.jpg,winter,2
+27802.jpg,winter,2
+27804.jpg,winter,2
+27891.jpg,winter,2
+27998.jpg,winter,2
+28181.jpg,winter,2
+28195.jpg,winter,2
+28237.jpg,winter,2
+28295.jpg,winter,2
+28805.jpg,winter,2
+28947.jpg,winter,2
+29280.jpg,winter,2
+29340.jpg,winter,2
+29605.jpg,winter,2
+29613.jpg,winter,2
+29895.jpg,winter,2
+3.jpg,winter,2
+31.jpg,winter,2
+3313.jpg,winter,2
+350.jpg,winter,2
+3659.jpg,winter,2
+3954.jpg,winter,2
+4104.jpg,winter,2
+416.jpg,winter,2
+4907.jpg,winter,2
+4926.jpg,winter,2
+5200.jpg,winter,2
+5223.jpg,winter,2
+5365.jpg,winter,2
+543.jpg,winter,2
+5589.jpg,winter,2
+5642.jpg,winter,2
+5704.jpg,winter,2
+5711.jpg,winter,2
+574.jpg,winter,2
+5840.jpg,winter,2
+6526.jpg,winter,2
+6813.jpg,winter,2
+7.jpg,winter,2
+7365.jpg,winter,2
+7386.jpg,winter,2
+7590.jpg,winter,2
+7635.jpg,winter,2
+7648.jpg,winter,2
+8178.jpg,winter,2
+8207.jpg,winter,2
+8290.jpg,winter,2
+8754.jpg,winter,2
+8939.jpg,winter,2
+9377.jpg,winter,2
+9757.jpg,winter,2
+Alessandra Airo1.png,winter,2
+alexandria ocasio cortez 2.png,winter,2
+alicebasso 2.png,winter,2
+Anna Valle6.png,winter,2
+ANNE HATHAWAY 1.png,winter,2
+ANNE HATHAWAY 2.png,winter,2
+anne hathaway11.png,winter,2
+anne hathaway12.png,winter,2
+anne hathaway15.png,winter,2
+anne hathaway21.png,winter,2
+anne hathaway9.png,winter,2
+brian robinson- .png,winter,2
+demi moore 5.png,winter,2
+elisa-maino 6.png,winter,2
+EVA LONGORIA 1_1.png,winter,2
+EVA LONGORIA 2.png,winter,2
+eva longoria 9.png,winter,2
+fotini peluso 2.png,winter,2
+GEORGE CLOONEY 3.png,winter,2
+giulia de lellis_5.png,winter,2
+giulia valentino 2.png,winter,2
+gwen stefani2.png,winter,2
+Irene Colzi.png,winter,2
+Irene Colzi1.png,winter,2
+iris tinunin 2.png,winter,2
+Jaime Murray DEEP WINTER.png,winter,2
+KATY PERRY 1.png,winter,2
+KATY PERRY 3.png,winter,2
+Katy Perry__1.png,winter,2
+KEANU REEVES 2.png,winter,2
+KEANU REEVES 3.png,winter,2
+kendall genner 5_0.png,winter,2
+Laura Pausini.png,winter,2
+levante 2.png,winter,2
+levante 6.png,winter,2
+lily collins13.png,winter,2
+lily collins16.png,winter,2
+lily collins2.png,winter,2
+lily collins27.png,winter,2
+lily collins6.png,winter,2
+lily collins7.png,winter,2
+lily collins8.png,winter,2
+LIV TYLER 1.png,winter,2
+liv tyler-inverno bright.png,winter,2
+liv tyler9.png,winter,2
+MEGAN FOX 2_0.png,winter,2
+megan fox-inverno bright.png,winter,2
+Megan Fox_(1)_1.png,winter,2
+Megan Fox__1.png,winter,2
+Michelle YEOH DEEP WINTER.png,winter,2
+Millie Bobby Brown1.png,winter,2
+MONICA BELLUCCI 3.png,winter,2
+Monica-Bellucci 9.png,winter,2
+natalie portman13.png,winter,2
+Natalie Portman2.png,winter,2
+natalie portman3.png,winter,2
+natalie portman6.png,winter,2
+nicole mazzocanto-inverno bright.png,winter,2
+paola turani20.png,winter,2
+paola turani21.png,winter,2
+paola turani29.png,winter,2
+paola turani30.png,winter,2
+paola turani36.png,winter,2
+paola turani41.png,winter,2
+paola turani5.png,winter,2
+paola turani55.png,winter,2
+paola turani58.png,winter,2
+paola turani7.png,winter,2
+paola turani8.png,winter,2
+PENELOPE CRUZ 2.png,winter,2
+PENELOPE CRUZ 3_0.png,winter,2
+penelope cruz 3_1.png,winter,2
+sabrina-ferilli 2.png,winter,2
+sandra bullock 3.png,winter,2
+sandra bullock 4.png,winter,2
+sandra bullock 5.png,winter,2
+Shakira1.png,winter,2
+shakira12.png,winter,2
+shakira13.png,winter,2
+shakira4.png,winter,2
+shakira5.png,winter,2
+shakira7.png,winter,2
+vanessa hudgens 3.png,winter,2
+vanessa hudgens 5.png,winter,2
+wnt (11).jpg,winter,2
+wnt (2).PNG,winter,2
+wnt (21).jpg,winter,2
+wnt (26).JPG,winter,2
+wnt (28).JPG,winter,2
+wnt (37).jpg,winter,2
+wnt (4).PNG,winter,2
+wnt (43).jpg,winter,2
+wnt (5).jpg,winter,2
+wnt (6).jpg,winter,2
+wnt (6).PNG,winter,2
+wnt (7).jpg,winter,2
+wnt (7).PNG,winter,2
+wnt (8).jpg,winter,2
+10411.jpg,fall,3
+11107.jpg,fall,3
+11113.jpg,fall,3
+11222.jpg,fall,3
+11802.jpg,fall,3
+12082.jpg,fall,3
+12497.jpg,fall,3
+12637.jpg,fall,3
+12640.jpg,fall,3
+13015.jpg,fall,3
+13450.jpg,fall,3
+13499.jpg,fall,3
+13583.jpg,fall,3
+13885.jpg,fall,3
+13933.jpg,fall,3
+14034.jpg,fall,3
+14128.jpg,fall,3
+14207.jpg,fall,3
+14305.jpg,fall,3
+14520.jpg,fall,3
+14565.jpg,fall,3
+15026.jpg,fall,3
+15060.jpg,fall,3
+15205.jpg,fall,3
+15381.jpg,fall,3
+1541.jpg,fall,3
+15428.jpg,fall,3
+15921.jpg,fall,3
+15945.jpg,fall,3
+16097.jpg,fall,3
+16147.jpg,fall,3
+1620.jpg,fall,3
+16204.jpg,fall,3
+16527.jpg,fall,3
+16541.jpg,fall,3
+16725.jpg,fall,3
+1719.jpg,fall,3
+17265.jpg,fall,3
+1744.jpg,fall,3
+17475.jpg,fall,3
+17483.jpg,fall,3
+17997.jpg,fall,3
+1801.jpg,fall,3
+18194.jpg,fall,3
+18258.jpg,fall,3
+18687.jpg,fall,3
+19130.jpg,fall,3
+19812.jpg,fall,3
+20547.jpg,fall,3
+20622.jpg,fall,3
+2088.jpg,fall,3
+21793.jpg,fall,3
+2185.jpg,fall,3
+21853.jpg,fall,3
+21895.jpg,fall,3
+22060.jpg,fall,3
+22292.jpg,fall,3
+22320.jpg,fall,3
+22372.jpg,fall,3
+22717.jpg,fall,3
+22886.jpg,fall,3
+22919.jpg,fall,3
+22979.jpg,fall,3
+2310.jpg,fall,3
+23189.jpg,fall,3
+23366.jpg,fall,3
+23781.jpg,fall,3
+23786.jpg,fall,3
+23813.jpg,fall,3
+24073.jpg,fall,3
+2409.jpg,fall,3
+24117.jpg,fall,3
+24239.jpg,fall,3
+24384.jpg,fall,3
+24547.jpg,fall,3
+24700.jpg,fall,3
+24936.jpg,fall,3
+25099.jpg,fall,3
+2520.jpg,fall,3
+25636.jpg,fall,3
+25637.jpg,fall,3
+26032.jpg,fall,3
+26182.jpg,fall,3
+263.jpg,fall,3
+26323.jpg,fall,3
+26983.jpg,fall,3
+27382.jpg,fall,3
+27677.jpg,fall,3
+27778.jpg,fall,3
+27791.jpg,fall,3
+27945.jpg,fall,3
+28031.jpg,fall,3
+28576.jpg,fall,3
+2860.jpg,fall,3
+28886.jpg,fall,3
+29029.jpg,fall,3
+29166.jpg,fall,3
+29465.jpg,fall,3
+29771.jpg,fall,3
+29953.jpg,fall,3
+3510.jpg,fall,3
+3636.jpg,fall,3
+3688.jpg,fall,3
+3796.jpg,fall,3
+4045.jpg,fall,3
+4130.jpg,fall,3
+4405.jpg,fall,3
+4565.jpg,fall,3
+4706.jpg,fall,3
+4712.jpg,fall,3
+4775.jpg,fall,3
+4965.jpg,fall,3
+5.jpg,fall,3
+5575.jpg,fall,3
+5941.jpg,fall,3
+6523.jpg,fall,3
+6639.jpg,fall,3
+6663.jpg,fall,3
+6682.jpg,fall,3
+6723.jpg,fall,3
+6759.jpg,fall,3
+6826.jpg,fall,3
+7.jpg,fall,3
+7028.jpg,fall,3
+7141.jpg,fall,3
+730.jpg,fall,3
+7331.jpg,fall,3
+7794.jpg,fall,3
+7817.jpg,fall,3
+8125.jpg,fall,3
+8183.jpg,fall,3
+8293.jpg,fall,3
+8519.jpg,fall,3
+864.jpg,fall,3
+9150.jpg,fall,3
+9300.jpg,fall,3
+9305.jpg,fall,3
+9632.jpg,fall,3
+9698.jpg,fall,3
+973.jpg,fall,3
+9805.jpg,fall,3
+981.jpg,fall,3
+9837.jpg,fall,3
+9933.jpg,fall,3
+adele 2.png,fall,3
+Alessandra Ambrosio 10.png,fall,3
+Alessandra Ambrosio 6.png,fall,3
+Ana de Armas 10.png,fall,3
+ana de armas 2.png,fall,3
+Annalisa 1.png,fall,3
+annalisa 3_1.png,fall,3
+annalisa 7.png,fall,3
+Belen-Rodriguez 8.png,fall,3
+beyonce 11.png,fall,3
+Calista Flockhart 5.png,fall,3
+cecilia rodriguez 3.png,fall,3
+Cecilia Rodriguez.png,fall,3
+Cindy Crawford1.png,fall,3
+CindyCrawford10.png,fall,3
+cristina parodi 4.png,fall,3
+Cristina Parodi AUTUNNO WARM.png,fall,3
+David beckham  3.png,fall,3
+David Beckham 2_1.png,fall,3
+debra messing 10.png,fall,3
+Drew Barrymore 7.png,fall,3
+Eddie Redmayne AUTUNNO SOFT.png,fall,3
+Eliana Miglio 6.png,fall,3
+Eliana-Miglio 8.png,fall,3
+elisabetta canalis 3.png,fall,3
+elisabetta canalis 5.png,fall,3
+elisabetta canalis 7.png,fall,3
+Elisabetta Canalis.png,fall,3
+elisabetta-canalis 10.png,fall,3
+elodie 7.png,fall,3
+elodie 9.png,fall,3
+emily ratajkowski  5.png,fall,3
+emily ratajkowski  9.png,fall,3
+emma watson 2_1.png,fall,3
+Emma Watson 3_0.png,fall,3
+emma watson 9.png,fall,3
+eva mendes3.png,fall,3
+EvaMendes 4.png,fall,3
+Evan Peters 1.png,fall,3
+Evan Peters 3_0.png,fall,3
+Evan peters 6.png,fall,3
+Evan-Peters 2.png,fall,3
+fall (11).jpg,fall,3
+fall (17).jpg,fall,3
+fall (2).jpg,fall,3
+fall (2).PNG,fall,3
+fall (20).jpg,fall,3
+fall (29).JPG,fall,3
+fall (31).JPG,fall,3
+fall (36).jpg,fall,3
+fall (37).jpg,fall,3
+gabrielle caunesil 6.png,fall,3
+Gabrielle Caunesil AUTUNNO WARM.png,fall,3
+Gigi Hadid 2_0.png,fall,3
+Gigi Hadid Autunno Soft.png,fall,3
+Hugh Jackman AUTUNNO SOFT.png,fall,3
+Jennifer garner 4.png,fall,3
+Jennifer garner 7.png,fall,3
+Jennifer_Lopez 9.png,fall,3
+jennn.JPG,fall,3
+jessica alba 10.png,fall,3
+Julia Roberts 1_0.png,fall,3
+Julia Roberts 2_0.png,fall,3
+Julia Roberts 3_0.png,fall,3
+julianne moore 10.png,fall,3
+julianne moore 3.png,fall,3
+julianne moore 5.png,fall,3
+julianne moore 6.png,fall,3
+julianne moore 9.png,fall,3
+kaia gerber 7.png,fall,3
+lorena cesarini 3.png,fall,3
+lorena cesarini 7.png,fall,3
+Lorena_Cesarini 4.png,fall,3
+mary kate olsen 2.png,fall,3
+meghan markle 10.png,fall,3
+Meghan Markle1.png,fall,3
+melissa satta 5.png,fall,3
+mila kunis 6.png,fall,3
+Mila Kunis.png,fall,3
+Natalie Portman AUTUNNO SOFT .png,fall,3
+Nicole richie 2_1.png,fall,3
+Nicole Richie 8.png,fall,3
+Robert Pattinson 2.png,fall,3
+"Robert Pattinson, 6.png",fall,3
+Robert-Pattinson 1.png,fall,3
+Ryan Gosling 1.png,fall,3
+Sara Hyland 1.png,fall,3
+Sarah Hyland 4.png,fall,3
+Sarah Hyland 7.png,fall,3
+Sarah Hyland 9.png,fall,3
+serena rossi  4.png,fall,3
+serena rossi 7.png,fall,3
+shay mitchell  4.png,fall,3
+shay mitchell 5.png,fall,3
+Sonia Grispo 3.png,fall,3
+susan sarandon 7.png,fall,3
+susan sarandon 8.png,fall,3
+theo james 4.png,fall,3
+Theo James.png,fall,3
+"Tyra Banks, 4.png",fall,3
+tyra banks2.png,fall,3
+vanessa incontrada 10.png,fall,3
+Vanessa incontrada 1_0.png,fall,3
+Vanessa Incontrada 3.png,fall,3
+Vanessa-Incontrada 9.png,fall,3
+zendaya 10.png,fall,3
+zendaya 6.png,fall,3
+zendaya 7.png,fall,3
+Zendaya1.png,fall,3
+10121.jpg,spring,3
+10123.jpg,spring,3
+10204.jpg,spring,3
+10409.jpg,spring,3
+11139.jpg,spring,3
+1115.jpg,spring,3
+12104.jpg,spring,3
+12474.jpg,spring,3
+1301.jpg,spring,3
+13080.jpg,spring,3
+13263.jpg,spring,3
+13333.jpg,spring,3
+13460.jpg,spring,3
+13871.jpg,spring,3
+13925.jpg,spring,3
+14727.jpg,spring,3
+15617.jpg,spring,3
+15775.jpg,spring,3
+16212.jpg,spring,3
+16445.jpg,spring,3
+16859.jpg,spring,3
+16911.jpg,spring,3
+17267.jpg,spring,3
+17376.jpg,spring,3
+17979.jpg,spring,3
+18125.jpg,spring,3
+18200.jpg,spring,3
+18396.jpg,spring,3
+18454.jpg,spring,3
+18468.jpg,spring,3
+18945.jpg,spring,3
+18974.jpg,spring,3
+19058.jpg,spring,3
+19139.jpg,spring,3
+19147.jpg,spring,3
+19196.jpg,spring,3
+19311.jpg,spring,3
+19387.jpg,spring,3
+19484.jpg,spring,3
+20028.jpg,spring,3
+20329.jpg,spring,3
+20354.jpg,spring,3
+20428.jpg,spring,3
+20753.jpg,spring,3
+2090.jpg,spring,3
+20938.jpg,spring,3
+20996.jpg,spring,3
+21136.jpg,spring,3
+21307.jpg,spring,3
+21553.jpg,spring,3
+2156.jpg,spring,3
+219.jpg,spring,3
+22220.jpg,spring,3
+22428.jpg,spring,3
+2246.jpg,spring,3
+22634.jpg,spring,3
+22721.jpg,spring,3
+22768.jpg,spring,3
+22929.jpg,spring,3
+23454.jpg,spring,3
+23561.jpg,spring,3
+23608.jpg,spring,3
+23930.jpg,spring,3
+24038.jpg,spring,3
+24453.jpg,spring,3
+2461.jpg,spring,3
+24734.jpg,spring,3
+25012.jpg,spring,3
+25352.jpg,spring,3
+25685.jpg,spring,3
+25805.jpg,spring,3
+26173.jpg,spring,3
+27002.jpg,spring,3
+27155.jpg,spring,3
+27729.jpg,spring,3
+27846.jpg,spring,3
+27893.jpg,spring,3
+2839.jpg,spring,3
+2870.jpg,spring,3
+28894.jpg,spring,3
+28962.jpg,spring,3
+29010.jpg,spring,3
+2922.jpg,spring,3
+2925.jpg,spring,3
+29297.jpg,spring,3
+29690.jpg,spring,3
+3.jpg,spring,3
+3047.jpg,spring,3
+3245.jpg,spring,3
+3373.jpg,spring,3
+3676.jpg,spring,3
+3958.jpg,spring,3
+438.jpg,spring,3
+4496.jpg,spring,3
+4557.jpg,spring,3
+4904.jpg,spring,3
+4935.jpg,spring,3
+5150.jpg,spring,3
+52.jpg,spring,3
+5618.jpg,spring,3
+6093.jpg,spring,3
+6384.jpg,spring,3
+6395.jpg,spring,3
+709.jpg,spring,3
+7337.jpg,spring,3
+7653.jpg,spring,3
+7701.jpg,spring,3
+7709.jpg,spring,3
+8588.jpg,spring,3
+8691.jpg,spring,3
+9104.jpg,spring,3
+9294.jpg,spring,3
+9313.jpg,spring,3
+9630.jpg,spring,3
+9963.jpg,spring,3
+Adriana Lima2.png,spring,3
+Adriana Lima4.png,spring,3
+alexa chung12.png,spring,3
+alexa chung13.png,spring,3
+alexa chung15.png,spring,3
+alexa chung16.png,spring,3
+alexa chung17.png,spring,3
+alexa chung2.png,spring,3
+alexa chung20.png,spring,3
+alexa chung25.png,spring,3
+alexa chung31.png,spring,3
+Angelina Jolie1.png,spring,3
+angelina jolie13.png,spring,3
+angelina jolie17.png,spring,3
+angelina jolie19.png,spring,3
+angelina jolie9.png,spring,3
+black lively- primavera warm.png,spring,3
+bradley cooper3.png,spring,3
+bradley cooper5.png,spring,3
+Cameron Diaz5.png,spring,3
+Camilla Boniardi PRIMAVERA BRIGHT .png,spring,3
+Cara Delevigne10.png,spring,3
+Cara Delevigne3.png,spring,3
+Cara Delevigne5.png,spring,3
+cate blanchett.png,spring,3
+cate blanchett11.png,spring,3
+cate blanchett2.png,spring,3
+cate blanchett5.png,spring,3
+cate blanchett8.png,spring,3
+charlie hunnam- primavera warm.png,spring,3
+Charlize Theron 3.png,spring,3
+Charlize Theron5.png,spring,3
+Claudia Camillo.png,spring,3
+Cristiana Capotondi1.png,spring,3
+cristiana capotondi10.png,spring,3
+cristiana capotondi13.png,spring,3
+cristiana capotondi16.png,spring,3
+cristiana capotondi17.png,spring,3
+cristiana capotondi23.png,spring,3
+cristiana capotondi29.png,spring,3
+Cristiana Capotondi3.png,spring,3
+cristiana capotondi30.png,spring,3
+cristiana capotondi31.png,spring,3
+cyntia nixon primavera light.png,spring,3
+Damian Lewis 2.png,spring,3
+Damian Lewis 3.png,spring,3
+Damian Lewis.png,spring,3
+Damian Lewis1.png,spring,3
+damian lewis8.png,spring,3
+doutzen kroes10.png,spring,3
+doutzen kroes12.png,spring,3
+doutzen kroes14.png,spring,3
+doutzen kroes16.png,spring,3
+doutzen kroes2.png,spring,3
+doutzen kroes7.png,spring,3
+Elettra Lamborghini 1.png,spring,3
+Elettra Lamborghini1.png,spring,3
+emma corrin11.png,spring,3
+emma stone- primavera warm.png,spring,3
+emy adams- primavera warm.png,spring,3
+gillian anderson21.png,spring,3
+gillian anderson24.png,spring,3
+gillian anderson27.png,spring,3
+gillian anderson32.png,spring,3
+gillian anderson35.png,spring,3
+gillian anderson38.png,spring,3
+gillian anderson47.png,spring,3
+gillian anderson54.png,spring,3
+Ilary Blasi1.png,spring,3
+Ilary Blasi3.png,spring,3
+irene grandi5.png,spring,3
+irene grandi7.png,spring,3
+jessica chastain18.png,spring,3
+jessica chastain27.png,spring,3
+jessica chastain28.png,spring,3
+jessica chastain4.png,spring,3
+jessica chastain5.png,spring,3
+Kate Middleton3.png,spring,3
+Katie Holmes1.png,spring,3
+kylie minogue- primavera light.png,spring,3
+Lindsay Lohan1.png,spring,3
+Margot Robbie 2.png,spring,3
+Margot Robbie2.png,spring,3
+Margot Robbie7.png,spring,3
+Margot Robbie8.png,spring,3
+matt lanter-primavera bright.png,spring,3
+Milla Jovovich.png,spring,3
+Milla Jovovich3.png,spring,3
+Miranda Kerr 1.png,spring,3
+Miranda Kerr1.png,spring,3
+Miranda Kerr3.png,spring,3
+Miriam Leone 3.png,spring,3
+Miriam Leone2.png,spring,3
+Miriam Leone4.png,spring,3
+Miriam Leone7.png,spring,3
+Nicole Kidman12.png,spring,3
+Nicole Kidman19.png,spring,3
+Nicole Kidman5.png,spring,3
+Nikole Kidman 1.png,spring,3
+Noemi.png,spring,3
+Noemi1.png,spring,3
+Noemi4.png,spring,3
+Scarlett Johansson 1.png,spring,3
+Scarlett Johansson 3.png,spring,3
+Scarlett Johansson.png,spring,3
+spr (18).jpg,spring,3
+spr (25).jpg,spring,3
+spr (26).jpg,spring,3
+spr (27).jpg,spring,3
+spr (45).jpg,spring,3
+spr (6).PNG,spring,3
+spr (7).PNG,spring,3
+spr (8).PNG,spring,3
+spr (9).jpg,spring,3
+tom hiddleston-primavera WARM.png,spring,3
+valentina ferragni1.png,spring,3
+valentina ferragni3.png,spring,3
+Vittoria Puccini4.png,spring,3
+10116.jpg,summer,3
+10256.jpg,summer,3
+10305.jpg,summer,3
+1043.jpg,summer,3
+10523.jpg,summer,3
+10744.jpg,summer,3
+1082.jpg,summer,3
+10832.jpg,summer,3
+10989.jpg,summer,3
+1111.jpg,summer,3
+112.jpg,summer,3
+1132.jpg,summer,3
+11658.jpg,summer,3
+11730.jpg,summer,3
+11784.jpg,summer,3
+12593.jpg,summer,3
+12968.jpg,summer,3
+13154.jpg,summer,3
+13562.jpg,summer,3
+13620.jpg,summer,3
+13854.jpg,summer,3
+14176.jpg,summer,3
+14556.jpg,summer,3
+14693.jpg,summer,3
+1522.jpg,summer,3
+15340.jpg,summer,3
+1535.jpg,summer,3
+15432.jpg,summer,3
+16813.jpg,summer,3
+16827.jpg,summer,3
+16894.jpg,summer,3
+17594.jpg,summer,3
+17875.jpg,summer,3
+18152.jpg,summer,3
+18154.jpg,summer,3
+18187.jpg,summer,3
+18530.jpg,summer,3
+18878.jpg,summer,3
+19392.jpg,summer,3
+20128.jpg,summer,3
+20216.jpg,summer,3
+20221.jpg,summer,3
+20628.jpg,summer,3
+20712.jpg,summer,3
+20720.jpg,summer,3
+2128.jpg,summer,3
+21285.jpg,summer,3
+21548.jpg,summer,3
+21814.jpg,summer,3
+21915.jpg,summer,3
+22175.jpg,summer,3
+22362.jpg,summer,3
+22498.jpg,summer,3
+22628.jpg,summer,3
+23252.jpg,summer,3
+23378.jpg,summer,3
+23397.jpg,summer,3
+23540.jpg,summer,3
+23704.jpg,summer,3
+23705.jpg,summer,3
+23733.jpg,summer,3
+2437.jpg,summer,3
+24639.jpg,summer,3
+24956.jpg,summer,3
+25260.jpg,summer,3
+25358.jpg,summer,3
+25850.jpg,summer,3
+25941.jpg,summer,3
+26164.jpg,summer,3
+26233.jpg,summer,3
+26334.jpg,summer,3
+26418.jpg,summer,3
+26432.jpg,summer,3
+26500.jpg,summer,3
+26789.jpg,summer,3
+26909.jpg,summer,3
+27236.jpg,summer,3
+28218.jpg,summer,3
+28298.jpg,summer,3
+28411.jpg,summer,3
+2858.jpg,summer,3
+28846.jpg,summer,3
+29055.jpg,summer,3
+29085.jpg,summer,3
+29498.jpg,summer,3
+29871.jpg,summer,3
+3286.jpg,summer,3
+3904.jpg,summer,3
+4103.jpg,summer,3
+4296.jpg,summer,3
+4318.jpg,summer,3
+4367.jpg,summer,3
+4401.jpg,summer,3
+4508.jpg,summer,3
+4848.jpg,summer,3
+6154.jpg,summer,3
+6192.jpg,summer,3
+6268.jpg,summer,3
+6378.jpg,summer,3
+6493.jpg,summer,3
+6502.jpg,summer,3
+6679.jpg,summer,3
+6762.jpg,summer,3
+6820.jpg,summer,3
+7029.jpg,summer,3
+7111.jpg,summer,3
+7279.jpg,summer,3
+7500.jpg,summer,3
+7836.jpg,summer,3
+7841.jpg,summer,3
+7963.jpg,summer,3
+8383.jpg,summer,3
+8558.jpg,summer,3
+8839.jpg,summer,3
+9.jpg,summer,3
+9280.jpg,summer,3
+9318.jpg,summer,3
+971.jpg,summer,3
+9727.jpg,summer,3
+9816.jpg,summer,3
+Brad Pitt 3.png,summer,3
+charlize teron-ESTATE light.png,summer,3
+ellen-pompeo LIGHT SUMMER.png,summer,3
+Elle_Fanning-LIGHT SUMMER.png,summer,3
+Eva Herzigova 3.png,summer,3
+Harry Styles 3.png,summer,3
+images-100_0.png,summer,3
+images-100_1.png,summer,3
+images-102_0.png,summer,3
+images-102_1.png,summer,3
+images-104_1.png,summer,3
+images-105_1.png,summer,3
+images-111_1.png,summer,3
+images-115_0.png,summer,3
+images-11_1.png,summer,3
+images-122.png,summer,3
+images-124.png,summer,3
+images-131.png,summer,3
+images-142.png,summer,3
+images-149.png,summer,3
+images-14_2.png,summer,3
+images-150.png,summer,3
+images-151.png,summer,3
+images-160.png,summer,3
+images-164.png,summer,3
+images-166.png,summer,3
+images-176.png,summer,3
+images-17_0.png,summer,3
+images-17_1.png,summer,3
+images-18_0.png,summer,3
+images-20_0.png,summer,3
+images-21_1.png,summer,3
+images-22_1.png,summer,3
+images-24_1.png,summer,3
+images-26_0.png,summer,3
+images-2_0.png,summer,3
+images-2_1.png,summer,3
+images-31_1.png,summer,3
+images-35_2.png,summer,3
+images-36_1.png,summer,3
+images-39_0.png,summer,3
+images-39_1.png,summer,3
+images-3_0.png,summer,3
+images-43_0.png,summer,3
+images-43_1.png,summer,3
+images-44_2.png,summer,3
+images-45_0.png,summer,3
+images-46_1.png,summer,3
+images-47_1.png,summer,3
+images-47_2.png,summer,3
+images-4_0.png,summer,3
+images-4_1.png,summer,3
+images-51_0.png,summer,3
+images-52_0.png,summer,3
+images-53_2.png,summer,3
+images-54_1.png,summer,3
+images-56_1.png,summer,3
+images-56_2.png,summer,3
+images-58_1.png,summer,3
+images-5_1.png,summer,3
+images-61_0.png,summer,3
+images-61_1.png,summer,3
+images-62_2.png,summer,3
+images-65_2.png,summer,3
+images-66_0.png,summer,3
+images-67_0.png,summer,3
+images-69_1.png,summer,3
+images-6_2.png,summer,3
+images-70_1.png,summer,3
+images-73_2.png,summer,3
+images-74_1.png,summer,3
+images-77_0.png,summer,3
+images-77_1.png,summer,3
+images-78_0.png,summer,3
+images-78_2.png,summer,3
+images-79_1.png,summer,3
+images-80_0.png,summer,3
+images-85_2.png,summer,3
+images-91_0.png,summer,3
+images-92_2.png,summer,3
+images-93_2.png,summer,3
+images-94_1.png,summer,3
+images-94_2.png,summer,3
+images-95_0.png,summer,3
+images-97_0.png,summer,3
+Kate Winslet 1.png,summer,3
+Leona Lewis SOFT SUMMER.png,summer,3
+Matilda de Angelis 1.png,summer,3
+Matilda De Angelis 2.png,summer,3
+Naomi Watts LIGHT SUMMER.png,summer,3
+Natalie-Dormer-SUMMER LIGHT.png,summer,3
+paul_walker_headshot_LIGHT SUMMER.png,summer,3
+Reese Witherspoon 1.png,summer,3
+Robin Wright LIGHT SUMMER.png,summer,3
+smr (18).jpg,summer,3
+smr (20).jpg,summer,3
+smr (21).jpg,summer,3
+smr (27).JPG,summer,3
+smr (3).PNG,summer,3
+smr (30).JPG,summer,3
+smr (35).JPG,summer,3
+smr (39).jpg,summer,3
+sy.jpg,summer,3
+sysysy.jpg,summer,3
+Tom Felton 1.png,summer,3
+10.jpg,winter,3
+10404.jpg,winter,3
+10654.jpg,winter,3
+10750.jpg,winter,3
+10789.jpg,winter,3
+11327.jpg,winter,3
+11373.jpg,winter,3
+11541.jpg,winter,3
+11708.jpg,winter,3
+11905.jpg,winter,3
+12037.jpg,winter,3
+12038.jpg,winter,3
+12271.jpg,winter,3
+1235.jpg,winter,3
+12362.jpg,winter,3
+12591.jpg,winter,3
+12609.jpg,winter,3
+12936.jpg,winter,3
+13231.jpg,winter,3
+13513.jpg,winter,3
+13771.jpg,winter,3
+14115.jpg,winter,3
+14127.jpg,winter,3
+14277.jpg,winter,3
+14409.jpg,winter,3
+14563.jpg,winter,3
+14732.jpg,winter,3
+14809.jpg,winter,3
+14812.jpg,winter,3
+1514.jpg,winter,3
+15272.jpg,winter,3
+15332.jpg,winter,3
+15452.jpg,winter,3
+15626.jpg,winter,3
+15628.jpg,winter,3
+15979.jpg,winter,3
+16304.jpg,winter,3
+16319.jpg,winter,3
+16572.jpg,winter,3
+16611.jpg,winter,3
+16734.jpg,winter,3
+16822.jpg,winter,3
+17016.jpg,winter,3
+17172.jpg,winter,3
+17717.jpg,winter,3
+18022.jpg,winter,3
+18277.jpg,winter,3
+18516.jpg,winter,3
+18518.jpg,winter,3
+18525.jpg,winter,3
+18863.jpg,winter,3
+18947.jpg,winter,3
+18988.jpg,winter,3
+1901.jpg,winter,3
+19275.jpg,winter,3
+19631.jpg,winter,3
+19955.jpg,winter,3
+20224.jpg,winter,3
+20319.jpg,winter,3
+20434.jpg,winter,3
+20978.jpg,winter,3
+21596.jpg,winter,3
+21744.jpg,winter,3
+23168.jpg,winter,3
+23285.jpg,winter,3
+2337.jpg,winter,3
+23491.jpg,winter,3
+23539.jpg,winter,3
+23630.jpg,winter,3
+23928.jpg,winter,3
+24019.jpg,winter,3
+24043.jpg,winter,3
+24217.jpg,winter,3
+24429.jpg,winter,3
+24742.jpg,winter,3
+24784.jpg,winter,3
+25283.jpg,winter,3
+2558.jpg,winter,3
+25831.jpg,winter,3
+26104.jpg,winter,3
+26119.jpg,winter,3
+26447.jpg,winter,3
+26603.jpg,winter,3
+26627.jpg,winter,3
+26654.jpg,winter,3
+26979.jpg,winter,3
+27006.jpg,winter,3
+2737.jpg,winter,3
+274.jpg,winter,3
+27435.jpg,winter,3
+27588.jpg,winter,3
+27897.jpg,winter,3
+28357.jpg,winter,3
+28546.jpg,winter,3
+28879.jpg,winter,3
+29069.jpg,winter,3
+29555.jpg,winter,3
+29715.jpg,winter,3
+29784.jpg,winter,3
+29825.jpg,winter,3
+2985.jpg,winter,3
+3406.jpg,winter,3
+3672.jpg,winter,3
+3738.jpg,winter,3
+3817.jpg,winter,3
+4015.jpg,winter,3
+4187.jpg,winter,3
+4306.jpg,winter,3
+4352.jpg,winter,3
+4495.jpg,winter,3
+4587.jpg,winter,3
+4690.jpg,winter,3
+4691.jpg,winter,3
+4871.jpg,winter,3
+5.jpg,winter,3
+5017.jpg,winter,3
+5246.jpg,winter,3
+5261.jpg,winter,3
+5401.jpg,winter,3
+5520.jpg,winter,3
+5557.jpg,winter,3
+609.jpg,winter,3
+612.jpg,winter,3
+6962.jpg,winter,3
+7033.jpg,winter,3
+7401.jpg,winter,3
+7582.jpg,winter,3
+766.jpg,winter,3
+7792.jpg,winter,3
+7833.jpg,winter,3
+8204.jpg,winter,3
+862.jpg,winter,3
+8648.jpg,winter,3
+8663.jpg,winter,3
+8783.jpg,winter,3
+8869.jpg,winter,3
+9102.jpg,winter,3
+9113.jpg,winter,3
+9156.jpg,winter,3
+9323.jpg,winter,3
+9646.jpg,winter,3
+9699.jpg,winter,3
+9710.jpg,winter,3
+9896.jpg,winter,3
+9997.jpg,winter,3
+adam driver COOL WINTWER.png,winter,3
+Anna Kendrick2 COOL INVERNO.png,winter,3
+Anna Valle2.png,winter,3
+Anna Valle3.png,winter,3
+Anna Valle4.png,winter,3
+Anne Hathaway.png,winter,3
+anne hathaway10.png,winter,3
+Anne Hathaway2.png,winter,3
+Anne Hathaway6.png,winter,3
+Anne Hathaway8.png,winter,3
+chiara biasi 3.png,winter,3
+chiara biasi 4.png,winter,3
+chiara biasi 6.png,winter,3
+chiara biasi2.png,winter,3
+Daniela Collu1.png,winter,3
+demi moore 4.png,winter,3
+elisa4.png,winter,3
+eva longoria 4.png,winter,3
+EVA longoria 5.png,winter,3
+eva longoria 7.png,winter,3
+eva-longoria 7.png,winter,3
+GEORGE CLOONEY 2.png,winter,3
+giulia de lellis 4.png,winter,3
+giulia valentino 1.png,winter,3
+jenniefer connelly-inverno bright.png,winter,3
+kary perry-inverno bright.png,winter,3
+Katy Perry_(2).png,winter,3
+kendall genner 5_1.png,winter,3
+kim kardashian 2.png,winter,3
+kim kardashian 5.png,winter,3
+Kim-Kardashian-DEEP WINTER.png,winter,3
+Kristin Davis1.png,winter,3
+kylie genner 4.png,winter,3
+Kylie-Jenner2.png,winter,3
+Laura Manfredi WINTER COOL.png,winter,3
+LILY COLLINS 3.png,winter,3
+lily collins11.png,winter,3
+lily collins18.png,winter,3
+lily collins19.png,winter,3
+lily collins25.png,winter,3
+lily collins4.png,winter,3
+lily collins5.png,winter,3
+lily collins9.png,winter,3
+LIV TYLER 2_1.png,winter,3
+liv tyler1.png,winter,3
+liv tyler3.png,winter,3
+lizzo 1.png,winter,3
+lizzo 7.png,winter,3
+LUCY LIU DEEP WINTER.png,winter,3
+lupita nyong_o 3.png,winter,3
+lupita nyong_o 7.png,winter,3
+maria-grazia-cucinotta 2.png,winter,3
+MARION COTILLARD 1_0.png,winter,3
+MARION COTILLARD 2.png,winter,3
+martina tinarelli 1.png,winter,3
+martina tinarelli 2.png,winter,3
+Megan Fox_(3).png,winter,3
+Millie Bobby Brown.png,winter,3
+MONICA BELLUCCI 1.png,winter,3
+MONICA BELLUCCI 2.png,winter,3
+monica bellucci 7.png,winter,3
+monica bellucci 8.png,winter,3
+monica-bellucci 3.png,winter,3
+Naomi_Campbell_deep winter.png,winter,3
+NATALIE PORTMAN 2.png,winter,3
+Natalie Portman.png,winter,3
+natalie portman10.png,winter,3
+natalie portman12.png,winter,3
+natalie portman15.png,winter,3
+natalie portman18.png,winter,3
+natalie portman20.png,winter,3
+natalie portman21.png,winter,3
+natalie portman24.png,winter,3
+paola turani12.png,winter,3
+paola turani17.png,winter,3
+paola turani23.png,winter,3
+paola turani26.png,winter,3
+paola turani27.png,winter,3
+paola turani38.png,winter,3
+paola turani54.png,winter,3
+paola turani63.png,winter,3
+priyanka-chopra-DEEP WINTER.png,winter,3
+raoul bova 2.png,winter,3
+sabrina ferilli 4.png,winter,3
+SabrinaFerilli 4.png,winter,3
+SALMA HAYEK 2.png,winter,3
+sandra bullock 2.png,winter,3
+sandra bullock1.png,winter,3
+sandra-bullock 4.png,winter,3
+Shakira.png,winter,3
+shakira8.png,winter,3
+Vanessa-Hudgens 1.png,winter,3
+wnt (1).PNG,winter,3
+wnt (10).jpg,winter,3
+wnt (12).jpg,winter,3
+wnt (33).JPG,winter,3
+wnt (35).JPG,winter,3
+wnt (9).jpg,winter,3
+wnt (9).PNG,winter,3
+zooey deschanel 1.png,winter,3
+zooey deschanel-inverno bright.png,winter,3
+0000507924_004_20170819100043228.jpg,fall,4
+1019.jpg,fall,4
+10443.jpg,fall,4
+10471.jpg,fall,4
+11199.jpg,fall,4
+11472.jpg,fall,4
+1151.jpg,fall,4
+11719.jpg,fall,4
+11764.jpg,fall,4
+11878.jpg,fall,4
+11961.jpg,fall,4
+12062.jpg,fall,4
+12113.jpg,fall,4
+12148.jpg,fall,4
+12251.jpg,fall,4
+1237.jpg,fall,4
+12386.jpg,fall,4
+12620.jpg,fall,4
+12625.jpg,fall,4
+12661.jpg,fall,4
+12897.jpg,fall,4
+12982.jpg,fall,4
+12992.jpg,fall,4
+13212.jpg,fall,4
+13478.jpg,fall,4
+13601.jpg,fall,4
+13613.jpg,fall,4
+13721.jpg,fall,4
+13959.jpg,fall,4
+14091.jpg,fall,4
+1430.jpg,fall,4
+14706.jpg,fall,4
+15243.jpg,fall,4
+15449.jpg,fall,4
+15685.jpg,fall,4
+16022.jpg,fall,4
+16482.jpg,fall,4
+16858.jpg,fall,4
+16936.jpg,fall,4
+17677.jpg,fall,4
+17978.jpg,fall,4
+18086.jpg,fall,4
+18257.jpg,fall,4
+18577.jpg,fall,4
+18661.jpg,fall,4
+1885.jpg,fall,4
+18936.jpg,fall,4
+19056.jpg,fall,4
+19518.jpg,fall,4
+19550.jpg,fall,4
+19593.jpg,fall,4
+19827.jpg,fall,4
+19977.jpg,fall,4
+20202.jpg,fall,4
+2023.jpg,fall,4
+2025.jpg,fall,4
+20334.jpg,fall,4
+20455.jpg,fall,4
+20500.jpg,fall,4
+20614.jpg,fall,4
+20782.jpg,fall,4
+20823.jpg,fall,4
+21124.jpg,fall,4
+21280.jpg,fall,4
+21332.jpg,fall,4
+21368.jpg,fall,4
+21438.jpg,fall,4
+21442.jpg,fall,4
+21601.jpg,fall,4
+21672.jpg,fall,4
+2178.jpg,fall,4
+21875.jpg,fall,4
+22389.jpg,fall,4
+22408.jpg,fall,4
+23031.jpg,fall,4
+23139.jpg,fall,4
+23463.jpg,fall,4
+23902.jpg,fall,4
+24077.jpg,fall,4
+24237.jpg,fall,4
+24530.jpg,fall,4
+24542.jpg,fall,4
+24783.jpg,fall,4
+24859.jpg,fall,4
+24902.jpg,fall,4
+24906.jpg,fall,4
+24919.jpg,fall,4
+25024.jpg,fall,4
+25041.jpg,fall,4
+25247.jpg,fall,4
+26023.jpg,fall,4
+26361.jpg,fall,4
+26689.jpg,fall,4
+26788.jpg,fall,4
+27253.jpg,fall,4
+27430.jpg,fall,4
+2765.jpg,fall,4
+27779.jpg,fall,4
+28305.jpg,fall,4
+28319.jpg,fall,4
+28447.jpg,fall,4
+28751.jpg,fall,4
+28787.jpg,fall,4
+28851.jpg,fall,4
+29182.jpg,fall,4
+29224.jpg,fall,4
+29452.jpg,fall,4
+29461.jpg,fall,4
+29759.jpg,fall,4
+298.jpg,fall,4
+29810.jpg,fall,4
+29887.jpg,fall,4
+29981.jpg,fall,4
+3018.jpg,fall,4
+3119.jpg,fall,4
+3544.jpg,fall,4
+404.jpg,fall,4
+4053.jpg,fall,4
+4159.jpg,fall,4
+4195.jpg,fall,4
+4498.jpg,fall,4
+4505.jpg,fall,4
+5159.jpg,fall,4
+5312.jpg,fall,4
+5556.jpg,fall,4
+559.jpg,fall,4
+6050.jpg,fall,4
+6228.jpg,fall,4
+6239.jpg,fall,4
+6346.jpg,fall,4
+6668.jpg,fall,4
+6673.jpg,fall,4
+6709.jpg,fall,4
+6779.jpg,fall,4
+6788.jpg,fall,4
+7040.jpg,fall,4
+7098.jpg,fall,4
+7273.jpg,fall,4
+761.jpg,fall,4
+7913.jpg,fall,4
+7923.jpg,fall,4
+8193.jpg,fall,4
+8413.jpg,fall,4
+8465.jpg,fall,4
+8610.jpg,fall,4
+8704.jpg,fall,4
+8896.jpg,fall,4
+8897.jpg,fall,4
+89.jpg,fall,4
+9110.jpg,fall,4
+9217.jpg,fall,4
+924.jpg,fall,4
+9572.jpg,fall,4
+9696.jpg,fall,4
+9832.jpg,fall,4
+9834.jpg,fall,4
+Adele 4.png,fall,4
+Alessandra Ambrosio 9.png,fall,4
+Ana de Armas 3.png,fall,4
+Ana de Armas 5.png,fall,4
+Ana de Armas 7.png,fall,4
+Ana de Armas 8.png,fall,4
+Annalisa 3_0.png,fall,4
+annalisa 8.png,fall,4
+Annalisa.png,fall,4
+Ashley Graham 4.png,fall,4
+Ashley Graham 7.png,fall,4
+Ashley Graham.png,fall,4
+Ashley Graham1.png,fall,4
+Ashley Olsen 1_0.png,fall,4
+belen rodriguez  6.png,fall,4
+belen rodriguez  7.png,fall,4
+belen rodriguez 5.png,fall,4
+Belen Rodriguez AUTUNNO DEEP.png,fall,4
+camilla boniardi 4.png,fall,4
+cecilia rodriguez 4.png,fall,4
+cecilia rodriguez 5.png,fall,4
+cecilia rodriguez 6.png,fall,4
+cindy crawford 4.png,fall,4
+cristina parodi 11.png,fall,4
+Cristina-Parodi 5.png,fall,4
+David beckham  4.png,fall,4
+debra messing 9.png,fall,4
+Drew Barrymore 3_1.png,fall,4
+Eliana Miglio 1.png,fall,4
+Eliana Miglio 5.png,fall,4
+elisabetta canalis 8.png,fall,4
+elodie 4.png,fall,4
+elodie 8.png,fall,4
+emily ratajkowski  4.png,fall,4
+emily ratajkowski 10.png,fall,4
+Emily Ratajkowski.png,fall,4
+emma watson 7.png,fall,4
+eva mendes 5.png,fall,4
+Eva Mendes1.png,fall,4
+EvaMendes-8.png,fall,4
+Evan peters 5.png,fall,4
+fall (22).jpg,fall,4
+fall (26).jpg,fall,4
+fall (3).PNG,fall,4
+fall (35).jpg,fall,4
+fall (39).jpg,fall,4
+fall (4).jpg,fall,4
+fall (6).PNG,fall,4
+"Felicity Jones,3.png",fall,4
+"Felicity Jones,5.png",fall,4
+Gabrielle Caunesil.png,fall,4
+gabrielle-caunesil 4.png,fall,4
+Gal Gadot 3.png,fall,4
+Gal Gadot 4.png,fall,4
+Gigi Hadid 1.png,fall,4
+Gigi Hadid 6.png,fall,4
+Gigi Hadid 9.png,fall,4
+Halle berry 3.png,fall,4
+Jennifer garner  5.png,fall,4
+jennifer lopez 4.png,fall,4
+Jennifer Lopez1.png,fall,4
+jessica alba 7.png,fall,4
+jessica alba 8.png,fall,4
+julia roberts 9.png,fall,4
+julianne moore 11.png,fall,4
+julianne moore 8.png,fall,4
+kaia gerber 4.png,fall,4
+Kerry washington 1.png,fall,4
+Kerry washington 3.png,fall,4
+lorena cesarini 5.png,fall,4
+meghan markle 3.png,fall,4
+meghan markle 5.png,fall,4
+melissa satta 9.png,fall,4
+mila kunis 4.png,fall,4
+mila kunis 5.png,fall,4
+Nicole richie 1_1.png,fall,4
+Nicole Richie 4.png,fall,4
+"Robert Pattinson, 3.png",fall,4
+"Robert Pattinson, 5.png",fall,4
+Rossella Migliaccio.png,fall,4
+"Ryan Gosling, 5.png",fall,4
+"Ryan Gosling, 7.png",fall,4
+Ryan-Gosling 7.png,fall,4
+serena rossi 11.png,fall,4
+serena rossi 8.png,fall,4
+Serena Rossi.png,fall,4
+shay mitchell 3.png,fall,4
+Shay Mitchell1.png,fall,4
+Sonia Grispo 2.png,fall,4
+susan sarandon 11.png,fall,4
+susan sarandon 13.png,fall,4
+Theo-James 5.png,fall,4
+vanessa incontrada 8.png,fall,4
+Vanessa-Incontrada 5.png,fall,4
+Veronica-Ferraro 4.png,fall,4
+zendaya 11.png,fall,4
+1.jpg,spring,4
+10329.jpg,spring,4
+10503.jpg,spring,4
+10530.jpg,spring,4
+10556.jpg,spring,4
+11175.jpg,spring,4
+11209.jpg,spring,4
+11249.jpg,spring,4
+11323.jpg,spring,4
+11489.jpg,spring,4
+11676.jpg,spring,4
+11986.jpg,spring,4
+12115.jpg,spring,4
+12404.jpg,spring,4
+12841.jpg,spring,4
+12903.jpg,spring,4
+13249.jpg,spring,4
+13386.jpg,spring,4
+13515.jpg,spring,4
+13844.jpg,spring,4
+14218.jpg,spring,4
+14251.jpg,spring,4
+14631.jpg,spring,4
+1505.jpg,spring,4
+15113.jpg,spring,4
+1518.jpg,spring,4
+15442.jpg,spring,4
+15480.jpg,spring,4
+15807.jpg,spring,4
+15836.jpg,spring,4
+15848.jpg,spring,4
+16151.jpg,spring,4
+1631.jpg,spring,4
+16816.jpg,spring,4
+1684.jpg,spring,4
+17250.jpg,spring,4
+17938.jpg,spring,4
+18083.jpg,spring,4
+18093.jpg,spring,4
+18260.jpg,spring,4
+18310.jpg,spring,4
+18741.jpg,spring,4
+18805.jpg,spring,4
+19624.jpg,spring,4
+19709.jpg,spring,4
+20038.jpg,spring,4
+20966.jpg,spring,4
+21411.jpg,spring,4
+2158.jpg,spring,4
+21683.jpg,spring,4
+21802.jpg,spring,4
+22188.jpg,spring,4
+22424.jpg,spring,4
+22567.jpg,spring,4
+22571.jpg,spring,4
+22618.jpg,spring,4
+22753.jpg,spring,4
+23002.jpg,spring,4
+23136.jpg,spring,4
+23146.jpg,spring,4
+23166.jpg,spring,4
+23247.jpg,spring,4
+23257.jpg,spring,4
+23556.jpg,spring,4
+2363.jpg,spring,4
+23729.jpg,spring,4
+23771.jpg,spring,4
+2418.jpg,spring,4
+24355.jpg,spring,4
+24398.jpg,spring,4
+24415.jpg,spring,4
+24474.jpg,spring,4
+24602.jpg,spring,4
+24657.jpg,spring,4
+2511.jpg,spring,4
+25331.jpg,spring,4
+25517.jpg,spring,4
+25861.jpg,spring,4
+25915.jpg,spring,4
+26054.jpg,spring,4
+27110.jpg,spring,4
+2735.jpg,spring,4
+27636.jpg,spring,4
+27873.jpg,spring,4
+28015.jpg,spring,4
+28059.jpg,spring,4
+28790.jpg,spring,4
+29796.jpg,spring,4
+3137.jpg,spring,4
+3161.jpg,spring,4
+3259.jpg,spring,4
+3312.jpg,spring,4
+3525.jpg,spring,4
+356.jpg,spring,4
+3767.jpg,spring,4
+4477.jpg,spring,4
+4481.jpg,spring,4
+4601.jpg,spring,4
+5010.jpg,spring,4
+5352.jpg,spring,4
+5440.jpg,spring,4
+5483.jpg,spring,4
+5587.jpg,spring,4
+575.jpg,spring,4
+6089.jpg,spring,4
+6188.jpg,spring,4
+6348.jpg,spring,4
+6400.jpg,spring,4
+6475.jpg,spring,4
+6517.jpg,spring,4
+7001.jpg,spring,4
+7436.jpg,spring,4
+7459.jpg,spring,4
+7799.jpg,spring,4
+8.jpg,spring,4
+8048.jpg,spring,4
+8231.jpg,spring,4
+8603.jpg,spring,4
+8667.jpg,spring,4
+8796.jpg,spring,4
+9019.jpg,spring,4
+9096.jpg,spring,4
+9460.jpg,spring,4
+9638.jpg,spring,4
+Adriana Lima 2.png,spring,4
+Adriana Lima1.png,spring,4
+Adriana Lima5.png,spring,4
+alexa chung10.png,spring,4
+alexa chung14.png,spring,4
+alexa chung23.png,spring,4
+alexa chung30.png,spring,4
+alexa chung34.png,spring,4
+alexa chung5.png,spring,4
+Angelina Jolie.png,spring,4
+angelina jolie15.png,spring,4
+angelina jolie16.png,spring,4
+angelina jolie20.png,spring,4
+angelina jolie25.png,spring,4
+angelina jolie30.png,spring,4
+Angelina Jolie5.png,spring,4
+Angelina Jolie6.png,spring,4
+bradley cooper.png,spring,4
+bradley cooper7.png,spring,4
+bradley cooper8.png,spring,4
+Cameron Diaz4.png,spring,4
+Cara Delevigne 1.png,spring,4
+cate blanchett1.png,spring,4
+Charlize Theron.png,spring,4
+Charlize Theron6.png,spring,4
+Charlotte Casiraghi.png,spring,4
+Charlotte Casiraghi1.png,spring,4
+Charlotte Casiraghi2.png,spring,4
+Charlotte Casiraghi7.png,spring,4
+Charlotte Casiraghi8.png,spring,4
+Chiara Ferragni6.png,spring,4
+Chiara Ferragni7.png,spring,4
+Chiara Ferragni8.png,spring,4
+Claudia camillo1.png,spring,4
+clio zammatteo3.png,spring,4
+Cristiana Capotondi.png,spring,4
+cristiana capotondi26.png,spring,4
+cristiana capotondi33.png,spring,4
+cristiana capotondi7.png,spring,4
+cristiana capotondi8.png,spring,4
+Cynthia Nixon.png,spring,4
+Damian Lewis 1.png,spring,4
+damian lewis2.png,spring,4
+damian lewis5.png,spring,4
+doutzen kroes13.png,spring,4
+doutzen kroes17.png,spring,4
+doutzen kroes3.png,spring,4
+doutzen kroes9.png,spring,4
+Elettra Lamborghini3.png,spring,4
+emma corrin1.png,spring,4
+emma corrin12.png,spring,4
+emma corrin5.png,spring,4
+emma corrin8.png,spring,4
+Emma Stone 2.png,spring,4
+Emma Stone3.png,spring,4
+Emma Stone7.png,spring,4
+Emma Stone8.png,spring,4
+gillian anderson2.png,spring,4
+gillian anderson29.png,spring,4
+gillian anderson3.png,spring,4
+gillian anderson30.png,spring,4
+gillian anderson31.png,spring,4
+gillian anderson34.png,spring,4
+gillian anderson36.png,spring,4
+gillian anderson5.png,spring,4
+gillian anderson50.png,spring,4
+gillian anderson52.png,spring,4
+Ilary Blasi2.png,spring,4
+Ilary Blasi4.png,spring,4
+irene grandi2.png,spring,4
+jessica chastain3.png,spring,4
+jessica chastain31.png,spring,4
+jessica chastain38.png,spring,4
+jessica chastain6.png,spring,4
+jeth green- primavera warm.png,spring,4
+Kate Middleton1.png,spring,4
+Katie Holmes.png,spring,4
+Katie Holmes2.png,spring,4
+laura dern- primavera light.png,spring,4
+Lindsay Lohan.png,spring,4
+Margot Robbie 3.png,spring,4
+Margot Robbie10.png,spring,4
+Milla Jovovich2.png,spring,4
+Miriam Leone1.png,spring,4
+Miriam Leone13.png,spring,4
+Miriam Leone6.png,spring,4
+Nicole Kidman11.png,spring,4
+Nicole Kidman18.png,spring,4
+Nikole Kidman 3.png,spring,4
+Scarlett Johansson 2.png,spring,4
+Scarlett Johansson3.png,spring,4
+Scarlett Johansson4.png,spring,4
+Scarlett Johansson6.png,spring,4
+Simon Baker 3.png,spring,4
+simon baker3.png,spring,4
+spr (1).PNG,spring,4
+spr (11).jpg,spring,4
+spr (13).jpg,spring,4
+spr (2).PNG,spring,4
+spr (22).jpg,spring,4
+spr (3).PNG,spring,4
+spr (38).JPG,spring,4
+spr (44).jpg,spring,4
+spr (8).jpg,spring,4
+spr (9).PNG,spring,4
+valentina ferragni10.png,spring,4
+valentina ferragni16.png,spring,4
+valentina ferragni5.png,spring,4
+Vittoria Puccini1.png,spring,4
+Vittoria Puccini3.png,spring,4
+1088.jpg,summer,4
+11264.jpg,summer,4
+11357.jpg,summer,4
+11436.jpg,summer,4
+11781.jpg,summer,4
+1182.jpg,summer,4
+11911.jpg,summer,4
+12029.jpg,summer,4
+12328.jpg,summer,4
+12472.jpg,summer,4
+1269.jpg,summer,4
+12835.jpg,summer,4
+12924.jpg,summer,4
+13406.jpg,summer,4
+13512.jpg,summer,4
+13595.jpg,summer,4
+1377.jpg,summer,4
+13990.jpg,summer,4
+14311.jpg,summer,4
+14452.jpg,summer,4
+14782.jpg,summer,4
+15037.jpg,summer,4
+15269.jpg,summer,4
+15351.jpg,summer,4
+15873.jpg,summer,4
+1619.jpg,summer,4
+16229.jpg,summer,4
+16512.jpg,summer,4
+16585.jpg,summer,4
+16915.jpg,summer,4
+16961.jpg,summer,4
+17223.jpg,summer,4
+17460.jpg,summer,4
+17943.jpg,summer,4
+18508.jpg,summer,4
+19176.jpg,summer,4
+19452.jpg,summer,4
+19657.jpg,summer,4
+20116.jpg,summer,4
+20156.jpg,summer,4
+20415.jpg,summer,4
+20820.jpg,summer,4
+2092.jpg,summer,4
+21282.jpg,summer,4
+2144.jpg,summer,4
+21445.jpg,summer,4
+217.jpg,summer,4
+21967.jpg,summer,4
+22199.jpg,summer,4
+22762.jpg,summer,4
+22766.jpg,summer,4
+22959.jpg,summer,4
+22995.jpg,summer,4
+23113.jpg,summer,4
+23183.jpg,summer,4
+23236.jpg,summer,4
+23266.jpg,summer,4
+23446.jpg,summer,4
+23511.jpg,summer,4
+23602.jpg,summer,4
+23755.jpg,summer,4
+23889.jpg,summer,4
+2396.jpg,summer,4
+24189.jpg,summer,4
+24235.jpg,summer,4
+24854.jpg,summer,4
+24855.jpg,summer,4
+24890.jpg,summer,4
+24916.jpg,summer,4
+24957.jpg,summer,4
+25561.jpg,summer,4
+25749.jpg,summer,4
+26045.jpg,summer,4
+26134.jpg,summer,4
+26144.jpg,summer,4
+26317.jpg,summer,4
+26517.jpg,summer,4
+26824.jpg,summer,4
+26889.jpg,summer,4
+27077.jpg,summer,4
+27370.jpg,summer,4
+27819.jpg,summer,4
+28221.jpg,summer,4
+28750.jpg,summer,4
+28927.jpg,summer,4
+29236.jpg,summer,4
+2987.jpg,summer,4
+3067.jpg,summer,4
+3330.jpg,summer,4
+3355.jpg,summer,4
+3702.jpg,summer,4
+3834.jpg,summer,4
+4350.jpg,summer,4
+4427.jpg,summer,4
+476.jpg,summer,4
+4813.jpg,summer,4
+4952.jpg,summer,4
+5277.jpg,summer,4
+5974.jpg,summer,4
+6045.jpg,summer,4
+6049.jpg,summer,4
+6547.jpg,summer,4
+6743.jpg,summer,4
+7247.jpg,summer,4
+758.jpg,summer,4
+8392.jpg,summer,4
+8466.jpg,summer,4
+852.jpg,summer,4
+8975.jpg,summer,4
+9016.jpg,summer,4
+9367.jpg,summer,4
+9375.jpg,summer,4
+9574.jpg,summer,4
+9874.jpg,summer,4
+Alison Brie1 COOL SUMMER.png,summer,4
+Allison Williams1 COOL SUMMER.png,summer,4
+Bella Hadid 1.png,summer,4
+Bella Hadid 3.png,summer,4
+Bianca-Balti SOFT SUMMER.png,summer,4
+Brad Pitt 1.png,summer,4
+Cate Blanchett LIGHT SUMMER.png,summer,4
+Dakota Johnson SOFT SUMMER.png,summer,4
+Denise Vasi SOFT SUMMER.png,summer,4
+Elle Fanning 2.png,summer,4
+Emilia Clarke SOFT SUMMER.png,summer,4
+Harry Styles 1.png,summer,4
+Harry Styles 2.png,summer,4
+images-101_0.png,summer,4
+images-104_0.png,summer,4
+images-106_1.png,summer,4
+images-10_0.png,summer,4
+images-112_0.png,summer,4
+images-116_0.png,summer,4
+images-119_0.png,summer,4
+images-120_0.png,summer,4
+images-121_0.png,summer,4
+images-126.png,summer,4
+images-128.png,summer,4
+images-129.png,summer,4
+images-12_0.png,summer,4
+images-134.png,summer,4
+images-138.png,summer,4
+images-139.png,summer,4
+images-154.png,summer,4
+images-155.png,summer,4
+images-159.png,summer,4
+images-15_1.png,summer,4
+images-15_2.png,summer,4
+images-167.png,summer,4
+images-16_2.png,summer,4
+images-170.png,summer,4
+images-171.png,summer,4
+images-178.png,summer,4
+images-17_2.png,summer,4
+images-19_1.png,summer,4
+images-1_1.png,summer,4
+images-22_0.png,summer,4
+images-25_0.png,summer,4
+images-26_1.png,summer,4
+images-26_2.png,summer,4
+images-27_0.png,summer,4
+images-27_2.png,summer,4
+images-29_2.png,summer,4
+images-2_2.png,summer,4
+images-34_2.png,summer,4
+images-36_2.png,summer,4
+images-37_1.png,summer,4
+images-37_2.png,summer,4
+images-41_0.png,summer,4
+images-41_1.png,summer,4
+images-45_2.png,summer,4
+images-46_0.png,summer,4
+images-50_1.png,summer,4
+images-52_2.png,summer,4
+images-53_0.png,summer,4
+images-54_0.png,summer,4
+images-55_1.png,summer,4
+images-58_0.png,summer,4
+images-5_2.png,summer,4
+images-62_0.png,summer,4
+images-64_1.png,summer,4
+images-67_1.png,summer,4
+images-67_2.png,summer,4
+images-68_0.png,summer,4
+images-69_0.png,summer,4
+images-69_2.png,summer,4
+images-71_2.png,summer,4
+images-72_1.png,summer,4
+images-73_1.png,summer,4
+images-74_2.png,summer,4
+images-7_2.png,summer,4
+images-80_1.png,summer,4
+images-81_2.png,summer,4
+images-82_0.png,summer,4
+images-82_1.png,summer,4
+images-85_1.png,summer,4
+images-86_1.png,summer,4
+images-87_0.png,summer,4
+images-88_0.png,summer,4
+images-88_1.png,summer,4
+images-89_1.png,summer,4
+images-91_2.png,summer,4
+images-93_0.png,summer,4
+images-93_1.png,summer,4
+irene.jpg,summer,4
+Jennifer Aniston 2.png,summer,4
+Kate Winslet 2.png,summer,4
+Matilda de Angelis 3.png,summer,4
+Megan Boone1 COOL SUMMER.png,summer,4
+Patrick Dempsey SOFT SUMMER.png,summer,4
+Paulina Porizkova1  SOFT  SUMMER.png,summer,4
+Rachel McADAMS SOFT ESTATE.png,summer,4
+Reese Witherspoon 2.png,summer,4
+Reese Witherspoon 3.png,summer,4
+Sasha-Pivovarova-LIGHT SUMMER.png,summer,4
+sharon-stone LIGHT SUMMER.png,summer,4
+smr (10).jpg,summer,4
+smr (11).jpg,summer,4
+smr (11).PNG,summer,4
+smr (12).jpg,summer,4
+smr (12).PNG,summer,4
+smr (22).jpg,summer,4
+smr (36).JPG,summer,4
+smr (5).PNG,summer,4
+smr (6).PNG,summer,4
+10330.jpg,winter,4
+10517.jpg,winter,4
+11143.jpg,winter,4
+11218.jpg,winter,4
+11525.jpg,winter,4
+11595.jpg,winter,4
+1168.jpg,winter,4
+11693.jpg,winter,4
+11703.jpg,winter,4
+11927.jpg,winter,4
+12132.jpg,winter,4
+12548.jpg,winter,4
+12561.jpg,winter,4
+12641.jpg,winter,4
+12953.jpg,winter,4
+13122.jpg,winter,4
+13215.jpg,winter,4
+13439.jpg,winter,4
+1347.jpg,winter,4
+13497.jpg,winter,4
+1360.jpg,winter,4
+13807.jpg,winter,4
+14023.jpg,winter,4
+14048.jpg,winter,4
+14109.jpg,winter,4
+14382.jpg,winter,4
+14429.jpg,winter,4
+14611.jpg,winter,4
+14786.jpg,winter,4
+14862.jpg,winter,4
+14911.jpg,winter,4
+14979.jpg,winter,4
+15251.jpg,winter,4
+15345.jpg,winter,4
+15464.jpg,winter,4
+15558.jpg,winter,4
+15567.jpg,winter,4
+15761.jpg,winter,4
+15828.jpg,winter,4
+16117.jpg,winter,4
+16160.jpg,winter,4
+16460.jpg,winter,4
+16580.jpg,winter,4
+16672.jpg,winter,4
+16801.jpg,winter,4
+16985.jpg,winter,4
+17017.jpg,winter,4
+17343.jpg,winter,4
+1762.jpg,winter,4
+17674.jpg,winter,4
+18127.jpg,winter,4
+18232.jpg,winter,4
+18416.jpg,winter,4
+18498.jpg,winter,4
+1910.jpg,winter,4
+19384.jpg,winter,4
+19418.jpg,winter,4
+19514.jpg,winter,4
+201.jpg,winter,4
+20138.jpg,winter,4
+20466.jpg,winter,4
+21034.jpg,winter,4
+21128.jpg,winter,4
+21379.jpg,winter,4
+21389.jpg,winter,4
+21474.jpg,winter,4
+21840.jpg,winter,4
+21888.jpg,winter,4
+21925.jpg,winter,4
+22086.jpg,winter,4
+22206.jpg,winter,4
+22257.jpg,winter,4
+22258.jpg,winter,4
+22348.jpg,winter,4
+22349.jpg,winter,4
+22387.jpg,winter,4
+22515.jpg,winter,4
+22546.jpg,winter,4
+22577.jpg,winter,4
+22593.jpg,winter,4
+22669.jpg,winter,4
+2270.jpg,winter,4
+22774.jpg,winter,4
+22852.jpg,winter,4
+23417.jpg,winter,4
+23762.jpg,winter,4
+23817.jpg,winter,4
+2392.jpg,winter,4
+24233.jpg,winter,4
+24279.jpg,winter,4
+24361.jpg,winter,4
+24369.jpg,winter,4
+24431.jpg,winter,4
+24447.jpg,winter,4
+24457.jpg,winter,4
+24556.jpg,winter,4
+24686.jpg,winter,4
+24866.jpg,winter,4
+25135.jpg,winter,4
+2516.jpg,winter,4
+25420.jpg,winter,4
+25427.jpg,winter,4
+25484.jpg,winter,4
+25775.jpg,winter,4
+26062.jpg,winter,4
+26073.jpg,winter,4
+26446.jpg,winter,4
+26595.jpg,winter,4
+26815.jpg,winter,4
+26956.jpg,winter,4
+2719.jpg,winter,4
+27304.jpg,winter,4
+27439.jpg,winter,4
+27634.jpg,winter,4
+27824.jpg,winter,4
+27845.jpg,winter,4
+27883.jpg,winter,4
+27961.jpg,winter,4
+28106.jpg,winter,4
+28110.jpg,winter,4
+28336.jpg,winter,4
+28556.jpg,winter,4
+28640.jpg,winter,4
+28830.jpg,winter,4
+28904.jpg,winter,4
+28983.jpg,winter,4
+29012.jpg,winter,4
+29211.jpg,winter,4
+29505.jpg,winter,4
+29634.jpg,winter,4
+29942.jpg,winter,4
+347.jpg,winter,4
+3536.jpg,winter,4
+3590.jpg,winter,4
+3706.jpg,winter,4
+3818.jpg,winter,4
+3897.jpg,winter,4
+4455.jpg,winter,4
+4590.jpg,winter,4
+5377.jpg,winter,4
+5689.jpg,winter,4
+5708.jpg,winter,4
+5981.jpg,winter,4
+6104.jpg,winter,4
+6158.jpg,winter,4
+6550.jpg,winter,4
+6556.jpg,winter,4
+6900.jpg,winter,4
+6918.jpg,winter,4
+7171.jpg,winter,4
+726.jpg,winter,4
+7364.jpg,winter,4
+7724.jpg,winter,4
+7735.jpg,winter,4
+7736.jpg,winter,4
+8.jpg,winter,4
+8139.jpg,winter,4
+8267.jpg,winter,4
+836.jpg,winter,4
+8428.jpg,winter,4
+8434.jpg,winter,4
+8618.jpg,winter,4
+8851.jpg,winter,4
+9580.jpg,winter,4
+9657.jpg,winter,4
+Alessandra Airo.png,winter,4
+Anna Valle.png,winter,4
+anne hathaway13.png,winter,4
+anne hathaway14.png,winter,4
+anne hathaway18.png,winter,4
+Anne Hathaway7.png,winter,4
+annie mazzola 1.png,winter,4
+audrey coyne 1.png,winter,4
+Daniela Collu WINTER COOL.png,winter,4
+Daniela Collu.png,winter,4
+demi moore 1.png,winter,4
+demi-moore 2.png,winter,4
+elisa maino 5.png,winter,4
+elisa.png,winter,4
+elizabeth taylor 1.png,winter,4
+ELLIOT PAGE COOL WINTER.png,winter,4
+Eva longoria 1_0.png,winter,4
+eva longoria 8.png,winter,4
+FINN WOLFHARD DEEP WINTER.png,winter,4
+giulia de lellis 3.png,winter,4
+Giulia-De-Lellis 7.png,winter,4
+gwen stefani4.png,winter,4
+IAN SOMERHALDER 1.png,winter,4
+KATY PERRY 2.png,winter,4
+Katy Perry_(1)_1.png,winter,4
+kim kardashian 6.png,winter,4
+laura graham 2.png,winter,4
+Laura Pausini2.png,winter,4
+levante 4.png,winter,4
+LILY COLLINS 1.png,winter,4
+lily collins10.png,winter,4
+lily collins12.png,winter,4
+lily collins20.png,winter,4
+lily collins26.png,winter,4
+lily collins3.png,winter,4
+Liv Tyler 2_0.png,winter,4
+LIV TYLER 3.png,winter,4
+lizzo 2.png,winter,4
+lizzo 4.png,winter,4
+lupita nyong_o 6.png,winter,4
+lupita nyong_o 9.png,winter,4
+lupita-nyong1.png,winter,4
+Lupita-Nyongo2.png,winter,4
+mariagrazia cucinotta  4.png,winter,4
+MARION COTILLARD 3.png,winter,4
+Marion-Cotillard 2.png,winter,4
+Megan Fox__0.png,winter,4
+megan gale-inverno bright.png,winter,4
+mindy kaling DEEP WINTER.png,winter,4
+monica bellucci 5.png,winter,4
+monica-bellucci 2.png,winter,4
+natalie portman22.png,winter,4
+natalie portman23.png,winter,4
+natalie portman4.png,winter,4
+natalie portman7.png,winter,4
+paola turani.png,winter,4
+paola turani28.png,winter,4
+paola turani33.png,winter,4
+PENELOPE CRUZ 1_0.png,winter,4
+penelope cruz 4.png,winter,4
+sabrina-ferilli- 1.png,winter,4
+Sabrinee ferilli 3.png,winter,4
+salma-hayek 2.png,winter,4
+Sandra_Bullock_DARK WINTER.png,winter,4
+SHAKIRA 1.png,winter,4
+SHAKIRA 2.png,winter,4
+SHAKIRA 3.png,winter,4
+shakira3.png,winter,4
+Sofia Coppola1.png,winter,4
+Top Cruise BRIGHT INVERNO.png,winter,4
+vanessa hudgens 2.png,winter,4
+wnt (14).jpg,winter,4
+wnt (15).jpg,winter,4
+wnt (16).jpg,winter,4
+wnt (19).jpg,winter,4
+wnt (2).jpg,winter,4
+wnt (22).jpg,winter,4
+wnt (25).jpg,winter,4
+wnt (4).jpg,winter,4
+wnt (42).jpg,winter,4
+wnt (8).PNG,winter,4
