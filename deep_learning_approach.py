@@ -8,7 +8,6 @@ import cv2
 import numpy as np
 import os
 from sklearn.metrics import classification_report
-from PIL import image
 
 def load_images_from_folder(folder_path, class_map):
     X = []
