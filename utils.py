@@ -41,6 +41,10 @@ def crop_img(img, landmarks, indices):
     cv2.fillPoly(mask, [points], 255)
     masked_img = cv2.bitwise_and(img, img, mask=mask)
     x, y, w_box, h_box = cv2.boundingRect(points)
+    x = max(x, 0)
+    y = max(y, 0)
+    w_box = min(w_box, img.shape[1] - x)
+    h_box = min(h_box, img.shape[0] - y)
     cropped_img = masked_img[y : y + h_box, x : x + w_box]
     return cropped_img, (x, y)
 
