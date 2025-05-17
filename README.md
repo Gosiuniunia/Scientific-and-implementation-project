@@ -25,4 +25,4 @@ The focus of this project is on building and comparing different **Machine Learn
        - Geometric transformations
        - GANs
 
-- Model evaluation and comparison using accuracy, precision, 
+- Model evaluation and comparison using accuracy, precision, recall and f1 score with statistical testing
