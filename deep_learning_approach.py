@@ -109,31 +109,31 @@ for fold in range(k):
     model.save(rf'C:\Users\wdomc\Documents\personal_color_analysis\model_weights\basic_vgg16_fold_{fold}.keras')
 
     # # training statistics
-    # np.save(f'scores/fold{fold}_training_history.npy', history.history)
-    # precision = np.array(history.history['precision'])
-    # recall = np.array(history.history['recall'])
-    # f1 = 2 * (precision * recall) / (precision + recall + 1e-7)
-    # np.save(f'scores/fold{fold}_f1.npy', f1)
-    #
-    # # Model evaluation
-    # loss, accuracy, precision, recall = model.evaluate(test_gen, verbose=1)
-    # print(f"Loss: {loss:.4f}, Acc: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}")
-    #
-    # eval_metrics = np.array([loss, accuracy, precision, recall])
-    # np.save(f'scores/fold{fold}_test_metrics.npy', eval_metrics)
-    #
-    # # Using model for prediction on test data
-    # y_pred_probs = model.predict(test_gen)
-    # y_pred = np.argmax(y_pred_probs, axis=1)
-    # y_true = test_gen.classes
-    #
-    # # Saving classification results
-    # np.save(f'scores/fold{fold}_y_pred.npy', y_pred)
-    # np.save(f'scores/fold{fold}_y_true.npy', y_true)
-    #
-    # # Saving classification statistics
-    # report_dict = classification_report(y_true, y_pred, target_names=['fall', 'spring', 'summer', 'winter'],
-    #                                     output_dict=True)
-    # print(report_dict)
-    #
-    # np.save(f'scores/fold{fold}_prediction_report.npy', report_dict, allow_pickle=True)
+    np.save(f'scores/fold{fold}_training_history.npy', history.history)
+    precision = np.array(history.history['precision'])
+    recall = np.array(history.history['recall'])
+    f1 = 2 * (precision * recall) / (precision + recall + 1e-7)
+    np.save(f'scores/fold{fold}_f1.npy', f1)
+
+    # Model evaluation
+    loss, accuracy, precision, recall = model.evaluate(test_gen, verbose=1)
+    print(f"Loss: {loss:.4f}, Acc: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}")
+
+    eval_metrics = np.array([loss, accuracy, precision, recall])
+    np.save(f'scores/fold{fold}_test_metrics.npy', eval_metrics)
+
+    # Using model for prediction on test data
+    y_pred_probs = model.predict(test_gen)
+    y_pred = np.argmax(y_pred_probs, axis=1)
+    y_true = test_gen.classes
+
+    # Saving classification results
+    np.save(f'scores/fold{fold}_y_pred.npy', y_pred)
+    np.save(f'scores/fold{fold}_y_true.npy', y_true)
+
+    # Saving classification statistics
+    report_dict = classification_report(y_true, y_pred, target_names=['fall', 'spring', 'summer', 'winter'],
+                                        output_dict=True)
+    print(report_dict)
+
+    np.save(f'scores/fold{fold}_prediction_report.npy', report_dict, allow_pickle=True)
