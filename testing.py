@@ -3,8 +3,6 @@ from tabulate import tabulate
 
 from scipy.stats import shapiro, ttest_rel, wilcoxon
 
-#to do: weronika's part
-
 
 def print_scores(classifier_name, feature_types=["all", "HSV", "Lab"],  round=None, table_style="grid", T=False):
     """
