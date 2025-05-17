@@ -3,194 +3,151 @@ from tabulate import tabulate
 
 from scipy.stats import shapiro, ttest_rel, wilcoxon
 
+#to do: weronika's part
 
-def print_dt_scores(param_list, table_style):
+
+def print_scores(classifier_name, feature_types=["all", "HSV", "Lab"],  round=None, table_style="grid", T=False):
     """
     Generates and prints tables of mean and standard deviation for different metrics
-    based on the results stored in .npy files for a Decision Tree classifier .
+    based on the results stored in .npy files for the chosen classifier. 
 
     Args:
-        param_list (list[str]): A list of parameter values corresponding to the columns of the tables.
-        table_style (str): The formatting style for the table (e.g., "latex", "grid").
-    """
-
-    acc_scores = np.load("dt_accuracies.npy")
-    pre_scores = np.load("dt_precisions.npy")
-    rec_scores = np.load("dt_recalls.npy")
-    f1_scores = np.load("dt_f1s.npy")
-
-    scr = {"Accuracy": acc_scores, "Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores}
-    mean_scores = []
-    std_scores = []
-    for s in scr.keys():
-        mean_scores.append(np.mean(scr[s], axis=1))
-        std_scores.append(np.std(scr[s], axis=1))
-
-    print(f"\n", f"Mean for dt")
-    table = tabulate(mean_scores, 
-                    tablefmt=table_style, 
-                    headers=param_list, 
-                    showindex=["Accuracy", "Precision", "Recall", "F1 score"]
-    )
-    print(table)
-
-    print(f"\n", f"STD for dt")
-    table = tabulate(std_scores, 
-                    tablefmt=table_style, 
-                    headers=param_list, 
-                    showindex=["Accuracy", "Precision", "Recall", "F1 score"]
-    )
-    print(table)
-
-def print_knn_scores(first_param_list, second_param_list, table_style):
-    """
-    Generates and prints tables of mean and standard deviation for different metrics
-    based on the results stored in .npy files for a K-Nearest Neighbors (KNN) classifier.
-
-    Args:
-        first_param_list (list): A list of the first parameter's values, used as row indices.
-        second_param_list (list): A list of the second parameter's values, used as column headers.
-        table_style (str): The formatting style for the table (e.g., "latex", "grid").
+        classifier_name (str): The name of a classifier (e.g., "DT", "KNN").
+        feature_types (list[str]): The list of feature types. Defaults to ["all", "HSV", "Lab"].
+        round (int, optional): The number of decimals for possible measures rounding
+        table_style (str, optional): The formatting style for the table (e.g., "latex", "grid"). Defaults to "grid"
+        T (bool, optional): Argument, which controls whether the table should be transposed. Defaults to False.
 
     """
-    acc_scores = np.load("knn_accuracies.npy")
-    pre_scores = np.load("knn_precisions.npy")
-    rec_scores = np.load("knn_recalls.npy")
-    f1_scores = np.load("knn_f1s.npy")
+    max_depths = list(range(2, 11))
 
-    scr = {"Accuracy": acc_scores, "Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores}
-    for s in scr.keys():
-        means = np.mean(scr[s], axis=1)
-        stds = np.std(scr[s], axis=1)
+    metrics = ['euclidean', 'manhattan', 'minkowski']
+    weights = ['uniform', 'distance']
+
+    kernels = ['linear', 'poly', 'rbf', 'sigmoid']
+    Cs = [0.1, 1, 10]
+    gammas = ['scale', 'auto']
+
+    # A list of the parameters permutation - models names, used as column headers.
+    if classifier_name.lower() == "dt":
+        model_names = max_depths
+    elif classifier_name.lower() == "knn":
+        model_names = [f"{x[:3]}-{y[:3]}" for x in metrics for y in weights]
+    elif classifier_name.lower() == "svm":
+        model_names = [f"{x[:3]}-{y}-{z[0]}" for x in kernels for y in Cs for z in gammas]
+    
+    metrics = ["Accuracy", "Precision", "Recall", "F1 score"]
+
+    for feature_type in feature_types:
+        acc_scores = np.load(f"{classifier_name.lower()}_{feature_type}_accuracies.npy")
+        pre_scores = np.load(f"{classifier_name.lower()}_{feature_type}_precisions.npy")
+        rec_scores = np.load(f"{classifier_name.lower()}_{feature_type}_recalls.npy")
+        f1_scores = np.load(f"{classifier_name.lower()}_{feature_type}_f1s.npy")
+
+        scr = {"Accuracy": acc_scores, "Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores}
         mean_scores = []
         std_scores = []
-        print(f"\n", f"Mean {s} for knn")
-        for idx in range(len(first_param_list)):
-            mean_scores.append(means[idx*len(second_param_list):(idx+1)*len(second_param_list)])
-            std_scores.append(stds[idx*len(second_param_list):(idx+1)*len(second_param_list)])
+        for s in scr.keys():
+            if round != None:
+                mean_scores.append(np.round(np.mean(scr[s], axis=1), round))
+                std_scores.append(np.round(np.std(scr[s], axis=1), round))
+            else:
+                mean_scores.append(np.mean(scr[s], axis=1))
+                std_scores.append(np.std(scr[s], axis=1))
 
-        table = tabulate(mean_scores, 
-                        tablefmt=table_style, 
-                        headers=second_param_list, 
-                        showindex=first_param_list
-        )
-        print(table)
+        if T == True:
+            mean_scores_T = np.array(mean_scores).T
+            std_scores_T = np.array(std_scores).T
+            table_mean = tabulate(mean_scores_T, 
+                            tablefmt=table_style, 
+                            headers=metrics, 
+                            showindex=model_names
+            )
 
-        print(f"\n", f"STD {s} for knn")
-        table = tabulate(std_scores, 
-                        tablefmt=table_style, 
-                        headers=second_param_list, 
-                        showindex=first_param_list
-        )
-        print(table)
+            table_std = tabulate(std_scores_T, 
+                            tablefmt=table_style, 
+                            headers=metrics, 
+                            showindex=model_names
+            )
+        elif T == False:
+            table_mean = tabulate(mean_scores, 
+                            tablefmt=table_style, 
+                            headers=model_names, 
+                            showindex=metrics
+            )
 
-def print_svm_scores(first_param_list, second_param_list, third_param_list, table_style):
-    """
-    Generates and prints tables of mean and standard deviation for different metrics
-    based on the results stored in .npy files for the Support Vector Machine (SVM) classifier 
-    and three parameters. 
+            table_std = tabulate(std_scores, 
+                            tablefmt=table_style, 
+                            headers=model_names, 
+                            showindex=metrics
+            )
 
-    Args:
-        first_param_list (list): A list of the first parameter's values, used as column headers.
-        second_param_list (list): A list of the second parameter's values, used in the row index.
-        third_param_list (list): A list of the third parameter's values, used in the row index (combined with the second).
-        table_style (str): The formatting style for the table (e.g., "latex", "grid").
+        if table_style == "grid":
+            print(f"\n", f"Mean for {classifier_name} classifiers with {feature_type} features")
+            print(table_mean)
 
-    """
-    acc_scores = np.load("svm_accuracies.npy")
-    pre_scores = np.load("svm_precisions.npy")
-    rec_scores = np.load("svm_recalls.npy")
-    f1_scores = np.load("svm_f1s.npy")
-
-    scr = {"Accuracy": acc_scores, "Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores}
-    indexes = [f"{x}-{y}" for x in second_param_list for y in third_param_list]
-    for s in scr.keys():
-        means = np.mean(scr[s], axis=1)
-        stds = np.std(scr[s], axis=1)
-        mean_scores = []
-        std_scores = []
-        for idx_1 in range(len(second_param_list)*len(third_param_list)):
-            mean_scores.append(means[idx_1*len(first_param_list):(idx_1+1)*len(first_param_list)])   
-            std_scores.append(stds[idx_1*len(first_param_list):(idx_1+1)*len(first_param_list)])       
-
-        print(f"\n", f"Mean {s} dla svm")
-        table = tabulate(mean_scores, 
-                        tablefmt=table_style, 
-                        headers=first_param_list, 
-                        showindex=indexes
-        )
-        print(table)
-
-        print(f"\n", f"STD {s} for svm")
-        table = tabulate(std_scores, 
-                        tablefmt=table_style, 
-                        headers=first_param_list, 
-                        showindex=indexes
-        )
-        print(table)
-
-#Example usage with the provided parameters:
-metrics = ['euclidean', 'manhattan', 'minkowski']
-weights = ['uniform', 'distance']
-
-kernels = ['linear', 'poly', 'rbf', 'sigmoid']
-Cs = [0.1, 1, 10]
-gammas = ['scale', 'auto']
-
-max_depths = list(range(2, 11))
-
-print_knn_scores(metrics, weights, "grid")
-
-print_svm_scores(gammas, kernels, Cs, "grid")
-
-print_dt_scores(max_depths, "grid")
+            print(f"\n", f"STD for {classifier_name} classifiers with {feature_type} features")
+            print(table_std)
+        else:
+            table_mean_latex = table_mean[:-13] + f"\caption{{Mean for {classifier_name} classifier with {feature_type} features}}\n" + table_mean[-13:]
+            table_std_latex = table_std[:-13] + f"\caption{{Mean for {classifier_name} classifier with {feature_type} features}}\n" + table_std[-13:]
+            print(table_mean_latex, "\n")
+            print(table_std_latex, "\n")
 
 
+#Example usage:
+print_scores("DT", table_style="latex")
+print_scores("KNN", round=3)
+print_scores("SVM")
+print_scores("SVM", T=True, feature_types=['all', 'Lab'])
 
-def compare_models(scores, alpha=0.05, alternative="two-sided"):
+
+def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternative="two-sided"):
     """
     Compares sets of related samples, performs statistical tests (Shapiro-Wilk for normality,
     followed by paired t-test for normal data or Wilcoxon signed-rank test for non-normal data),
-    and generates a matrix indicating statistical significance based on the provided alpha level.
+    generates and prints a table with p-value of a paired test with the information about which of them 
+    was performed ("t" being t-test and "w" being the Wilcoxon).
 
     Args:
-        scores (np.array[float]): Array of samples scores for testing
-        alpha (float, optional): The significance level for the statistical tests. Defaults to 0.05.
-        alternative (str, optional): The alternative hypothesis for the tests.
-                                     Can be 'two-sided', 'less', or 'greater'. Defaults to "two-sided".
-
-    Returns:
-        str: A tabular representation of the statistical significance matrix.
-             Each cell (i, j) indicates whether the p-value from the comparison
-             of the i-th and j-th set of scores is greater than the alpha level
-             (True) or not (False), suggesting no statistically significant difference
-             at the given alpha.
+        scores (np.array[float]): Array of samples scores for testing.
+        model_names (list[str]): List of the compared model's names.
+        table_style (str, optional): The formatting style for the table (e.g., "latex", "grid"). Defaults to "grid".
+        alpha (float, optional): The significance level for the statistical test for normality. Defaults to 0.05.
+        alternative (str, optional): The alternative hypothesis for the comparison tests. Can be 'two-sided', 'less', or 'greater'. Defaults to "two-sided".
     """
-    stat_matrix = np.zeros((scores.shape[0], scores.shape[0]), dtype=bool)
+    stat_matrix = [[None for _ in range(scores.shape[0])] for _ in range(scores.shape[0])]
     for i in range(scores.shape[0]):
         for j in range(scores.shape[0]):
-            print(f"Comparing sample {i+1} and sample {j+1}:")
-            print(scores[i])
-            print(scores[j])
+            if i == j: #comparison with oneself is omitted
+                stat_matrix[i][j] = "nan"
+                continue
             t1, p1 = shapiro(scores[i])
             t2, p2 = shapiro(scores[j])
-            print(f"  Shapiro-Wilk p-values: p1 = {p1}, p2 = {p2}")
             if p1 > alpha and p2 > alpha:
                 t, p = ttest_rel(scores[i], scores[j], alternative=alternative)
-                print(f"  Paired t-test p-value: p = {p}")
+                stat_matrix[i][j] = f"t, {p:.4f}"
             else:
                 t, p = wilcoxon(scores[i], scores[j], alternative=alternative)
-                print(f"  Wilcoxon signed-rank test p-value: p = {p}")
-            stat_matrix[i, j] = 1 if p <= alpha else 0
+                stat_matrix[i][j] = f"w, {p:.4f}"
 
-    table = tabulate(stat_matrix)
-    print("\nSignificance Matrix (1 = significant difference, 0 = no significant difference):")
-    print(table)
-    return table
+    table = tabulate(stat_matrix,
+                    tablefmt=table_style, 
+                    headers=model_names, 
+                    showindex=model_names)
+    
+    if table_style == "grid":
+        print("\n Matrix of p-values from paired statistical tests between models")
+        print(table)
+    else:
+        table_latex = table[:-13] + f"\caption{{Matrix of p-values from paired statistical tests between models}}\n" + table[-13:]
+        print(table_latex)
+
 
 # Example usage with the provided parameters:
 alpha = 0.05
 alternative_hypothesis = "greater"
-scores = np.load("dt_precisions.npy")
+scores = np.load("dt_all_precisions.npy")
+max_depths = list(range(2, 11))
 
-comparison_table = compare_models(scores, alpha, alternative_hypothesis)
+comparison_table = compare_models(scores, max_depths, alpha=alpha, alternative=alternative_hypothesis, table_style="latex")
