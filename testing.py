@@ -36,10 +36,10 @@ def print_scores(classifier_name, feature_types=["all", "HSV", "Lab"],  round=No
     metrics = ["Accuracy", "Precision", "Recall", "F1 score"]
 
     for feature_type in feature_types:
-        acc_scores = np.load(f"{classifier_name.lower()}_{feature_type}_accuracies.npy")
-        pre_scores = np.load(f"{classifier_name.lower()}_{feature_type}_precisions.npy")
-        rec_scores = np.load(f"{classifier_name.lower()}_{feature_type}_recalls.npy")
-        f1_scores = np.load(f"{classifier_name.lower()}_{feature_type}_f1s.npy")
+        acc_scores = np.load(f"scores/{classifier_name.lower()}_{feature_type}_accuracies.npy")
+        pre_scores = np.load(f"scores/{classifier_name.lower()}_{feature_type}_precisions.npy")
+        rec_scores = np.load(f"scores/{classifier_name.lower()}_{feature_type}_recalls.npy")
+        f1_scores = np.load(f"scores/{classifier_name.lower()}_{feature_type}_f1s.npy")
 
         scr = {"Accuracy": acc_scores, "Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores}
         mean_scores = []
@@ -89,6 +89,7 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
     """
 
     model_names = ["without_aug", "with_aug"]
+    model_files = ['', 'model_free_']
     metrics = ["Accuracy", "Precision", "Recall", "F1 score"]
 
     acc_scores = [[], []]
@@ -97,14 +98,12 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
     f1_scores = [[], []]
 
     for i in range(len(model_names)):
-        for repeat in range(2): 
-            for fold in range(5):
-                data = np.load(f"fold{fold}_prediction_report.npy", allow_pickle=True).item() #name of the file should be adjusted
-                # data = np.load(f"fold{fold}_{repeat}_{model_names[i]}_prediction_report.npy", allow_pickle=True).item()
-                acc_scores[i].append(data['accuracy'])
-                pre_scores[i].append(data['weighted avg']['precision'])
-                rec_scores[i].append(data['weighted avg']['recall'])
-                f1_scores[i].append(data['weighted avg']['f1-score'])
+        for fold in range(5):
+            data = np.load(f"scores/deep_learning_scores/{model_files[i]}fold{fold}_prediction_report.npy", allow_pickle=True).item()
+            acc_scores[i].append(data['accuracy'])
+            pre_scores[i].append(data['weighted avg']['precision'])
+            rec_scores[i].append(data['weighted avg']['recall'])
+            f1_scores[i].append(data['weighted avg']['f1-score'])
 
     scr = {"Accuracy": acc_scores, "Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores}
     mean_scores = []
