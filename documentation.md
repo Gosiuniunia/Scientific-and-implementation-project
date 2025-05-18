@@ -1,13 +1,19 @@
-# utils
+# Personal Colour Analysis System
+
+This experimental environment contains implementations of machine learning (ML) and deep learning (DL) methods for seasonal color analysis. The environment incorporates various components including color feature extraction (based on facial images and landmark detection), hyperparameter tuning of ML classifiers (KNN, SVM, Decision Trees), and preparation and training of DL models (e.g., VGG16), with support for data augmentation.
+
+Additionally, the environment provides tools for testing and comparing classifier performance using statistical tests.
+
+## utils
 
 This module provides helper functions for facial image processing, including white balancing and color extraction.
 
-## utils/white_balancing
+### utils/white_balancing
 
 This submodule contains functions related to correcting and adjusting image colors via white balancing.
 
 
-## utils/color_utils 
+### utils/color_utils 
 
 This submodule provides helper functions for color extraction and processing from facial regions. It includes image cropping based on facial landmarks, color segmentation using K-Means, and color space conversion to LAB and HSV formats.
     
@@ -71,14 +77,14 @@ FUNCTIONS
         Returns:
               wb_img (np.ndarray): White-balanced image in RGB format.
 
-# face_features_extraction
+## face_features_extraction
 
 This script extracts color features from facial regions (iris, skin, eyebrows) using MediaPipe Face Landmarker.
 It processes images organized into subdirectories (each representing a class label), computes HSV and LAB color
 values, and saves the results in a CSV file.
 
 Usage:
-- Place labeled image folders in a root directory (e.g., 'dataset_PColA').
+- Place labeled image folders in a root directory (e.g., `dataset_PColA`).
 - Set the correct model path (`.task` file).
 - Run the script to generate a dataset CSV.
 
@@ -155,14 +161,12 @@ FUNCTIONS
         Returns:
             tuple: A tuple containing the FaceLandmarker class and its configuration options (FaceLandmarkerOptions).
 
-# tuning
+## tuning
 
 Hyperparameter tuning for KNN, SVM, and Decision Tree classifiers
 using repeated stratified k-fold cross-validation.
 
 FUNCTIONS
-
-    run_tuning(file_name)
 
     select_features(df, feature_type)
         Selects specific feature columns from the dataframe based on the feature type.
@@ -222,7 +226,56 @@ FUNCTIONS
             - 'svm_recalls.npy': Recall scores for each parameter combination and fold.
             - 'svm_f1s.npy': F1 scores for each parameter combination and fold.
 
-# testing
+## model_free_augmentation
+
+FUNCTIONS
+
+    augment_and_save_image(image_path, augment_operation, output_path)
+        Function applies provided augment operation, defined as Albumentations Compose operation, to an image and saves it as an image.
+        Albumentations reference: https://albumentations.ai/docs/
+        Args:
+            image_path: path of image to be augmented
+            augment_operation: Albumentations operation to be applied
+            output_path: path to save augmented image
+        Returns:
+            None
+
+## model_based_augmentation
+
+
+## deep_learning_approach
+
+FUNCTIONS
+
+    adjust_folds_assignment_file(assignment_file_input_path, assignment_file_output_path, prefixes_list)
+        Function modifies prepares the folds assignment for the augmented data.
+        Args:
+            assignment_file_path: path to a .csv file with folds assignment information
+            prefixes_list: list of prefixes which are used in augmented images files, for example "co" for cut-out augmented images files
+
+        Returns:
+            None
+
+    prepare_vgg16_model()
+        Function sets up a VGG16 model with Imagenet pre-trained weights for 4 classes classification task.
+        Model reference: https://keras.io/api/applications/vgg/
+
+        Returns:
+            model: VGG16 model
+
+    split_data_test_train(assignment_file_path, k=5)
+        Splits images details (file path, label),  provided as pandas Dataframe, into train and test sets details pandas Dataframes,
+        taking into account the fold number k
+        Args:
+            k: number of current fold
+
+        Returns:
+            train_df: train data details pandas Dataframe, including label and file path
+            test_df:  test data details pandas Dataframe, including label and file path
+
+
+
+## testing
 
 FUNCTIONS
 

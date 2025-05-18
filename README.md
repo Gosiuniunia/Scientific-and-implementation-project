@@ -1,11 +1,13 @@
 # Personal Colour Analysis System
 
-This repository contains the implementation of a **Personal Colour Analysis (PCoA)** system.  
+ins implementations of machine learning (ML) and deep learning (DL) methods for **Personal Colour Analysis (PCoA)** system.  
 The goal of this project is to classify individuals into seasonal color types (Spring, Summer, Autumn, Winter) based on image data.
 
 ## 🔍 Project Overview
 
-The focus of this project is on building and comparing different **Machine Learning (ML)** and **Deep Learning (DL)** models for personal colour classification.
+The environment incorporates various components including color feature extraction (based on facial images and landmark detection), hyperparameter tuning of ML classifiers (KNN, SVM, Decision Trees), and preparation and training of DL models (e.g., VGG16), with support for data augmentation.
+
+Additionally, the environment provides tools for testing and comparing classifier performance using statistical tests.
 
 ## Key Features
 - Image preprocessing including **White balancing**
