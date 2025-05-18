@@ -11,9 +11,11 @@ https://github.com/yunjey/stargan
 https://github.com/clovaai/stargan-v2-tensorflow
 https://github.com/NVlabs/stylegan
 
-Intergan and Stylegan implementations also were tested - each of them failed because of internal libraries errors and libraries incompatibilities.
-Found solutions on Hugging Face like: 
-https://huggingface.co/spaces/fffiloni/expression-editor
+Stylegan implementations also were tested - each of them failed because of internal libraries errors and libraries incompatibilities.
+There was a tes of running Startagn on a computer with GPU - unfortunately it ended in unsuccessful augmentation.
+Solutions from the Hugging Face like https://huggingface.co/spaces/fffiloni/expression-editor were also tested. 
+This solution would need processing manually thousands of images. It was tried to automate the data ingestion pipeline but was not completed due to memory resources lacking.
+
 
 """
 
