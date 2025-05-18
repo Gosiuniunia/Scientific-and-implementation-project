@@ -90,6 +90,9 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
         round (int, optional): The number of decimals for possible measures rounding
         table_style (str, optional): The formatting style for the table (e.g., "latex", "grid"). Defaults to "grid"
         return_scores (bool, optional): Whether the scores should be returned. Defaults to False. 
+
+    Returns:
+        acc_scores, pre_scores, rec_scores, f1_scores (list[float], optional): Metrics values lists.
     """
 
     model_names = ["without_aug", "with_aug"]
@@ -102,12 +105,12 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
     f1_scores = [[], []]
 
     for i in range(len(model_names)):
-        for fold in range(5):
+        for fold in range(10):
             data = np.load(f"scores/deep_learning_scores/{model_files[i]}fold{fold}_prediction_report.npy", allow_pickle=True).item()
             acc_scores[i].append(data['accuracy'])
-            pre_scores[i].append(data['weighted avg']['precision'])
-            rec_scores[i].append(data['weighted avg']['recall'])
-            f1_scores[i].append(data['weighted avg']['f1-score'])
+            pre_scores[i].append(data['macro avg']['precision'])
+            rec_scores[i].append(data['macro avg']['recall'])
+            f1_scores[i].append(data['macro avg']['f1-score'])
 
     scr = {"Accuracy": acc_scores, "Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores}
     mean_scores = []
