@@ -80,7 +80,7 @@ def adjust_folds_assignment_file(assignment_file_input_path, assignment_file_out
     with open(assignment_file_input_path, mode='r', newline='') as infile:
         reader = csv.DictReader(infile)
         rows = list(reader)
-        fieldnames = reader.fieldnames
+        header = reader.fieldnames
 
         new_rows = []
         for row in rows:
@@ -91,7 +91,7 @@ def adjust_folds_assignment_file(assignment_file_input_path, assignment_file_out
                 new_rows.append(new_row)
 
     with open(assignment_file_output_path, mode='w', newline='') as outfile:
-        writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+        writer = csv.DictWriter(outfile, fieldnames=header)
         writer.writeheader()
         writer.writerows(new_rows)
 
