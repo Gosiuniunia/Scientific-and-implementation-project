@@ -14,12 +14,10 @@ target_size = (224, 224)
 input_shape = (224, 224, 3)
 num_classes = 4
 
-datagen = ImageDataGenerator(preprocessing_function=preprocess_input)
-
 df = pd.read_csv(FOLDS_ASSIGNMENT_PATH)
 df['filename'] = df['label'] + '/' + df['filename']
 
-k = df['kfold'].nunique()
+k = 1
 
 for fold in range(k):
     print(f"Testing fold {fold}...")
@@ -27,7 +25,7 @@ for fold in range(k):
     train_df = df[df['kfold'] != fold]
     test_df = df[df['kfold'] == fold]
 
-    datagen = ImageDataGenerator(rescale=1./255)
+    datagen = ImageDataGenerator(preprocessing_function=preprocess_input)
 
     train_gen = datagen.flow_from_dataframe(
         dataframe=train_df,
@@ -54,7 +52,15 @@ for fold in range(k):
     test_model = load_model(rf"C:\Users\wdomc\Documents\personal_color_analysis\model_weights\basic_vgg16_fold_0.keras")
     loss, accuracy, precision, recall = test_model.evaluate(test_gen, verbose=1)
     print(f"Loss: {loss:.4f}, Acc: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}")
+
+    eval_metrics = np.array([loss, accuracy, precision, recall])
+    np.save(f'scores/fold{fold}_test_metrics.npy', eval_metrics)
+
+    # Using model for prediction on test data
     y_pred_probs = test_model.predict(test_gen)
     y_pred = np.argmax(y_pred_probs, axis=1)
     y_true = test_gen.classes
-    print(classification_report(y_true, y_pred, target_names=['fall', 'spring', 'summer', 'winter']))
+
+    report_dict = classification_report(y_true, y_pred, target_names=['fall', 'spring', 'summer', 'winter'],
+                                        output_dict=True)
+    print(report_dict)
