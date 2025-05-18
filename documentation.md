@@ -1,4 +1,4 @@
-# Personal Colour Analysis System
+# Enviroment documentation
 
 This experimental environment contains implementations of machine learning (ML) and deep learning (DL) methods for seasonal color analysis. The environment incorporates various components including color feature extraction (based on facial images and landmark detection), hyperparameter tuning of ML classifiers (KNN, SVM, Decision Trees), and preparation and training of DL models (e.g., VGG16), with support for data augmentation.
 
