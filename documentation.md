@@ -4,6 +4,13 @@ This experimental environment contains implementations of machine learning (ML) 
 
 Additionally, the environment provides tools for testing and comparing classifier performance using statistical tests.
 
+## data
+
+The folder contains two CSV files that assign images to each fold for k-fold cross-validation:
+
+- `fold_assignments.csv` — used to ensure consistent comparisons between machine learning and deep learning approaches.
+- `model_free_fold_assignments.csv` — used to ensure consistent data separation, independent of any specific modeling approach.
+
 ## utils
 
 This module provides helper functions for facial image processing, including white balancing and color extraction.
@@ -228,6 +235,9 @@ FUNCTIONS
 
 ## model_free_augmentation
 
+Performing model free image data augmentation, using Albumentations library.
+Augmentation operations are cutoff and horizontal flip.
+
 FUNCTIONS
 
     augment_and_save_image(image_path, augment_operation, output_path)
@@ -240,10 +250,15 @@ FUNCTIONS
         Returns:
             None
 
-## model_based_augmentation
-
-
 ## deep_learning_approach
+
+This script:
+
+- performs a transfer learning of CNN VGG16 model, using provided image data, so it can perform seasonal beauty type classification
+- VGG16 model has only an output layer changed so it's adjusted for 4 classes classification problem
+- collects model training, evaluation and classification statistics like accuracy, precision, recall and F1 score
+- Kfolds validation is used in the learning process - there is k models trained, each time with different train and test data, indicated by the file fold.assignments.csv
+
 
 FUNCTIONS
 
@@ -313,3 +328,5 @@ FUNCTIONS
             round (int, optional): The number of decimals for possible measures rounding
             table_style (str, optional): The formatting style for the table (e.g., "latex", "grid"). Defaults to "grid"
             return_scores (bool, optional): Whether the scores should be returned. Defaults to False.
+        Returns:
+            acc_scores, pre_scores, rec_scores, f1_scores (list[float], optional): Metrics values lists.
