@@ -1,3 +1,8 @@
+"""
+Hyperparameter tuning for KNN, SVM, and Decision Tree classifiers 
+using repeated stratified k-fold cross-validation.
+
+"""
 import numpy as np
 from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
@@ -196,4 +201,4 @@ def run_tuning(file_name):
         tune_dt_params(feature_type, X, y, max_depths, rskf)
 
 
-run_tuning("dataset_PColA.csv")
+# run_tuning("dataset_PColA.csv")

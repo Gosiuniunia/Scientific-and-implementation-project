@@ -1,3 +1,15 @@
+"""
+This script extracts color features from facial regions (iris, skin, eyebrows) using MediaPipe Face Landmarker.
+It processes images organized into subdirectories (each representing a class label), computes HSV and LAB color
+values, and saves the results in a CSV file.
+
+Usage:
+- Place labeled image folders in a root directory (e.g., 'dataset_PColA').
+- Set the correct model path (`.task` file).
+- Run the script to generate a dataset CSV.
+"""
+
+
 import mediapipe as mp
 import cv2
 import numpy as np
@@ -6,9 +18,7 @@ from utils.color_utils import white_balance, crop_img, apply_kmeans, get_hsv_lab
 import os
 
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 model_path = r"C:/studia/P_nw/face_landmarker.task"
-image_path = "OIP.jpg"
 
 
 def init_face_landmark(model_path):
@@ -228,6 +238,5 @@ def extract_dataset_to_csv(root_dir):
                 df.loc[len(df)] = row
     df.to_csv(root_dir + ".csv")
 
-# primavera
 
-df = extract_dataset_to_csv("dataset_PColA")
+# extract_dataset_to_csv("dataset_PColA")

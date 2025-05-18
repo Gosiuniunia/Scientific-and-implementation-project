@@ -1,3 +1,11 @@
+"""
+This module provides helper functions for color extraction and processing from facial regions.
+It supports white balancing, image cropping based on facial landmarks, color segmentation using K-Means,
+and color space conversion to LAB and HSV formats.
+
+
+"""
+
 import numpy as np
 import cv2
 from utils.white_balancing.classes import WBsRGB as wb_srgb
