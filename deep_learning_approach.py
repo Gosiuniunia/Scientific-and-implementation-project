@@ -14,10 +14,10 @@ import csv
 
 This script:
 
-- performs a transfer learning of CNN VGG16 model, using provided image data, so it can perform seasonal type classification
-- collects model training, evaluation and classification statistics lik 
-
-- Kfolds validation is used in the learning process
+- performs a transfer learning of CNN VGG16 model, using provided image data, so it can perform seasonal beauty type classification
+- VGG16 model has only an output layer changed so it's adjusted for 4 classes classification problem
+- collects model training, evaluation and classification statistics like accuracy, precision, recall and F1 score
+- Kfolds validation is used in the learning process - there is k models trained, each time with different train and test data, indicated by the file fold.assignments.csv
 
 """
 
@@ -155,24 +155,23 @@ for fold in range(k):
     f1 = 2 * (precision * recall) / (precision + recall + 1e-7)
     np.save(f'scores/{current_approach}_fold{fold}_f1.npy', f1)
 
-    # Model evaluation
+    # model evaluation
     loss, accuracy, precision, recall = model.evaluate(test_gen, verbose=1)
     print(f"Loss: {loss:.4f}, Acc: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}")
 
     eval_metrics = np.array([loss, accuracy, precision, recall])
     np.save(f'scores/{current_approach}_fold{fold}_test_metrics.npy', eval_metrics)
 
-    # Using model for prediction on test data
+    # using model for prediction on test data
     predicted_types = model.predict(test_gen)
     y_pred = np.argmax(predicted_types, axis=1)
     true_types = test_gen.classes
 
-    # Saving classification results
+    # saving true and predicted labels
     np.save(f'scores/{current_approach}_fold{fold}_y_pred.npy', y_pred)
     np.save(f'scores/{current_approach}_fold{fold}_y_true.npy', true_types)
 
-    # Saving classification statistics
+    # saving classification statistics
     report_dict = classification_report(true_types, y_pred, target_names=['fall', 'spring', 'summer', 'winter'],
                                         output_dict=True)
-    print(report_dict)
     np.save(f'scores/{current_approach}_fold{fold}_prediction_report.npy', report_dict, allow_pickle=True)
