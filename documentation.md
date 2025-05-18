@@ -91,8 +91,8 @@ FUNCTIONS
         Args:
             root_dir (str): Root directory containing labeled subdirectories of images.
 
-        Returns:
-            pd.DataFrame: A DataFrame where each row contains extracted features and a label.
+        Saves:
+            - 'root_dir.csv': A DataFrame where each row contains extracted features and a label.
 
     extract_hair_colour(img, face_landmarks)
         Extracts eyebrow (hair) color using facial landmarks.

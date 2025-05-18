@@ -215,8 +215,8 @@ def extract_dataset_to_csv(root_dir):
     Args:
         root_dir (str): Root directory containing labeled subdirectories of images.
 
-    Returns:
-        pd.DataFrame: A DataFrame where each row contains extracted features and a label.
+    Saves:
+         - 'root_dir.csv': A DataFrame where each row contains extracted features and a label.
     """
     FaceLandmarker, options = init_face_landmark(model_path)
 
