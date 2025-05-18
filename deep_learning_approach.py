@@ -1,3 +1,15 @@
+"""
+
+This script:
+
+- performs a transfer learning of CNN VGG16 model, using provided image data, so it can perform seasonal beauty type classification
+- VGG16 model has only an output layer changed so it's adjusted for 4 classes classification problem
+- collects model training, evaluation and classification statistics like accuracy, precision, recall and F1 score
+- Kfolds validation is used in the learning process - there is k models trained, each time with different train and test data, indicated by the file fold.assignments.csv
+
+"""
+
+
 import pandas as pd
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications.vgg16 import preprocess_input
@@ -9,17 +21,6 @@ from tensorflow.keras.metrics import Precision, Recall
 import numpy as np
 from sklearn.metrics import classification_report
 import csv
-
-"""
-
-This script:
-
-- performs a transfer learning of CNN VGG16 model, using provided image data, so it can perform seasonal beauty type classification
-- VGG16 model has only an output layer changed so it's adjusted for 4 classes classification problem
-- collects model training, evaluation and classification statistics like accuracy, precision, recall and F1 score
-- Kfolds validation is used in the learning process - there is k models trained, each time with different train and test data, indicated by the file fold.assignments.csv
-
-"""
 
 def split_data_test_train(assignment_file_path, k=5):
     """

@@ -1,3 +1,11 @@
+"""
+
+Performing model free image data augmentation, using Albumentations library.
+Augmentation operations are cutoff and horizontal flip.
+
+"""
+
+
 import albumentations as A
 import cv2
 import os
