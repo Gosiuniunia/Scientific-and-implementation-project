@@ -90,6 +90,9 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
         round (int, optional): The number of decimals for possible measures rounding
         table_style (str, optional): The formatting style for the table (e.g., "latex", "grid"). Defaults to "grid"
         return_scores (bool, optional): Whether the scores should be returned. Defaults to False. 
+
+    Returns:
+        acc_scores, pre_scores, rec_scores, f1_scores (list[float], optional): Metrics values lists.
     """
 
     model_names = ["without_aug", "with_aug"]
