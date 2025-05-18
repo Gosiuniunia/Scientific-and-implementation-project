@@ -1,6 +1,9 @@
 import numpy as np
 import pandas as pd
 import os
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
 
 def summarize_f1(f1_stats_list):
     f1_scores_df = pd.DataFrame(f1_stats_list, columns=['Epoch 1', 'Epoch 2', 'Epoch 3', 'Epoch 4', 'Epoch 5'], index=['Model 1', 'Model 2', 'Model 3', 'Model 4', 'Model 5'])
@@ -17,8 +20,18 @@ def summarize_training_history(training_history):
     th = pd.DataFrame(training_history, index=['Epoch 1', 'Epoch 2', 'Epoch 3', 'Epoch 4', 'Epoch 5'])
     return th
 
-def summarize_predicted_labels(predicted_labels_list):
-    pass
+def summarize_predicted_labels(true_labels, predicted_labels, model_no, model_approach):
+    class_map = {0: "fall", 1: "spring", 2: "summer", 3: "winter"}
+    labels = [0, 1, 2, 3]
+    display_labels = ['fall', 'spring', 'summer', 'winter']
+    cm = confusion_matrix(true_labels, predicted_labels, labels=labels)
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=display_labels, yticklabels=display_labels)
+    plt.xlabel('predicted labels')
+    plt.ylabel('true labels')
+    plt.title(f'Confusion matrix of PCoIA classification - model {model_no}, {model_approach} ')
+    plt.tight_layout()
+    plt.savefig(f"scores/confusion_matrices/confusion_matrix_model_{model_no}_{model_approach}.png")
 
 def fetch_all_statistics(file_prefix):
     f1_scores = []
@@ -53,7 +66,7 @@ def fetch_all_statistics(file_prefix):
 
     return f1_scores, prediction_reports, test_metrics, training_histories, y_preds, y_trues
 
-SCORES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\Scientific-and-implementation-project\scores"
+SCORES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\Scientific-and-implementation-project\scores\deep_learning_scores"
 
 all_scores_files = os.listdir(SCORES_PATH)
 
@@ -71,8 +84,12 @@ summarized_test_metrics_model_free = summarize_test_metrics(test_metrics_model_f
 # print(summarized_test_metrics)
 # print(summarized_test_metrics_model_free)
 
-for th in training_histories:
-    print(summarize_training_history(th))
+# for th in training_histories:
+#     print(summarize_training_history(th))
+cnt = 0
+for yt, yp in zip(y_trues_model_free, y_preds_model_free):
+    summarize_predicted_labels(yt, yp, cnt, "model_free")
+    cnt += 1
 
 
 
