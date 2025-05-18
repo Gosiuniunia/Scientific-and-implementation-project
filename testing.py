@@ -1,3 +1,7 @@
+"""
+Statistical tests and tables for metrics.  
+"""
+
 import numpy as np
 from tabulate import tabulate
 

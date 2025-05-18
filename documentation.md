@@ -277,6 +277,8 @@ FUNCTIONS
 
 ## testing
 
+Statistical tests and tables for metrics.  
+
 FUNCTIONS
 
     compare_models(scores, model_names, table_style='grid', alpha=0.05, alternative='two-sided')
