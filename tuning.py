@@ -38,7 +38,7 @@ def select_features(df, feature_type):
         cols = [col for col in df.columns if col.endswith(("_L", "_a", "_b"))]
         return df[cols].to_numpy()
 
-def tune_knn_params(feature_type, X, y, metrics, weights, rskf):
+def tune_knn_params(feature_type, X, y, n_neighbors, metrics, weights, rskf):
     """
     Performs hyperparameter tuning for the K-Nearest Neighbors (KNN) classifier 
     using repeated stratified K-fold cross-validation.
@@ -54,7 +54,7 @@ def tune_knn_params(feature_type, X, y, metrics, weights, rskf):
         - 'knn_recalls.npy': Recall scores for each parameter combination and fold.
         - 'knn_f1s.npy': F1 scores for each parameter combination and fold.
     """
-    param_grid = list(itertools.product(metrics, weights))
+    param_grid = list(itertools.product(n_neighbors, metrics, weights))
     n_param_combinations = len(param_grid)
     n_folds = rskf.get_n_splits()
 
@@ -65,11 +65,11 @@ def tune_knn_params(feature_type, X, y, metrics, weights, rskf):
 
     scaler = StandardScaler()
 
-    for param_idx, (metric, weight) in enumerate(param_grid):
+    for param_idx, (n_neighbor, metric, weight) in enumerate(param_grid):
         for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
             X_train = scaler.fit_transform(X[train])
             X_test = scaler.transform(X[test])
-            clf = KNeighborsClassifier(metric=metric, weights=weight)
+            clf = KNeighborsClassifier(n_neighbors=n_neighbor, metric=metric, weights=weight)
             clf.fit(X_train, y[train])
             y_pred = clf.predict(X_test)
 
@@ -217,6 +217,7 @@ def tune_rf_params(feature_type, X, y, n_estimators, max_depths, rskf):
 
 
 def run_tuning(file_name):
+    n_neighbors = [3, 5, 7, 9]
     metrics = ['euclidean', 'manhattan', 'minkowski']
     weights = ['uniform', 'distance']
 
@@ -240,13 +241,13 @@ def run_tuning(file_name):
     for feature_type in feature_types:
         X = select_features(all_features, feature_type)
 
-        tune_rf_params(feature_type, X, y, n_estimators, max_depth, rskf)
+        # tune_rf_params(feature_type, X, y, n_estimators, max_depth, rskf)
 
-        tune_knn_params(feature_type, X, y, metrics, weights, rskf)
+        tune_knn_params(feature_type, X, y, n_neighbors, metrics, weights, rskf)
 
-        tune_svm_params(feature_type, X, y, kernels, Cs, gammas, rskf)
+        # tune_svm_params(feature_type, X, y, kernels, Cs, gammas, rskf)
 
-        tune_dt_params(feature_type, X, y, max_depths, rskf)
+        # tune_dt_params(feature_type, X, y, max_depths, rskf)
 
 
 run_tuning("dataset_PColA.csv")
