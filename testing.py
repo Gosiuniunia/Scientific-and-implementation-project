@@ -136,7 +136,7 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
         print(f"\n", "Scores for Deep Learning approach")
         print(table)
     else:
-        table_latex = table[:-13] + f"\caption{{Scores for Deep Learning approach}}\n" + table[-13:]
+        table_latex = "\\begin{table}[h!]\n\centering" + table + f"\caption{{Scores for Deep Learning approach}}\n\end{{table}}\n"
         print(table_latex, "\n")
 
     if return_scores == True:
@@ -188,7 +188,7 @@ def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternat
         print("\n Matrix of p-values from paired statistical tests between models")
         print(table)
     else:
-        table_latex = table[:-13] + f"\caption{{Matrix of p-values from paired statistical tests between models}}\n" + table[-13:]
+        table_latex = "\\begin{table}[h!]\n\centering" + table + f"\n\caption{{Matrix of p-values from paired statistical tests between models}}\n\end{{table}}\n"
         print(table_latex)
 
 
