@@ -22,6 +22,7 @@ def print_scores(classifier_name, feature_types=["all", "HSV", "Lab"],  round=No
     """
     max_depths = list(range(2, 11))
 
+    n_neighbors = [3, 5, 7, 9]
     metrics = ['euclidean', 'manhattan', 'minkowski']
     weights = ['uniform', 'distance']
 
@@ -29,11 +30,16 @@ def print_scores(classifier_name, feature_types=["all", "HSV", "Lab"],  round=No
     Cs = [0.1, 1, 10]
     gammas = ['scale', 'auto']
 
+    n_estimators = [50, 100, 200]
+    max_depth = [5, 10, 20]
+
     # A list of the parameters permutation - models names, used as column headers.
     if classifier_name.lower() == "dt":
         model_names = max_depths
+    elif classifier_name.lower() == "rf":
+        model_names = [f"{x}-{y}" for x in n_estimators for y in max_depth]
     elif classifier_name.lower() == "knn":
-        model_names = [f"{x[:3]}-{y[:3]}" for x in metrics for y in weights]
+        model_names = [f"{x}-{y[:3]}-{z[:3]}" for x in n_neighbors for y in metrics for z in weights]
     elif classifier_name.lower() == "svm":
         model_names = [f"{x[:3]}-{y}-{z[0]}" for x in kernels for y in Cs for z in gammas]
     
@@ -77,8 +83,9 @@ def print_scores(classifier_name, feature_types=["all", "HSV", "Lab"],  round=No
             print(f"\n", f"Scores for {classifier_name} classifiers with {feature_type} features")
             print(table)
         else:
-            table_latex = table[:-13] + f"\caption{{Scores for {classifier_name} classifier with {feature_type} features}}\n" + table[-13:]
+            table_latex = "\\begin{table}[H]\n\centering\n"+ table + f"\n\\vspace{{10pt}}\n\caption{{Scores for {classifier_name} classifiers with {feature_type} features}}\n\label{{tab:{classifier_name.lower()}_{feature_type.lower()}}}\n\end{{table}}\n"
             print(table_latex, "\n")
+            return table_latex
 
 
 def print_scores_deep(round=None, table_style="grid", return_scores=False):
@@ -105,7 +112,7 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
     f1_scores = [[], []]
 
     for i in range(len(model_names)):
-        for fold in range(10):
+        for fold in range(5):
             data = np.load(f"scores/deep_learning_scores/{model_files[i]}fold{fold}_prediction_report.npy", allow_pickle=True).item()
             acc_scores[i].append(data['accuracy'])
             pre_scores[i].append(data['macro avg']['precision'])
@@ -126,28 +133,37 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
     mean_scores = np.array(mean_scores)
     std_scores = np.array(std_scores)
     scores = np.char.add(np.char.add(mean_scores.astype(str), u' \u00B1 '), std_scores.astype(str))
-    table = tabulate(scores, 
+    table = tabulate(scores.T, 
                     tablefmt=table_style, 
-                    headers=model_names, 
-                    showindex=metrics
+                    headers=metrics, 
+                    showindex=model_names
     )
 
     if table_style == "grid":
         print(f"\n", "Scores for Deep Learning approach")
         print(table)
     else:
-        table_latex = "\\begin{table}[h!]\n\centering" + table + f"\caption{{Scores for Deep Learning approach}}\n\end{{table}}\n"
+        table_latex = "\\begin{table}[H]\n\centering\n"+ table + f"\n\\vspace{{10pt}}\n\caption{{Scores for Deep Learning approach}}\n\label{{tab:deep}}\n\end{{table}}\n"
         print(table_latex, "\n")
+        return table_latex
 
     if return_scores == True:
         return acc_scores, pre_scores, rec_scores, f1_scores
 
-#Example usage:
-# print_scores("DT", table_style="latex")
-# print_scores("KNN", round=3)
-# print_scores("SVM", round=3)
-# print_scores("SVM", T=True, feature_types=['all', 'Lab'], round=3)
-# print_scores_deep()
+# Table generation for report:
+file = 'tables.txt'
+model_names = ["KNN", "SVM", 'RF', 'DT']
+features = [["all"], ["HSV"], ["Lab"]]
+with open(file, "w", encoding="utf-8") as f:
+    for model in model_names:
+        for feature in features:
+            result = print_scores(model, feature, table_style="latex", round=3, T=True)
+            f.write(result)
+            f.write('\n\n')
+    
+    result = print_scores_deep(round=3, table_style="latex")
+    f.write(result)
+    f.write('\n\n')
 
 
 def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternative="two-sided"):
@@ -188,7 +204,7 @@ def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternat
         print("\n Matrix of p-values from paired statistical tests between models")
         print(table)
     else:
-        table_latex = "\\begin{table}[h!]\n\centering" + table + f"\n\caption{{Matrix of p-values from paired statistical tests between models}}\n\end{{table}}\n"
+        table_latex = "\\begin{table}[h!]\n\centering" + table + f"\n\\vspace{{10pt}}\n\caption{{Matrix of p-values from paired statistical tests between models}}\n\end{{table}}\n"
         print(table_latex)
 
 
