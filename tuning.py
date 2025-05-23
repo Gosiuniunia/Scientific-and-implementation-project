@@ -12,7 +12,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 import pandas as pd
 from sklearn.preprocessing import StandardScaler, LabelEncoder
-
+from sklearn.ensemble import RandomForestClassifier
 
 
 def select_features(df, feature_type):
@@ -171,6 +171,50 @@ def tune_dt_params(feature_type, X, y, max_depths, rskf):
     np.save(f"dt_{feature_type}_recalls.npy", recalls)
     np.save(f"dt_{feature_type}_f1s.npy", f1s)
 
+def tune_rf_params(feature_type, X, y, n_estimators, max_depths, rskf):
+    """
+    Performs hyperparameter tuning for the Random Forest Classifier
+    using repeated stratified K-fold cross-validation.
+
+    Args:
+        n_estimators (list[str]): Number of estimators.
+        max_depths (list[str]): Max tree depth.
+        rskf (RepeatedStratifiedKFold): Cross-validation splitting strategy.
+
+    Saves:
+        - 'rf_accuracies.npy': Accuracy scores for each parameter combination and fold.
+        - 'rf_precisions.npy': Precision scores for each parameter combination and fold.
+        - 'rf_recalls.npy': Recall scores for each parameter combination and fold.
+        - 'rf_f1s.npy': F1 scores for each parameter combination and fold.
+    """
+    param_grid = list(itertools.product(n_estimators, max_depths))
+    n_param_combinations = len(param_grid)
+    n_folds = rskf.get_n_splits()
+
+    accuracies = np.zeros((n_param_combinations, n_folds))
+    precisions = np.zeros_like(accuracies)
+    recalls = np.zeros_like(accuracies)
+    f1s = np.zeros_like(accuracies)
+
+    for param_idx, (n_estimator, max_depth) in enumerate(param_grid):
+        for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
+            X_train = X[train]
+            X_test = X[test]
+            clf = RandomForestClassifier(random_state=42, n_estimators=n_estimator, max_depth=max_depth)
+            clf.fit(X_train, y[train])
+            y_pred = clf.predict(X_test)
+
+            accuracies[param_idx, fold_idx] = accuracy_score(y[test], y_pred)
+            precisions[param_idx, fold_idx] = precision_score(y[test], y_pred, average='macro', zero_division=0)
+            recalls[param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
+            f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
+    
+    # Zapis wyników
+    np.save(f"rf_{feature_type}_accuracies.npy", accuracies)
+    np.save(f"rf_{feature_type}_precisions.npy", precisions)
+    np.save(f"rf_{feature_type}_recalls.npy", recalls)
+    np.save(f"rf_{feature_type}_f1s.npy", f1s)
+
 
 def run_tuning(file_name):
     metrics = ['euclidean', 'manhattan', 'minkowski']
@@ -182,6 +226,8 @@ def run_tuning(file_name):
 
     max_depths = list(range(2, 11))
     feature_types = ["all", "HSV", "Lab"]
+    n_estimators = [50, 100, 200]
+    max_depth = [5, 10, 20]
     rskf = RepeatedStratifiedKFold(n_repeats=2, n_splits=5, random_state=100)
 
     df = pd.read_csv(file_name)
@@ -194,6 +240,8 @@ def run_tuning(file_name):
     for feature_type in feature_types:
         X = select_features(all_features, feature_type)
 
+        tune_rf_params(feature_type, X, y, n_estimators, max_depth, rskf)
+
         tune_knn_params(feature_type, X, y, metrics, weights, rskf)
 
         tune_svm_params(feature_type, X, y, kernels, Cs, gammas, rskf)
@@ -201,4 +249,4 @@ def run_tuning(file_name):
         tune_dt_params(feature_type, X, y, max_depths, rskf)
 
 
-# run_tuning("dataset_PColA.csv")
+run_tuning("dataset_PColA.csv")
