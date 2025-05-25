@@ -22,9 +22,9 @@ import numpy as np
 from sklearn.metrics import classification_report
 import csv
 
-def split_data_test_train(assignment_file_path, k=5):
+def split_data_test_train(assignment_file_path):
     """
-    Splits images details (file path, label),  provided as pandas Dataframe, into train and test sets details pandas Dataframes,
+    Splits images details (file path, label), provided as pandas Dataframe, into train and test sets details pandas Dataframes,
     taking into account the fold number k
     Args:
         k: number of current fold
@@ -38,8 +38,8 @@ def split_data_test_train(assignment_file_path, k=5):
     df = pd.read_csv(assignment_file_path)
     df['filename'] = df['label'] + '/' + df['filename']
 
-    train_df = df[df['kfold'] != fold]
-    test_df = df[df['kfold'] == fold]
+    train_df = df[df['kfold']+5 != fold]
+    test_df = df[df['kfold']+5 == fold]
 
     return test_df, train_df
 
@@ -110,20 +110,20 @@ target_size = (224, 224)
 input_shape = (224, 224, 3)
 num_classes = 4
 k = 5
-current_approach = "model_free"
+current_approach = "basic"
 augment_prefixes_list = ["hf_", "co_"]
 
 adjust_folds_assignment_file(FOLDS_ASSIGNMENT_PATH, MODEL_FREE_FOLDS_ASSIGNMENT_PATH, prefixes_list=augment_prefixes_list)
 
-for fold in range(k):
+for fold in range(k, k+5):
     print(f"Training fold {fold}...")
 
     dg = ImageDataGenerator(preprocessing_function=preprocess_input)
-    test_df, train_df = split_data_test_train(MODEL_FREE_FOLDS_ASSIGNMENT_PATH, k)
+    test_df, train_df = split_data_test_train(FOLDS_ASSIGNMENT_PATH)
 
     train_gen = dg.flow_from_dataframe(
         dataframe=train_df,
-        directory=MODEL_FREE_AUGMENTED_IMAGES_PATH,
+        directory=IMAGES_PATH,
         x_col='filename',
         y_col='label',
         target_size=target_size,
@@ -134,7 +134,7 @@ for fold in range(k):
 
     test_gen = dg.flow_from_dataframe(
         dataframe=test_df,
-        directory=MODEL_FREE_AUGMENTED_IMAGES_PATH,
+        directory=IMAGES_PATH,
         x_col='filename',
         y_col='label',
         target_size=target_size,
