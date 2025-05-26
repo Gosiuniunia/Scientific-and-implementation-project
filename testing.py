@@ -151,19 +151,19 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
         return acc_scores, pre_scores, rec_scores, f1_scores
 
 # Table generation for report:
-file = 'tables.txt'
-model_names = ["KNN", "SVM", 'RF', 'DT']
-features = [["all"], ["HSV"], ["Lab"]]
-with open(file, "w", encoding="utf-8") as f:
-    for model in model_names:
-        for feature in features:
-            result = print_scores(model, feature, table_style="latex", round=3, T=True)
-            f.write(result)
-            f.write('\n\n')
+# file = 'tables.txt'
+# model_names = ["KNN", "SVM", 'RF', 'DT']
+# features = [["all"], ["HSV"], ["Lab"]]
+# with open(file, "w", encoding="utf-8") as f:
+#     for model in model_names:
+#         for feature in features:
+#             result = print_scores(model, feature, table_style="latex", round=3, T=True)
+#             f.write(result)
+#             f.write('\n\n')
     
-    result = print_scores_deep(round=3, table_style="latex")
-    f.write(result)
-    f.write('\n\n')
+#     result = print_scores_deep(round=3, table_style="latex")
+#     f.write(result)
+#     f.write('\n\n')
 
 
 def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternative="two-sided"):
@@ -202,10 +202,38 @@ def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternat
     
     if table_style == "grid":
         print("\n Matrix of p-values from paired statistical tests between models")
-        print(table)
+        return table
     else:
         table_latex = "\\begin{table}[h!]\n\centering" + table + f"\n\\vspace{{10pt}}\n\caption{{Matrix of p-values from paired statistical tests between models}}\n\end{{table}}\n"
-        print(table_latex)
+        return table_latex
+
+
+data = {}
+# best_params_num = [19, 19, 19] #knn
+# best_params_num = [14,14,14] #svm
+# best_params_num = [7,8,7] #rf
+best_params_num = [4,3,4] #dt
+i = 0
+for clf in ["dt"]:
+    for over in ["all" , "HSV", "Lab"]:
+        pre_scores = np.load(f"scores/{clf.lower()}_{over}_precisions.npy")[best_params_num[i]]
+        rec_scores = np.load(f"scores/{clf.lower()}_{over}_recalls.npy")[best_params_num[i]]
+        f1_scores = np.load(f"scores/{clf.lower()}_{over}_f1s.npy")[best_params_num[i]]
+        acc_scores = np.load(f"scores/{clf.lower()}_{over}_accuracies.npy")[best_params_num[i]]
+
+        scr = {"Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores, "Accuracy":acc_scores}
+        data[f"{clf}_{over}"] = scr
+        i += 1
+
+# metric = "Recall"
+metric = "F1 score"
+model_names = list(data.keys())
+scores = np.array([data[key][metric] for key in data])
+
+file = "compare.txt"
+with open(file, "a", encoding="utf-8") as f:
+    f.write(compare_models(scores, model_names, table_style="latex", alternative="two-sided"))
+    f.write("\n")
 
 
 # Example usage with the provided parameters:
