@@ -22,7 +22,7 @@ import numpy as np
 from sklearn.metrics import classification_report
 import csv
 
-def split_data_test_train(assignment_file_path):
+def split_data_test_train(assignment_file_path, fold):
     """
     Splits images details (file path, label), provided as pandas Dataframe, into train and test sets details pandas Dataframes,
     taking into account the fold number k
@@ -36,10 +36,12 @@ def split_data_test_train(assignment_file_path):
     """
     # Retrieving and adjusting folds assignments details
     df = pd.read_csv(assignment_file_path)
+    non_augmented_df = pd.read_csv(fr"data/fold_assignments.csv")
     df['filename'] = df['label'] + '/' + df['filename']
+    non_augmented_df['filename'] = non_augmented_df['label'] + '/' + non_augmented_df['filename']
 
     train_df = df[df['kfold']+5 != fold]
-    test_df = df[df['kfold']+5 == fold]
+    test_df = non_augmented_df[non_augmented_df['kfold']+5 == fold]
 
     return test_df, train_df
 
@@ -86,6 +88,7 @@ def adjust_folds_assignment_file(assignment_file_input_path, assignment_file_out
         new_rows = []
         for row in rows:
             original_filename = row["filename"]
+            new_rows.append(row)
             for prefix in prefixes_list:
                 new_row = row.copy()
                 new_row["filename"] = prefix + original_filename
@@ -99,10 +102,10 @@ def adjust_folds_assignment_file(assignment_file_input_path, assignment_file_out
 
 IMAGES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PColA"
 MODEL_FREE_AUGMENTED_IMAGES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PCoIA_model_free_augmented"
-MODEL_BASED_AUGMENTED_IMAGES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PCoIA_model_based_augmented"
+#MODEL_BASED_AUGMENTED_IMAGES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PCoIA_model_based_augmented"
 FOLDS_ASSIGNMENT_PATH = rf"data/fold_assignments.csv"
 MODEL_FREE_FOLDS_ASSIGNMENT_PATH = rf"data/model_free_fold_assignments.csv"
-MODEL_BASED_FOLDS_ASSIGNMENT_PATH = rf"data/model_based_fold_assignments.csv"
+#MODEL_BASED_FOLDS_ASSIGNMENT_PATH = rf"data/model_based_fold_assignments.csv"
 
 # Training parameters
 batch_size = 32
@@ -110,7 +113,7 @@ target_size = (224, 224)
 input_shape = (224, 224, 3)
 num_classes = 4
 k = 5
-current_approach = "basic"
+current_approach = "model_free"
 augment_prefixes_list = ["hf_", "co_"]
 
 adjust_folds_assignment_file(FOLDS_ASSIGNMENT_PATH, MODEL_FREE_FOLDS_ASSIGNMENT_PATH, prefixes_list=augment_prefixes_list)
@@ -119,11 +122,11 @@ for fold in range(k, k+5):
     print(f"Training fold {fold}...")
 
     dg = ImageDataGenerator(preprocessing_function=preprocess_input)
-    test_df, train_df = split_data_test_train(FOLDS_ASSIGNMENT_PATH)
+    test_df, train_df = split_data_test_train(MODEL_FREE_FOLDS_ASSIGNMENT_PATH, fold)
 
     train_gen = dg.flow_from_dataframe(
         dataframe=train_df,
-        directory=IMAGES_PATH,
+        directory=MODEL_FREE_AUGMENTED_IMAGES_PATH,
         x_col='filename',
         y_col='label',
         target_size=target_size,
