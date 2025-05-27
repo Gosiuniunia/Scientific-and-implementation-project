@@ -40,8 +40,8 @@ def split_data_test_train(assignment_file_path, fold):
     df['filename'] = df['label'] + '/' + df['filename']
     non_augmented_df['filename'] = non_augmented_df['label'] + '/' + non_augmented_df['filename']
 
-    train_df = df[df['kfold']+5 != fold]
-    test_df = non_augmented_df[non_augmented_df['kfold']+5 == fold]
+    train_df = df[df['kfold'] != fold]
+    test_df = non_augmented_df[non_augmented_df['kfold'] == fold]
 
     return test_df, train_df
 
@@ -118,7 +118,7 @@ augment_prefixes_list = ["hf_", "co_"]
 
 adjust_folds_assignment_file(FOLDS_ASSIGNMENT_PATH, MODEL_FREE_FOLDS_ASSIGNMENT_PATH, prefixes_list=augment_prefixes_list)
 
-for fold in range(k, k+5):
+for fold in range(k):
     print(f"Training fold {fold}...")
 
     dg = ImageDataGenerator(preprocessing_function=preprocess_input)
