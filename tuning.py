@@ -157,7 +157,7 @@ def tune_dt_params(feature_type, X, y, max_depths, rskf):
 
     for param_idx, max_depth in enumerate(max_depths):
         for fold_idx, (train, test) in enumerate(rskf.split(X, y)):
-            clf = DecisionTreeClassifier(max_depth=max_depth)
+            clf = DecisionTreeClassifier(random_state=42, max_depth=max_depth)
             clf.fit(X[train], y[train])
             y_pred = clf.predict(X[test])
 
@@ -243,11 +243,11 @@ def run_tuning(file_name):
 
         # tune_rf_params(feature_type, X, y, n_estimators, max_depth, rskf)
 
-        tune_knn_params(feature_type, X, y, n_neighbors, metrics, weights, rskf)
+        # tune_knn_params(feature_type, X, y, n_neighbors, metrics, weights, rskf)
 
         # tune_svm_params(feature_type, X, y, kernels, Cs, gammas, rskf)
 
-        # tune_dt_params(feature_type, X, y, max_depths, rskf)
+        tune_dt_params(feature_type, X, y, max_depths, rskf)
 
 
 run_tuning("dataset_PColA.csv")
