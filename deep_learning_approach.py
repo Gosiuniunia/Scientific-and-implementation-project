@@ -18,9 +18,21 @@ from tensorflow.keras.applications import VGG16
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.metrics import Precision, Recall
-import numpy as np
 from sklearn.metrics import classification_report
 import csv
+from keras.utils import set_random_seed
+
+set_random_seed(42)
+
+import tensorflow as tf
+import numpy as np
+import random
+
+seed = 42
+tf.random.set_seed(seed)
+np.random.seed(seed)
+random.seed(seed)
+
 
 def split_data_test_train(assignment_file_path, fold):
     """
@@ -113,7 +125,7 @@ target_size = (224, 224)
 input_shape = (224, 224, 3)
 num_classes = 4
 k = 5
-current_approach = "model_free"
+current_approach = "model_free_shuffle_with_seed"
 augment_prefixes_list = ["hf_", "co_"]
 
 adjust_folds_assignment_file(FOLDS_ASSIGNMENT_PATH, MODEL_FREE_FOLDS_ASSIGNMENT_PATH, prefixes_list=augment_prefixes_list)
@@ -132,7 +144,8 @@ for fold in range(k):
         target_size=target_size,
         class_mode='categorical',
         batch_size=batch_size,
-        shuffle=True
+        shuffle=True,
+        seed=seed
     )
 
     test_gen = dg.flow_from_dataframe(
@@ -143,7 +156,8 @@ for fold in range(k):
         target_size=target_size,
         class_mode='categorical',
         batch_size=batch_size,
-        shuffle=False
+        shuffle=False,
+        seed = seed
     )
 
     model = prepare_vgg16_model()
