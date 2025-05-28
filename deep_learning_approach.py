@@ -8,8 +8,6 @@ This script:
 - Kfolds validation is used in the learning process - there is k models trained, each time with different train and test data, indicated by the file fold.assignments.csv
 
 """
-
-
 import pandas as pd
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications.vgg16 import preprocess_input
@@ -21,6 +19,7 @@ from tensorflow.keras.metrics import Precision, Recall
 from sklearn.metrics import classification_report
 import csv
 from keras.utils import set_random_seed
+import os
 
 set_random_seed(42)
 
@@ -112,12 +111,10 @@ def adjust_folds_assignment_file(assignment_file_input_path, assignment_file_out
         writer.writerows(new_rows)
 
 
-IMAGES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PColA"
-MODEL_FREE_AUGMENTED_IMAGES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PCoIA_model_free_augmented"
-#MODEL_BASED_AUGMENTED_IMAGES_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PCoIA_model_based_augmented"
+IMAGES_PATH = rf"../dataset_PColA"
+MODEL_FREE_AUGMENTED_IMAGES_PATH = rf"../dataset_PCoIA_model_free_augmented"
 FOLDS_ASSIGNMENT_PATH = rf"data/fold_assignments.csv"
 MODEL_FREE_FOLDS_ASSIGNMENT_PATH = rf"data/model_free_fold_assignments.csv"
-#MODEL_BASED_FOLDS_ASSIGNMENT_PATH = rf"data/model_based_fold_assignments.csv"
 
 # Training parameters
 batch_size = 32
@@ -164,7 +161,7 @@ for fold in range(k):
 
     # model training
     history = model.fit(train_gen, epochs=5, verbose=True)
-    model.save(rf'C:\Users\wdomc\Documents\personal_color_analysis\model_weights\{current_approach}_vgg16_fold_{fold}.keras')
+    model.save(rf'../personal_color_analysis/model_weights/{current_approach}_vgg16_fold_{fold}.keras')
 
     # # training statistics
     np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_training_history.npy', history.history)
