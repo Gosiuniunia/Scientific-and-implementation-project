@@ -102,8 +102,8 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
         acc_scores, pre_scores, rec_scores, f1_scores (list[float], optional): Metrics values lists.
     """
 
-    model_names = ["without_aug", "with_aug"]
-    model_files = ['', 'model_free_']
+    model_names = ["No", "Yes"]
+    model_files = ['basic', 'model_free']
     metrics = ["Accuracy", "Precision", "Recall", "F1 score"]
 
     acc_scores = [[], []]
@@ -112,8 +112,8 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
     f1_scores = [[], []]
 
     for i in range(len(model_names)):
-        for fold in range(5):
-            data = np.load(f"scores/deep_learning_scores/{model_files[i]}fold{fold}_prediction_report.npy", allow_pickle=True).item()
+        for fold in range(10):
+            data = np.load(f"scores/{model_files[i]}_fold{fold}_prediction_report.npy", allow_pickle=True).item()
             acc_scores[i].append(data['accuracy'])
             pre_scores[i].append(data['macro avg']['precision'])
             rec_scores[i].append(data['macro avg']['recall'])
@@ -144,7 +144,7 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
         print(table)
     else:
         table_latex = "\\begin{table}[H]\n\centering\n"+ table + f"\n\\vspace{{10pt}}\n\caption{{Scores for Deep Learning approach}}\n\label{{tab:deep}}\n\end{{table}}\n"
-        print(table_latex, "\n")
+        # print(table_latex, "\n")
         return table_latex
 
     if return_scores == True:
@@ -164,7 +164,8 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
 #     result = print_scores_deep(round=3, table_style="latex")
 #     f.write(result)
 #     f.write('\n\n')
-
+# print(print_scores_deep(round=3, table_style="latex"))
+# print(np.load("scores/basic_fold6_prediction_report.npy", allow_pickle=True).item())
 
 def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternative="two-sided"):
     """
@@ -183,7 +184,7 @@ def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternat
     stat_matrix = [[None for _ in range(scores.shape[0])] for _ in range(scores.shape[0])]
     for i in range(scores.shape[0]):
         for j in range(scores.shape[0]):
-            if i == j: #comparison with oneself is omitted
+            if i >= j: #comparison with oneself is omitted
                 stat_matrix[i][j] = "nan"
                 continue
             t1, p1 = shapiro(scores[i])
@@ -208,32 +209,43 @@ def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternat
         return table_latex
 
 
-data = {}
+# data = {}
 # best_params_num = [19, 19, 19] #knn
 # best_params_num = [14,14,14] #svm
 # best_params_num = [7,8,7] #rf
-best_params_num = [4,3,4] #dt
-i = 0
-for clf in ["dt"]:
-    for over in ["all" , "HSV", "Lab"]:
-        pre_scores = np.load(f"scores/{clf.lower()}_{over}_precisions.npy")[best_params_num[i]]
-        rec_scores = np.load(f"scores/{clf.lower()}_{over}_recalls.npy")[best_params_num[i]]
-        f1_scores = np.load(f"scores/{clf.lower()}_{over}_f1s.npy")[best_params_num[i]]
-        acc_scores = np.load(f"scores/{clf.lower()}_{over}_accuracies.npy")[best_params_num[i]]
+# best_params_num = [4,3,4] #dt
+# best_params_num = [19, 19, 19, 14, 14, 14, 7, 8, 8, 4, 3, 4]
+# i = 0
+# for clf in ["knn", "svm", "rf", "dt"]:
+#     for over in ["all" , "HSV", "Lab"]:
+#         pre_scores = np.load(f"scores/{clf.lower()}_{over}_precisions.npy")[best_params_num[i]]
+#         rec_scores = np.load(f"scores/{clf.lower()}_{over}_recalls.npy")[best_params_num[i]]
+#         f1_scores = np.load(f"scores/{clf.lower()}_{over}_f1s.npy")[best_params_num[i]]
+#         acc_scores = np.load(f"scores/{clf.lower()}_{over}_accuracies.npy")[best_params_num[i]]
 
-        scr = {"Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores, "Accuracy":acc_scores}
-        data[f"{clf}_{over}"] = scr
-        i += 1
+#         scr = {"Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores, "Accuracy":acc_scores}
+#         data[f"{clf}_{over}"] = scr
+#         i += 1
+
+# a, p, r, f = print_scores_deep(return_scores=True)
+# print(a[1])
+# i = 0
+# name = ["nope", "yaaas"]
+# print(compare_models(np.array(a), name, table_style="latex"))
+# for aug in ["no_aug", "with_aug"]:
+#     scr = {"Precision":p[i], "Recall":r[i], "F1 score":f[i], "Accuracy":a[i]}
+#     data[aug] = scr
+#     i += 1
 
 # metric = "Recall"
-metric = "F1 score"
-model_names = list(data.keys())
-scores = np.array([data[key][metric] for key in data])
+# metric = "F1 score"
+# model_names = list(data.keys())
+# scores = np.array([data[key][metric] for key in data])
 
-file = "compare.txt"
-with open(file, "a", encoding="utf-8") as f:
-    f.write(compare_models(scores, model_names, table_style="latex", alternative="two-sided"))
-    f.write("\n")
+# file = "compare.txt"
+# with open(file, "a", encoding="utf-8") as f:
+    # f.write(compare_models(scores, model_names, table_style="latex", alternative="two-sided"))
+    # f.write("\n")
 
 
 # Example usage with the provided parameters:
@@ -246,3 +258,41 @@ with open(file, "a", encoding="utf-8") as f:
 # a, _, _, _ = print_scores_deep(return_scores=True)
 # model_names = ["without_aug", "with_aug"]
 # compare_models(np.array(a), model_names)
+
+# All combination's metrics visualization
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# file = "metrics.jpg"
+# labels = list(data.keys())
+# metrics = ['Precision', 'Recall', 'F1 score', 'Accuracy']
+# n_metrics = len(metrics)
+# n_labels = len(labels)
+# colors = ['orchid', 'mediumpurple', 'skyblue', 'teal']
+
+# averaged_data = {}
+# for key, metric_values in data.items():
+#     averaged_data[key] = {metric: np.mean(values) for metric, values in metric_values.items()}
+
+# df_avg = pd.DataFrame.from_dict(averaged_data, orient='index')
+
+# fig, ax = plt.subplots(figsize=(16, 6)) 
+
+# width = 0.15 
+
+# x = np.arange(n_labels) 
+
+# for i, metric in enumerate(metrics):
+#     offset = width * (i - (n_metrics - 1) / 2)
+#     ax.bar(x + offset, df_avg[metric], width, label=metric, color=colors[i % len(colors)])
+
+# ax.set_ylabel('Uśredniona Wartość Metryki')
+# ax.set_xticks(x)
+# ax.set_xticklabels(labels, rotation=45, ha='right') 
+# ax.legend(title='Metryka', loc='lower right')
+# ax.grid(axis='y', linestyle='--', alpha=0.7)
+# plt.tight_layout()
+
+
+# plt.savefig(file, dpi=300, bbox_inches='tight')
+
+# plt.show()
