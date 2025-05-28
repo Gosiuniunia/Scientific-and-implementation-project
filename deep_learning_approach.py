@@ -167,18 +167,18 @@ for fold in range(k):
     model.save(rf'C:\Users\wdomc\Documents\personal_color_analysis\model_weights\{current_approach}_vgg16_fold_{fold}.keras')
 
     # # training statistics
-    np.save(f'scores/{current_approach}_fold{fold}_training_history.npy', history.history)
+    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_training_history.npy', history.history)
     precision = np.array(history.history['precision'])
     recall = np.array(history.history['recall'])
     f1 = 2 * (precision * recall) / (precision + recall + 1e-7)
-    np.save(f'scores/{current_approach}_fold{fold}_f1.npy', f1)
+    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_f1.npy', f1)
 
     # model evaluation
     loss, accuracy, precision, recall = model.evaluate(test_gen, verbose=1)
     print(f"Loss: {loss:.4f}, Acc: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}")
 
     eval_metrics = np.array([loss, accuracy, precision, recall])
-    np.save(f'scores/{current_approach}_fold{fold}_test_metrics.npy', eval_metrics)
+    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_test_metrics.npy', eval_metrics)
 
     # using model for prediction on test data
     predicted_types = model.predict(test_gen)
@@ -186,10 +186,10 @@ for fold in range(k):
     true_types = test_gen.classes
 
     # saving true and predicted labels
-    np.save(f'scores/{current_approach}_fold{fold}_y_pred.npy', y_pred)
-    np.save(f'scores/{current_approach}_fold{fold}_y_true.npy', true_types)
+    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_y_pred.npy', y_pred)
+    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_y_true.npy', true_types)
 
     # saving classification statistics
     report_dict = classification_report(true_types, y_pred, target_names=['fall', 'spring', 'summer', 'winter'],
                                         output_dict=True)
-    np.save(f'scores/{current_approach}_fold{fold}_prediction_report.npy', report_dict, allow_pickle=True)
+    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_prediction_report.npy', report_dict, allow_pickle=True)
