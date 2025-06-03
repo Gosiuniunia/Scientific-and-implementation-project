@@ -113,7 +113,7 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
 
     for i in range(len(model_names)):
         for fold in range(10):
-            data = np.load(f"scores/{model_files[i]}_fold{fold}_prediction_report.npy", allow_pickle=True).item()
+            data = np.load(f"scores/deep_learning_scores/{model_files[i]}_fold{fold}_prediction_report.npy", allow_pickle=True).item()
             acc_scores[i].append(data['accuracy'])
             pre_scores[i].append(data['macro avg']['precision'])
             rec_scores[i].append(data['macro avg']['recall'])
