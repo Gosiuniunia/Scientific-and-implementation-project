@@ -36,8 +36,10 @@ Additionally, the environment provides tools for testing and comparing classifie
 git clone 
 ```
 ### 2. Install dependencies
-pip install -r requirements.txt
 
+```bash
+pip install -r requirements.txt
+```
 
 ###  3. Configure paths in config.ini
 
