@@ -28,3 +28,24 @@ Additionally, the environment provides tools for testing and comparing classifie
        - GANs
 
 - Model evaluation and comparison using accuracy, precision, recall and f1 score with statistical testing
+
+## Usage
+### 1. Clone the repository
+
+```bash
+git clone 
+```
+### 2. Install dependencies
+pip install -r requirements.txt
+
+
+###  3. Configure paths in config.ini
+
+Open `config/pca.ini` and update the paths to match your environment:
+
+- `mediapipe_model_path` - download the `.task` model file from the official MediaPipe website: https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker?hl=pl
+
+- `dataset_path ` - path to the dataset folder containing subfolders, each subfolder represents a different class label (personal season)
+
+- `extracted_features_csv_file_path  ` path and filename for the output CSV file where the extracted features will be saved.
+
