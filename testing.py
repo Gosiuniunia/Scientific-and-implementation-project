@@ -113,13 +113,14 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
 
     for i in range(len(model_names)):
         for fold in range(10):
-            data = np.load(f"scores/{model_files[i]}_fold{fold}_prediction_report.npy", allow_pickle=True).item()
+            data = np.load(f"scores/deep_learning_scores/{model_files[i]}_shuffle_with_seed_fold{fold}_prediction_report.npy", allow_pickle=True).item()
             acc_scores[i].append(data['accuracy'])
             pre_scores[i].append(data['macro avg']['precision'])
             rec_scores[i].append(data['macro avg']['recall'])
             f1_scores[i].append(data['macro avg']['f1-score'])
 
     scr = {"Accuracy": acc_scores, "Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores}
+    print(acc_scores)
     mean_scores = []
     std_scores = []
     for s in scr.keys():
@@ -164,8 +165,8 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
 #     result = print_scores_deep(round=3, table_style="latex")
 #     f.write(result)
 #     f.write('\n\n')
-# print(print_scores_deep(round=3, table_style="latex"))
-# print(np.load("scores/basic_fold6_prediction_report.npy", allow_pickle=True).item())
+print(print_scores_deep(round=3, table_style="latex"))
+print(np.load("scores/deep_learning_scores/basic_shuffle_with_seed_fold0_prediction_report.npy", allow_pickle=True).item())
 
 def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternative="two-sided"):
     """
