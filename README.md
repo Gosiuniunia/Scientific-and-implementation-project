@@ -51,3 +51,9 @@ Open `config/pca.ini` and update the paths to match your environment:
 
 - `extracted_features_csv_file_path  ` path and filename for the output CSV file where the extracted features will be saved.
 
+### 4. Run main.py file
+
+
+```bash
+python main,py
+```

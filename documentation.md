@@ -236,6 +236,20 @@ FUNCTIONS
             - 'svm_recalls.npy': Recall scores for each parameter combination and fold.
             - 'svm_f1s.npy': F1 scores for each parameter combination and fold.
 
+## src/fold_assignments
+
+Saves k fold assignments into csv in order to compare DL and ML approach.
+
+FUNCTIONS
+    k_fold_assignment(csv_file)
+        This function performs a stratified 5-fold split of the input dataset and saves the fold assignment for each file into a CSV file.
+
+        Parameters:
+        csv_file (str): Path to the input CSV file.
+
+        Output:
+        - Saves 'fold_assignments.csv' to data folder.
+
 ## model_free_augmentation
 
 Performing model free image data augmentation, using Albumentations library.
