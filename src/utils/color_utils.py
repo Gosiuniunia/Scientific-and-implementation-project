@@ -8,7 +8,7 @@ and color space conversion to LAB and HSV formats.
 
 import numpy as np
 import cv2
-from utils.white_balancing.classes import WBsRGB as wb_srgb
+from src.utils.white_balancing.classes import WBsRGB as wb_srgb
 
 def white_balance(img):
   """

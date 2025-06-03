@@ -14,11 +14,8 @@ import mediapipe as mp
 import cv2
 import numpy as np
 import pandas as pd
-from utils.color_utils import white_balance, crop_img, apply_kmeans, get_hsv_lab_colour, get_color_between_points
+from src.utils.color_utils import white_balance, crop_img, apply_kmeans, get_hsv_lab_colour, get_color_between_points
 import os
-
-
-model_path = r"C:/studia/P_nw/face_landmarker.task"
 
 
 def init_face_landmark(model_path):
@@ -207,16 +204,18 @@ def extract_lab_hsv_values_from_photo(image_path, FaceLandmarker, options):
     return extracted_values
 
 
-def extract_dataset_to_csv(root_dir):
+def extract_dataset_to_csv(root_dir, model_path, output_csv_path):
     """ 
     Extracts color features (in HSV and LAB color spaces) from images located in subdirectories of the root folder.
-    Each subdirectory is treated as a separate class label. The final CSV file will be named after the root folder.
+    Each subdirectory is treated as a separate class label. The final CSV file will be saved to output_csv_path.
 
     Args:
         root_dir (str): Root directory containing labeled subdirectories of images.
+        model_path (str): Path to the face landmarker model.
+        output_csv_path (str): Full path (including filename) where CSV will be saved.
 
     Saves:
-         - 'root_dir.csv': A DataFrame where each row contains extracted features and a label.
+         - CSV file at output_csv_path containing extracted features and labels.
     """
     FaceLandmarker, options = init_face_landmark(model_path)
 
@@ -236,7 +235,5 @@ def extract_dataset_to_csv(root_dir):
                 )
                 row = [filename] + extracted_values + [label_name]
                 df.loc[len(df)] = row
-    df.to_csv(root_dir + ".csv")
 
-
-# extract_dataset_to_csv("dataset_PColA")
+    df.to_csv(output_csv_path, index=False)

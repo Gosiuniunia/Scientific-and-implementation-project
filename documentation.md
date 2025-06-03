@@ -11,16 +11,16 @@ The folder contains two CSV files that assign images to each fold for k-fold cro
 - `fold_assignments.csv` — used to ensure consistent comparisons between machine learning and deep learning approaches.
 - `model_free_fold_assignments.csv` — used to ensure consistent data separation, independent of any specific modeling approach.
 
-## utils
+## src/utils
 
 This module provides helper functions for facial image processing, including white balancing and color extraction.
 
-### utils/white_balancing
+### src/utils/white_balancing
 
 This submodule contains functions related to correcting and adjusting image colors via white balancing.
 
 
-### utils/color_utils 
+### src/utils/color_utils 
 
 This submodule provides helper functions for color extraction and processing from facial regions. It includes image cropping based on facial landmarks, color segmentation using K-Means, and color space conversion to LAB and HSV formats.
     
@@ -84,7 +84,7 @@ FUNCTIONS
         Returns:
               wb_img (np.ndarray): White-balanced image in RGB format.
 
-## face_features_extraction
+## src/face_features_extraction
 
 This script extracts color features from facial regions (iris, skin, eyebrows) using MediaPipe Face Landmarker.
 It processes images organized into subdirectories (each representing a class label), computes HSV and LAB color
@@ -99,13 +99,16 @@ FUNCTIONS
 
     extract_dataset_to_csv(root_dir)
         Extracts color features (in HSV and LAB color spaces) from images located in subdirectories of the root folder.
-        Each subdirectory is treated as a separate class label. The final CSV file will be named after the root folder.
+        Each subdirectory is treated as a separate class label. The final CSV file will be saved to output_csv_path.
 
         Args:
             root_dir (str): Root directory containing labeled subdirectories of images.
+            model_path (str): Path to the face landmarker model.
+            output_csv_path (str): Full path (including filename) where CSV will be saved.
+
 
         Saves:
-            - 'root_dir.csv': A DataFrame where each row contains extracted features and a label.
+            - CSV file at output_csv_path containing extracted features and labels.
 
     extract_hair_colour(img, face_landmarks)
         Extracts eyebrow (hair) color using facial landmarks.
@@ -168,7 +171,7 @@ FUNCTIONS
         Returns:
             tuple: A tuple containing the FaceLandmarker class and its configuration options (FaceLandmarkerOptions).
 
-## tuning
+## src/tuning
 
 Hyperparameter tuning for KNN, SVM, and Decision Tree classifiers
 using repeated stratified k-fold cross-validation.
@@ -290,7 +293,7 @@ FUNCTIONS
 
 
 
-## testing
+## src/testing
 
 Statistical tests and tables for metrics.  
 

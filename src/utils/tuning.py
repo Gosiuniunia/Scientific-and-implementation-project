@@ -79,10 +79,10 @@ def tune_knn_params(feature_type, X, y, n_neighbors, metrics, weights, rskf):
             f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
     
     # Zapis wyników
-    np.save(f"knn_{feature_type}_accuracies.npy", accuracies)
-    np.save(f"knn_{feature_type}_precisions.npy", precisions)
-    np.save(f"knn_{feature_type}_recalls.npy", recalls)
-    np.save(f"knn_{feature_type}_f1s.npy", f1s)
+    np.save(f"scores/knn_{feature_type}_accuracies.npy", accuracies)
+    np.save(f"scores/knn_{feature_type}_precisions.npy", precisions)
+    np.save(f"scores/knn_{feature_type}_recalls.npy", recalls)
+    np.save(f"scores/knn_{feature_type}_f1s.npy", f1s)
 
 def tune_svm_params(feature_type, X, y, kernels, Cs, gammas, rskf):
     """
@@ -126,10 +126,10 @@ def tune_svm_params(feature_type, X, y, kernels, Cs, gammas, rskf):
             recalls[param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
             f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
 
-    np.save(f"svm_{feature_type}_accuracies.npy", accuracies)
-    np.save(f"svm_{feature_type}_precisions.npy", precisions)
-    np.save(f"svm_{feature_type}_recalls.npy", recalls)
-    np.save(f"svm_{feature_type}_f1s.npy", f1s)
+    np.save(f"scores/svm_{feature_type}_accuracies.npy", accuracies)
+    np.save(f"scores/svm_{feature_type}_precisions.npy", precisions)
+    np.save(f"scores/svm_{feature_type}_recalls.npy", recalls)
+    np.save(f"scores/svm_{feature_type}_f1s.npy", f1s)
 
 
 def tune_dt_params(feature_type, X, y, max_depths, rskf):
@@ -166,10 +166,10 @@ def tune_dt_params(feature_type, X, y, max_depths, rskf):
             recalls[param_idx, fold_idx] = recall_score(y[test], y_pred, average='macro', zero_division=0)
             f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
 
-    np.save(f"dt_{feature_type}_accuracies.npy", accuracies)
-    np.save(f"dt_{feature_type}_precisions.npy", precisions)
-    np.save(f"dt_{feature_type}_recalls.npy", recalls)
-    np.save(f"dt_{feature_type}_f1s.npy", f1s)
+    np.save(f"scores/dt_{feature_type}_accuracies.npy", accuracies)
+    np.save(f"scores/dt_{feature_type}_precisions.npy", precisions)
+    np.save(f"scores/dt_{feature_type}_recalls.npy", recalls)
+    np.save(f"scores/dt_{feature_type}_f1s.npy", f1s)
 
 def tune_rf_params(feature_type, X, y, n_estimators, max_depths, rskf):
     """
@@ -210,10 +210,10 @@ def tune_rf_params(feature_type, X, y, n_estimators, max_depths, rskf):
             f1s[param_idx, fold_idx] = f1_score(y[test], y_pred, average='macro', zero_division=0)
     
     # Zapis wyników
-    np.save(f"rf_{feature_type}_accuracies.npy", accuracies)
-    np.save(f"rf_{feature_type}_precisions.npy", precisions)
-    np.save(f"rf_{feature_type}_recalls.npy", recalls)
-    np.save(f"rf_{feature_type}_f1s.npy", f1s)
+    np.save(f"scores/rf_{feature_type}_accuracies.npy", accuracies)
+    np.save(f"scores/rf_{feature_type}_precisions.npy", precisions)
+    np.save(f"scores/rf_{feature_type}_recalls.npy", recalls)
+    np.save(f"scores/rf_{feature_type}_f1s.npy", f1s)
 
 
 def run_tuning(file_name):
@@ -241,13 +241,10 @@ def run_tuning(file_name):
     for feature_type in feature_types:
         X = select_features(all_features, feature_type)
 
-        # tune_rf_params(feature_type, X, y, n_estimators, max_depth, rskf)
+        tune_rf_params(feature_type, X, y, n_estimators, max_depth, rskf)
 
-        # tune_knn_params(feature_type, X, y, n_neighbors, metrics, weights, rskf)
+        tune_knn_params(feature_type, X, y, n_neighbors, metrics, weights, rskf)
 
-        # tune_svm_params(feature_type, X, y, kernels, Cs, gammas, rskf)
+        tune_svm_params(feature_type, X, y, kernels, Cs, gammas, rskf)
 
         tune_dt_params(feature_type, X, y, max_depths, rskf)
-
-
-run_tuning("dataset_PColA.csv")
