@@ -33,7 +33,7 @@ np.random.seed(seed)
 random.seed(seed)
 
 
-def split_data_test_train(assignment_file_path, fold):
+def split_data_test_train(assignment_file_path, fold, offset=0):
     """
     Splits images details (file path, label), provided as pandas Dataframe, into train and test sets details pandas Dataframes,
     taking into account the fold number k
@@ -51,8 +51,8 @@ def split_data_test_train(assignment_file_path, fold):
     df['filename'] = df['label'] + '/' + df['filename']
     non_augmented_df['filename'] = non_augmented_df['label'] + '/' + non_augmented_df['filename']
 
-    train_df = df[df['kfold'] != fold]
-    test_df = non_augmented_df[non_augmented_df['kfold'] == fold]
+    train_df = df[df['kfold']+offset != fold]
+    test_df = non_augmented_df[non_augmented_df['kfold']+offset == fold]
 
     return test_df, train_df
 
@@ -122,20 +122,26 @@ target_size = (224, 224)
 input_shape = (224, 224, 3)
 num_classes = 4
 k = 5
-current_approach = "model_free_shuffle_with_seed"
+current_approach = "basic_shuffle_with_seed"
+offset = 0
 augment_prefixes_list = ["hf_", "co_"]
 
 adjust_folds_assignment_file(FOLDS_ASSIGNMENT_PATH, MODEL_FREE_FOLDS_ASSIGNMENT_PATH, prefixes_list=augment_prefixes_list)
 
-for fold in range(k):
+for fold in range(offset, k+offset):
     print(f"Training fold {fold}...")
 
     dg = ImageDataGenerator(preprocessing_function=preprocess_input)
-    test_df, train_df = split_data_test_train(MODEL_FREE_FOLDS_ASSIGNMENT_PATH, fold)
+    if current_approach == "basic_shuffle_with_seed":
+        test_df, train_df = split_data_test_train(FOLDS_ASSIGNMENT_PATH, fold, offset)
+    elif current_approach == "model_free_shuffle_with_seed":
+        test_df, train_df = split_data_test_train(MODEL_FREE_FOLDS_ASSIGNMENT_PATH, fold, offset)
+    else:
+        print('Invalid approach name given')
 
     train_gen = dg.flow_from_dataframe(
         dataframe=train_df,
-        directory=MODEL_FREE_AUGMENTED_IMAGES_PATH,
+        directory=IMAGES_PATH,
         x_col='filename',
         y_col='label',
         target_size=target_size,
@@ -161,7 +167,9 @@ for fold in range(k):
 
     # model training
     history = model.fit(train_gen, epochs=5, verbose=True)
-    model.save(rf'../personal_color_analysis/model_weights/{current_approach}_vgg16_fold_{fold}.keras')
+    model.save(rf'../model_weights/{current_approach}_vgg16_fold_{fold}.keras')
+
+    os.mkdir('deep_learning_scores')
 
     # # training statistics
     np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_training_history.npy', history.history)
