@@ -67,6 +67,8 @@ def prepare_vgg16_model():
 
     """
     # model definition
+    input_shape = (224, 224, 3)
+    num_classes = 4
     base_model = VGG16(include_top=True, weights='imagenet', input_shape=input_shape)
     x = base_model.layers[-2].output
     output = Dense(num_classes, activation='softmax')(x)
@@ -110,91 +112,101 @@ def adjust_folds_assignment_file(assignment_file_input_path, assignment_file_out
         writer.writeheader()
         writer.writerows(new_rows)
 
+def run_deep_learning(images_path, model_free_images_path, folds_assignment_path, model_free_folds_assignment_path, offset=0):
 
-IMAGES_PATH = rf"../dataset_PColA"
-MODEL_FREE_AUGMENTED_IMAGES_PATH = rf"../dataset_PCoIA_model_free_augmented"
-FOLDS_ASSIGNMENT_PATH = rf"data/fold_assignments.csv"
-MODEL_FREE_FOLDS_ASSIGNMENT_PATH = rf"data/model_free_fold_assignments.csv"
+    """
+    Function runs training of the VGG16 model for PCoA task.
+    Args:
+        images_path: path to original images
+        model_free_images_path: path to images with model free image augmentaation applied
+        folds_assignment_path: path to the csv file containing fold assigment information
+        model_free_folds_assignment_path: path to the csv file containing fold assignment information when using model free image augmentation
+        offset: integer value needed when experiment is run twice to change the numeration of folds.
+        Should be set to 0 or 5. By default set to 0.
 
-# Training parameters
-batch_size = 32
-target_size = (224, 224)
-input_shape = (224, 224, 3)
-num_classes = 4
-k = 5
-current_approach = "basic_shuffle_with_seed"
-offset = 0
-augment_prefixes_list = ["hf_", "co_"]
+    Returns:
+        None
+    """
+    # Training parameters
+    batch_size = 32
+    target_size = (224, 224)
+    # input_shape = (224, 224, 3)
+    # num_classes = 4
+    k = 5
+    current_approach = "basic_shuffle_with_seed"
+    offset = offset
+    augment_prefixes_list = ["hf_", "co_"]
 
-adjust_folds_assignment_file(FOLDS_ASSIGNMENT_PATH, MODEL_FREE_FOLDS_ASSIGNMENT_PATH, prefixes_list=augment_prefixes_list)
+    adjust_folds_assignment_file(folds_assignment_path, model_free_folds_assignment_path, prefixes_list=augment_prefixes_list)
 
-for fold in range(offset, k+offset):
-    print(f"Training fold {fold}...")
+    for fold in range(offset, k+offset):
+        print(f"Training fold {fold}...")
+        dg = ImageDataGenerator(preprocessing_function=preprocess_input)
+        if current_approach == "basic_shuffle_with_seed":
+            test_df, train_df = split_data_test_train(folds_assignment_path, fold, offset)
+            directory = images_path
+        elif current_approach == "model_free_shuffle_with_seed":
+            test_df, train_df = split_data_test_train(model_free_folds_assignment_path, fold, offset)
+            directory = model_free_images_path
+        else:
+            print('Invalid approach name given')
 
-    dg = ImageDataGenerator(preprocessing_function=preprocess_input)
-    if current_approach == "basic_shuffle_with_seed":
-        test_df, train_df = split_data_test_train(FOLDS_ASSIGNMENT_PATH, fold, offset)
-    elif current_approach == "model_free_shuffle_with_seed":
-        test_df, train_df = split_data_test_train(MODEL_FREE_FOLDS_ASSIGNMENT_PATH, fold, offset)
-    else:
-        print('Invalid approach name given')
+        train_gen = dg.flow_from_dataframe(
+            dataframe=train_df,
+            directory=directory,
+            x_col='filename',
+            y_col='label',
+            target_size=target_size,
+            class_mode='categorical',
+            batch_size=batch_size,
+            shuffle=True,
+            seed=seed
+        )
 
-    train_gen = dg.flow_from_dataframe(
-        dataframe=train_df,
-        directory=IMAGES_PATH,
-        x_col='filename',
-        y_col='label',
-        target_size=target_size,
-        class_mode='categorical',
-        batch_size=batch_size,
-        shuffle=True,
-        seed=seed
-    )
+        test_gen = dg.flow_from_dataframe(
+            dataframe=test_df,
+            directory=images_path,
+            x_col='filename',
+            y_col='label',
+            target_size=target_size,
+            class_mode='categorical',
+            batch_size=batch_size,
+            shuffle=False,
+            seed = seed
+        )
 
-    test_gen = dg.flow_from_dataframe(
-        dataframe=test_df,
-        directory=IMAGES_PATH,
-        x_col='filename',
-        y_col='label',
-        target_size=target_size,
-        class_mode='categorical',
-        batch_size=batch_size,
-        shuffle=False,
-        seed = seed
-    )
+        model = prepare_vgg16_model()
 
-    model = prepare_vgg16_model()
+        # model training
+        history = model.fit(train_gen, epochs=5, verbose=True)
+        model.save(rf'../model_weights/{current_approach}_vgg16_fold_{fold}.keras')
 
-    # model training
-    history = model.fit(train_gen, epochs=5, verbose=True)
-    model.save(rf'../model_weights/{current_approach}_vgg16_fold_{fold}.keras')
+        os.mkdir('deep_learning_scores')
 
-    os.mkdir('deep_learning_scores')
+        # # training statistics
+        np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_training_history.npy', history.history)
+        precision = np.array(history.history['precision'])
+        recall = np.array(history.history['recall'])
+        f1 = 2 * (precision * recall) / (precision + recall + 1e-7)
+        np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_f1.npy', f1)
 
-    # # training statistics
-    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_training_history.npy', history.history)
-    precision = np.array(history.history['precision'])
-    recall = np.array(history.history['recall'])
-    f1 = 2 * (precision * recall) / (precision + recall + 1e-7)
-    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_f1.npy', f1)
+        # model evaluation
+        loss, accuracy, precision, recall = model.evaluate(test_gen, verbose=1)
+        print(f"Loss: {loss:.4f}, Acc: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}")
 
-    # model evaluation
-    loss, accuracy, precision, recall = model.evaluate(test_gen, verbose=1)
-    print(f"Loss: {loss:.4f}, Acc: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}")
+        eval_metrics = np.array([loss, accuracy, precision, recall])
+        np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_test_metrics.npy', eval_metrics)
 
-    eval_metrics = np.array([loss, accuracy, precision, recall])
-    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_test_metrics.npy', eval_metrics)
+        # using model for prediction on test data
+        predicted_types = model.predict(test_gen)
+        y_pred = np.argmax(predicted_types, axis=1)
+        true_types = test_gen.classes
 
-    # using model for prediction on test data
-    predicted_types = model.predict(test_gen)
-    y_pred = np.argmax(predicted_types, axis=1)
-    true_types = test_gen.classes
+        # saving true and predicted labels
+        np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_y_pred.npy', y_pred)
+        np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_y_true.npy', true_types)
 
-    # saving true and predicted labels
-    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_y_pred.npy', y_pred)
-    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_y_true.npy', true_types)
-
-    # saving classification statistics
-    report_dict = classification_report(true_types, y_pred, target_names=['fall', 'spring', 'summer', 'winter'],
-                                        output_dict=True)
-    np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_prediction_report.npy', report_dict, allow_pickle=True)
+        # saving classification statistics
+        report_dict = classification_report(true_types, y_pred, target_names=['fall', 'spring', 'summer', 'winter'],
+                                            output_dict=True)
+        np.save(f'scores/deep_learning_scores/{current_approach}_fold{fold}_prediction_report.npy', report_dict, allow_pickle=True)

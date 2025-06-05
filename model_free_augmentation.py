@@ -5,14 +5,13 @@ Augmentation operations are cutoff and horizontal flip.
 
 """
 
-
 import albumentations as A
 import cv2
 import os
 
-TARGET_SIZE = 224
-ORIGINAL_DATA_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PColA"
-AUGMENTED_DATA_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PCoIA_model_free_augmented"
+# TARGET_SIZE = 224
+# ORIGINAL_DATA_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PColA"
+# AUGMENTED_DATA_PATH = rf"C:\Users\wdomc\Documents\personal_color_analysis\dataset_PCoIA_model_free_augmented"
 
 def augment_and_save_image(image_path, augment_operation, output_path):
     """
@@ -33,34 +32,41 @@ def augment_and_save_image(image_path, augment_operation, output_path):
     augmented_image_bgr = cv2.cvtColor(augmented_image, cv2.COLOR_RGB2BGR)
     cv2.imwrite(output_path, augmented_image_bgr)
 
-if __name__ == '__main__':
-
-    horizontal_flip = A.Compose([A.Resize(TARGET_SIZE, TARGET_SIZE), A.HorizontalFlip(p=0.5)])
-    translation_zoom_rotation = A.Compose([A.Resize(TARGET_SIZE, TARGET_SIZE), A.Affine(scale=(0.8, 1.2), rotate=(-15, 15), p=0.7)])
-    cutout = A.Compose([A.Resize(TARGET_SIZE, TARGET_SIZE), A.CoarseDropout(num_holes_range=(1, 8), hole_height_range=(0.1, 0.25),
+def run_augmentation(original_data_path, augmented_data_path, target_size):
+    '''
+    Function runs model free image data augmentation using Albumentations library
+    on images specified in original_data_path and saves them in augmented_data_path directory.
+    Images are divided into folders describing class withing each directory.
+    Result image size is specified by target_size.
+    Returns:
+        None
+    '''
+    horizontal_flip = A.Compose([A.Resize(target_size, target_size), A.HorizontalFlip(p=0.5)])
+    # translation_zoom_rotation = A.Compose([A.Resize(target_size, target_size), A.Affine(scale=(0.8, 1.2), rotate=(-15, 15), p=0.7)])
+    cutout = A.Compose([A.Resize(target_size, target_size), A.CoarseDropout(num_holes_range=(1, 8), hole_height_range=(0.1, 0.25),
                         hole_width_range=(0.1, 0.25), p=1.0)])
 
-    classes_folders = os.listdir(ORIGINAL_DATA_PATH)
-
+    classes_folders = os.listdir(original_data_path)
+    print("Running augmentation")
     for class_folder in classes_folders:
-        class_folder_path = os.path.join(ORIGINAL_DATA_PATH, class_folder)
+        class_folder_path = os.path.join(original_data_path, class_folder)
         images_files = os.listdir(class_folder_path)
         for img_filename in images_files:
             img_path = os.path.join(class_folder_path, img_filename)
             original_image = cv2.imread(img_path)
-            original_output_img_path = os.path.join(AUGMENTED_DATA_PATH, class_folder, f"{img_filename}")
+            original_output_img_path = os.path.join(original_data_path, class_folder, f"{img_filename}")
             cv2.imwrite(original_output_img_path, original_image)
 
             # horizontal flip application
-            output_img_path = os.path.join(AUGMENTED_DATA_PATH, class_folder, f"hf_{img_filename}")
+            output_img_path = os.path.join(augmented_data_path, class_folder, f"hf_{img_filename}")
             img = augment_and_save_image(img_path, horizontal_flip, output_path=output_img_path)
 
             # translation, rotation, zoom application
-            # output_img_path = os.path.join(AUGMENTED_DATA_PATH, class_folder, f"tz_{img_filename}")
+            # output_img_path = os.path.join(augmented_data_path class_folder, f"tz_{img_filename}")
             # img = augment_and_save_image(img_path, translation_zoom_rotation, output_path=output_img_path)
 
             # cutout application
-            output_img_path = os.path.join(AUGMENTED_DATA_PATH, class_folder, f"co_{img_filename}")
+            output_img_path = os.path.join(augmented_data_path, class_folder, f"co_{img_filename}")
             img = augment_and_save_image(img_path, cutout, output_path=output_img_path)
 
             # print(output_img_path)

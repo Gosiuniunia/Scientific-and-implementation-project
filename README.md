@@ -22,10 +22,8 @@ Additionally, the environment provides tools for testing and comparing classifie
      - Hyperparameter tuning for optimal performance of ML models
 
   2. **End-to-End Deep Learning**:
-     - Processing of raw facial images using CNN
-     - Integration of pre-implemented image augmentation methods, including:
-       - Geometric transformations
-       - GANs
+     - Processing of raw facial images using CNN VGG16 model
+     - Integration of pre-implemented model free image augmentation methods
 
 - Model evaluation and comparison using accuracy, precision, recall and f1 score with statistical testing
 
@@ -55,5 +53,5 @@ Open `config/pca.ini` and update the paths to match your environment:
 
 
 ```bash
-python main,py
+python main.py
 ```
