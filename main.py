@@ -3,8 +3,8 @@ import configparser
 from src.face_features_extraction import extract_dataset_to_csv
 from src.tuning import run_tuning
 from src.fold_assignments import k_fold_assignment
-from deep_learning_approach import run_deep_learning
-from model_free_augmentation import run_augmentation
+from src.deep_learning_approach import run_deep_learning
+from src.model_free_augmentation import run_augmentation
 
 config = configparser.ConfigParser()
 config.read('config.ini')

@@ -47,7 +47,7 @@ def split_data_test_train(assignment_file_path, fold, offset=0):
     """
     # Retrieving and adjusting folds assignments details
     df = pd.read_csv(assignment_file_path)
-    non_augmented_df = pd.read_csv(fr"data/fold_assignments.csv")
+    non_augmented_df = pd.read_csv(fr"../data/fold_assignments.csv")
     df['filename'] = df['label'] + '/' + df['filename']
     non_augmented_df['filename'] = non_augmented_df['label'] + '/' + non_augmented_df['filename']
 
