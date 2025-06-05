@@ -49,6 +49,18 @@ Open `config/pca.ini` and update the paths to match your environment:
 
 - `extracted_features_csv_file_path  ` path and filename for the output CSV file where the extracted features will be saved.
 
+- `images_path` - path to the dataset folder containing subfolders, each subfolder represents a different class label (personal season)
+
+- `model_free_augmented_images_path` - path to the dataset folder which will contain model-free augmented images. Folder should contain subfolders, each subfolder represents a different class label (personal season)
+
+- `folds_assignment_path` - path to the csv file with images assigned to training folds - used when model training without data augmentation is performed
+
+- `model_free_folds_assignment_path` - path to the csv file with images assigned to training folds - used when model training with data augmentation is performed
+
+- `target_size` - size of the image for training. For VGG16 model the value 224 is required
+
+- `offset` - parameter used to perform multiple experiment runs. Should be set to 0 in the first trial and to 5 if the second run is done
+
 ### 4. Run main.py file
 
 

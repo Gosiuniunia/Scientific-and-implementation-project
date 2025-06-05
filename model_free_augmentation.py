@@ -59,20 +59,24 @@ def run_augmentation(original_data_path, augmented_data_path, target_size):
 
             # horizontal flip application
             output_img_path = os.path.join(augmented_data_path, class_folder, f"hf_{img_filename}")
-            img = augment_and_save_image(img_path, horizontal_flip, output_path=output_img_path)
+            if not os.path.exists(output_img_path):
+                img = augment_and_save_image(img_path, horizontal_flip, output_path=output_img_path)
+            else:
+                print(f"Skipped: {output_img_path} already exists.")
+            # output_img_path = os.path.join(augmented_data_path, class_folder, f"hf_{img_filename}")
+            # img = augment_and_save_image(img_path, horizontal_flip, output_path=output_img_path)
 
             # translation, rotation, zoom application
             # output_img_path = os.path.join(augmented_data_path class_folder, f"tz_{img_filename}")
             # img = augment_and_save_image(img_path, translation_zoom_rotation, output_path=output_img_path)
 
             # cutout application
+            # Apply cutout augmentation if not already done
             output_img_path = os.path.join(augmented_data_path, class_folder, f"co_{img_filename}")
-            img = augment_and_save_image(img_path, cutout, output_path=output_img_path)
+            if not os.path.exists(output_img_path):
+                img = augment_and_save_image(img_path, cutout, output_path=output_img_path)
+            else:
+                print(f"Skipped: {output_img_path} already exists.")
 
             # print(output_img_path)
-
-
-
-
-
-
+    print("Augmentation operations finished")
