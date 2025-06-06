@@ -112,7 +112,7 @@ def adjust_folds_assignment_file(assignment_file_input_path, assignment_file_out
         writer.writeheader()
         writer.writerows(new_rows)
 
-def run_deep_learning(images_path, model_free_images_path, folds_assignment_path, model_free_folds_assignment_path, offset_val=0):
+def run_deep_learning(images_path, model_free_images_path, folds_assignment_path, model_free_folds_assignment_path, offset_val=0, current_approach="basic_shuffle_with_seed"):
 
     """
     Function runs training of the VGG16 model for PCoA task.
@@ -122,6 +122,9 @@ def run_deep_learning(images_path, model_free_images_path, folds_assignment_path
         folds_assignment_path: path to the csv file containing fold assigment information
         model_free_folds_assignment_path: path to the csv file containing fold assignment information when using model free image augmentation
         offset_val: integer value needed when experiment is run twice to change the numeration of folds.
+        current_approach: current approach to train model.
+        Value should be set to "basic_shuffle_with_seed" when training without data augmentation applied is intended.
+        Value should be set to "model_free_shuffle_with_seed" when training with data augmentation applied is intended.
         Should be set to 0 or 5. By default set to 0.
 
     Returns:
@@ -133,7 +136,7 @@ def run_deep_learning(images_path, model_free_images_path, folds_assignment_path
     # input_shape = (224, 224, 3)
     # num_classes = 4
     k = 5
-    current_approach = "basic_shuffle_with_seed"
+    current_approach = current_approach
     offset = offset_val
     augment_prefixes_list = ["hf_", "co_"]
 

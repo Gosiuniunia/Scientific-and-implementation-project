@@ -23,9 +23,10 @@ folds_assignment_path = config['config2']['folds_assignment_path']
 model_free_folds_assignment_path = config['config2']['model_free_folds_assignment_path']
 target_size = int(config['config2']['target_size'])
 offset = int(config['config2']['offset'])
+current_approach = config['config2']['current_approach']
 
 run_augmentation(images_path, model_free_images_path, target_size)
-run_deep_learning(images_path, model_free_images_path, folds_assignment_path, model_free_folds_assignment_path, offset_val=offset)
+run_deep_learning(images_path, model_free_images_path, folds_assignment_path, model_free_folds_assignment_path, offset_val=offset, current_approach=current_approach)
 
 
 

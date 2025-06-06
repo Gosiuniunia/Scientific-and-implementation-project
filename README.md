@@ -61,6 +61,8 @@ Open `config/pca.ini` and update the paths to match your environment:
 
 - `offset` - parameter used to perform multiple experiment runs. Should be set to 0 in the first trial and to 5 if the second run is done
 
+- ``
+
 ### 4. Run main.py file
 
 
