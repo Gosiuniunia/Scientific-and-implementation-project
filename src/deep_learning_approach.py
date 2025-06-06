@@ -33,12 +33,15 @@ np.random.seed(seed)
 random.seed(seed)
 
 
-def split_data_test_train(assignment_file_path, fold, offset=0):
+def split_data_test_train(assignment_file_path, non_augmented_assignment_file_path, fold, offset=0):
     """
     Splits images details (file path, label), provided as pandas Dataframe, into train and test sets details pandas Dataframes,
     taking into account the fold number k
     Args:
-        k: number of current fold
+        assignment_file_path - path to folds assignment csv file
+        non_augmented_assignment_file_path - path to assignment to folds of non-augmented images stored in a csv file
+        fold: number of current fold
+        offset: offset for current fold. Should be set to 0 for running experiment the first time and 5 if running for the second time
 
     Returns:
         train_df: train data details pandas Dataframe, including label and file path
@@ -47,7 +50,7 @@ def split_data_test_train(assignment_file_path, fold, offset=0):
     """
     # Retrieving and adjusting folds assignments details
     df = pd.read_csv(assignment_file_path)
-    non_augmented_df = pd.read_csv(fr"../data/fold_assignments.csv")
+    non_augmented_df = pd.read_csv(non_augmented_assignment_file_path)
     df['filename'] = df['label'] + '/' + df['filename']
     non_augmented_df['filename'] = non_augmented_df['label'] + '/' + non_augmented_df['filename']
 
@@ -87,7 +90,8 @@ def adjust_folds_assignment_file(assignment_file_input_path, assignment_file_out
     """
     Function modifies prepares the folds assignment for the augmented data.
     Args:
-        assignment_file_path: path to a .csv file with folds assignment information
+        assignment_file_input_path: path to a .csv file with folds assignment information
+        assignment_file_output_path: path where adjusted .csv file with fold assignment information will be saved
         prefixes_list: list of prefixes which are used in augmented images files, for example "co" for cut-out augmented images files
 
     Returns:
@@ -145,11 +149,10 @@ def run_deep_learning(images_path, model_free_images_path, folds_assignment_path
     for fold in range(offset, k+offset):
         print(f"Training fold {fold}...")
         dg = ImageDataGenerator(preprocessing_function=preprocess_input)
-        if current_approach == "basic_shuffle_with_seed":
-            test_df, train_df = split_data_test_train(folds_assignment_path, fold, offset)
-            directory = images_path
-        elif current_approach == "model_free_shuffle_with_seed":
-            test_df, train_df = split_data_test_train(model_free_folds_assignment_path, fold, offset)
+        test_df, train_df = split_data_test_train(folds_assignment_path, folds_assignment_path, offset)
+        directory = images_path
+        if current_approach == "model_free_shuffle_with_seed":
+            test_df, train_df = split_data_test_train(model_free_folds_assignment_path, folds_assignment_path, fold, offset)
             directory = model_free_images_path
         else:
             print('Invalid approach name given')
