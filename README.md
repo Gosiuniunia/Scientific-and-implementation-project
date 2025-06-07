@@ -47,7 +47,7 @@ Open `config.ini` and update the paths to match your environment:
 
 - `dataset_path ` - path to the dataset folder containing subfolders, each subfolder represents a different class label (personal season)
 
-- `extracted_features_csv_file_path  ` path and filename for the output CSV file where the extracted features will be saved.
+- `extracted_features_csv_file_path  ` path and filename for the output CSV file where the extracted features will be saved
 
 - `model_free_augmented_images_path` - path to the dataset folder which will contain model-free augmented images. Folder should contain subfolders, each subfolder represents a different class label (personal season)
 
@@ -59,7 +59,13 @@ Open `config.ini` and update the paths to match your environment:
 
 - `offset` - parameter used to perform multiple experiment runs. Should be set to 0 in the first trial and to 5 if the second run is done
 
-- `current_approach` - parameter used to specify current approach to train the model.
+- `current_approach` - parameter used to specify current approach to train the model
+
+- `summary_scores_path` - path to the txt file, where the summary of all scores will be saved
+
+- `testing_path` - path to the txt file, where result of the statistical testing will be saved
+
+- `plot_path` - path to the png file, where bar plot of scores will be saved
 
 ### 4. Run main.py file
 

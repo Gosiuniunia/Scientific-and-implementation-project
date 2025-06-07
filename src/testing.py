@@ -1,10 +1,11 @@
 """
-Statistical tests and tables for metrics.  
+Statistical tests, tables and visualization for metrics.  
 """
 
 import numpy as np
 from tabulate import tabulate
-
+import matplotlib.pyplot as plt
+import pandas as pd
 from scipy.stats import shapiro, ttest_rel, wilcoxon
 
 
@@ -84,7 +85,6 @@ def print_scores(classifier_name, feature_types=["all", "HSV", "Lab"],  round=No
             print(table)
         else:
             table_latex = "\\begin{table}[H]\n\centering\n"+ table + f"\n\\vspace{{10pt}}\n\caption{{Scores for {classifier_name} classifiers with {feature_type} features}}\n\label{{tab:{classifier_name.lower()}_{feature_type.lower()}}}\n\end{{table}}\n"
-            print(table_latex, "\n")
             return table_latex
 
 
@@ -120,7 +120,6 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
             f1_scores[i].append(data['macro avg']['f1-score'])
 
     scr = {"Accuracy": acc_scores, "Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores}
-    print(acc_scores)
     mean_scores = []
     std_scores = []
     for s in scr.keys():
@@ -140,35 +139,18 @@ def print_scores_deep(round=None, table_style="grid", return_scores=False):
                     showindex=model_names
     )
 
+    if return_scores == True:
+        return acc_scores, pre_scores, rec_scores, f1_scores
+
     if table_style == "grid":
         print(f"\n", "Scores for Deep Learning approach")
         print(table)
     else:
         table_latex = "\\begin{table}[H]\n\centering\n"+ table + f"\n\\vspace{{10pt}}\n\caption{{Scores for Deep Learning approach}}\n\label{{tab:deep}}\n\end{{table}}\n"
-        # print(table_latex, "\n")
         return table_latex
 
-    if return_scores == True:
-        return acc_scores, pre_scores, rec_scores, f1_scores
 
-# Table generation for report:
-# file = 'tables.txt'
-# model_names = ["KNN", "SVM", 'RF', 'DT']
-# features = [["all"], ["HSV"], ["Lab"]]
-# with open(file, "w", encoding="utf-8") as f:
-#     for model in model_names:
-#         for feature in features:
-#             result = print_scores(model, feature, table_style="latex", round=3, T=True)
-#             f.write(result)
-#             f.write('\n\n')
-    
-#     result = print_scores_deep(round=3, table_style="latex")
-#     f.write(result)
-#     f.write('\n\n')
-print(print_scores_deep(round=3, table_style="latex"))
-print(np.load("scores/deep_learning_scores/basic_shuffle_with_seed_fold0_prediction_report.npy", allow_pickle=True).item())
-
-def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternative="two-sided"):
+def compare_models(data, metric, model_names, table_style="grid", alpha=0.05, alternative="two-sided"):
     """
     Compares sets of related samples, performs statistical tests (Shapiro-Wilk for normality,
     followed by paired t-test for normal data or Wilcoxon signed-rank test for non-normal data),
@@ -176,16 +158,18 @@ def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternat
     was performed ("t" being t-test and "w" being the Wilcoxon).
 
     Args:
-        scores (np.array[float]): Array of samples scores for testing.
+        data (dict[dict]):Dictonary of all scores for chosen models.
+        metric (str): Metric on which the tests are based.
         model_names (list[str]): List of the compared model's names.
         table_style (str, optional): The formatting style for the table (e.g., "latex", "grid"). Defaults to "grid".
         alpha (float, optional): The significance level for the statistical test for normality. Defaults to 0.05.
         alternative (str, optional): The alternative hypothesis for the comparison tests. Can be 'two-sided', 'less', or 'greater'. Defaults to "two-sided".
     """
+    scores = np.array([data[key][metric] for key in data if key in model_names])
     stat_matrix = [[None for _ in range(scores.shape[0])] for _ in range(scores.shape[0])]
     for i in range(scores.shape[0]):
         for j in range(scores.shape[0]):
-            if i >= j: #comparison with oneself is omitted
+            if i >= j: #comparison with oneself and double is omitted
                 stat_matrix[i][j] = "nan"
                 continue
             t1, p1 = shapiro(scores[i])
@@ -204,96 +188,121 @@ def compare_models(scores, model_names, table_style="grid", alpha=0.05, alternat
     
     if table_style == "grid":
         print("\n Matrix of p-values from paired statistical tests between models")
-        return table
+        print(table)
     else:
-        table_latex = "\\begin{table}[h!]\n\centering" + table + f"\n\\vspace{{10pt}}\n\caption{{Matrix of p-values from paired statistical tests between models}}\n\end{{table}}\n"
+        table_latex = "\\begin{table}[h!]\n\centering" + table + f"\n\\vspace{{10pt}}\n\caption{{Matrix of p-values from paired statistical tests between models for {metric.lower()}}}\n\end{{table}}\n"
         return table_latex
 
+def load_tuned_models_data():
+    """
+    Loads all of the model's metrics values for chosen hyperparamethers and deep learning scores.
 
-# data = {}
-# best_params_num = [19, 19, 19] #knn
-# best_params_num = [14,14,14] #svm
-# best_params_num = [7,8,7] #rf
-# best_params_num = [4,3,4] #dt
-# best_params_num = [19, 19, 19, 14, 14, 14, 7, 8, 8, 4, 3, 4]
-# i = 0
-# for clf in ["knn", "svm", "rf", "dt"]:
-#     for over in ["all" , "HSV", "Lab"]:
-#         pre_scores = np.load(f"scores/{clf.lower()}_{over}_precisions.npy")[best_params_num[i]]
-#         rec_scores = np.load(f"scores/{clf.lower()}_{over}_recalls.npy")[best_params_num[i]]
-#         f1_scores = np.load(f"scores/{clf.lower()}_{over}_f1s.npy")[best_params_num[i]]
-#         acc_scores = np.load(f"scores/{clf.lower()}_{over}_accuracies.npy")[best_params_num[i]]
+    Returns:
+        data (dict[dict]): Dictonary of all scores for chosen models.
+    """
+    data = {}
+    best_params_num = [19, 19, 19, 14, 14, 14, 7, 8, 8, 4, 3, 4]
+    i = 0
+    for clf in ["knn", "svm", "rf", "dt"]:
+        for over in ["all" , "HSV", "Lab"]:
+            pre_scores = np.load(f"scores/{clf.lower()}_{over}_precisions.npy")[best_params_num[i]]
+            rec_scores = np.load(f"scores/{clf.lower()}_{over}_recalls.npy")[best_params_num[i]]
+            f1_scores = np.load(f"scores/{clf.lower()}_{over}_f1s.npy")[best_params_num[i]]
+            acc_scores = np.load(f"scores/{clf.lower()}_{over}_accuracies.npy")[best_params_num[i]]
 
-#         scr = {"Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores, "Accuracy":acc_scores}
-#         data[f"{clf}_{over}"] = scr
-#         i += 1
+            scr = {"Precision":pre_scores, "Recall":rec_scores, "F1 score":f1_scores, "Accuracy":acc_scores}
+            data[f"{clf.lower()}_{over.lower()}"] = scr
+            i += 1
 
-# a, p, r, f = print_scores_deep(return_scores=True)
-# print(a[1])
-# i = 0
-# name = ["nope", "yaaas"]
-# print(compare_models(np.array(a), name, table_style="latex"))
-# for aug in ["no_aug", "with_aug"]:
-#     scr = {"Precision":p[i], "Recall":r[i], "F1 score":f[i], "Accuracy":a[i]}
-#     data[aug] = scr
-#     i += 1
+    a, p, r, f = print_scores_deep(return_scores=True)
+    i = 0
+    for aug in ["no_aug", "with_aug"]:
+        scr = {"Precision":p[i], "Recall":r[i], "F1 score":f[i], "Accuracy":a[i]}
+        data[aug] = scr
+        i += 1
+    
+    return data
 
-# metric = "Recall"
-# metric = "F1 score"
-# model_names = list(data.keys())
-# scores = np.array([data[key][metric] for key in data])
+def load_and_generate_all_scores(summary_scores_path):
+    """
+    Loads and generates scores for all models for hyperparamethers tuning and deep learning comparison.
 
-# file = "compare.txt"
-# with open(file, "a", encoding="utf-8") as f:
-    # f.write(compare_models(scores, model_names, table_style="latex", alternative="two-sided"))
-    # f.write("\n")
-
-
-# Example usage with the provided parameters:
-# alpha = 0.05
-# alternative_hypothesis = "greater"
-# scores = np.load("dt_all_precisions.npy")
-# max_depths = list(range(2, 11))
-# compare_models(scores, max_depths, alpha=alpha, alternative=alternative_hypothesis, table_style="latex")
-
-# a, _, _, _ = print_scores_deep(return_scores=True)
-# model_names = ["without_aug", "with_aug"]
-# compare_models(np.array(a), model_names)
-
-# All combination's metrics visualization
-# import matplotlib.pyplot as plt
-# import pandas as pd
-# file = "metrics.jpg"
-# labels = list(data.keys())
-# metrics = ['Precision', 'Recall', 'F1 score', 'Accuracy']
-# n_metrics = len(metrics)
-# n_labels = len(labels)
-# colors = ['orchid', 'mediumpurple', 'skyblue', 'teal']
-
-# averaged_data = {}
-# for key, metric_values in data.items():
-#     averaged_data[key] = {metric: np.mean(values) for metric, values in metric_values.items()}
-
-# df_avg = pd.DataFrame.from_dict(averaged_data, orient='index')
-
-# fig, ax = plt.subplots(figsize=(16, 6)) 
-
-# width = 0.15 
-
-# x = np.arange(n_labels) 
-
-# for i, metric in enumerate(metrics):
-#     offset = width * (i - (n_metrics - 1) / 2)
-#     ax.bar(x + offset, df_avg[metric], width, label=metric, color=colors[i % len(colors)])
-
-# ax.set_ylabel('Uśredniona Wartość Metryki')
-# ax.set_xticks(x)
-# ax.set_xticklabels(labels, rotation=45, ha='right') 
-# ax.legend(title='Metryka', loc='lower right')
-# ax.grid(axis='y', linestyle='--', alpha=0.7)
-# plt.tight_layout()
+    Args:
+        summary_scores_path (str): path to the txt file, where the summary of all scores will be saved.
+    """
+    model_names = ["KNN", "SVM", 'RF', 'DT']
+    features = [["all"], ["HSV"], ["Lab"]]
+    with open(summary_scores_path, "w", encoding="utf-8") as f:
+        for model in model_names:
+            for feature in features:
+                result = print_scores(model, feature, table_style="latex", round=3, T=True)
+                f.write(result)
+                f.write('\n\n')
+        
+        result = print_scores_deep(round=3, table_style="latex")
+        f.write(result)
+        f.write('\n\n')
 
 
-# plt.savefig(file, dpi=300, bbox_inches='tight')
+def perform_statistical_testing(testing_path):
+    """
+    Performs all statistical testing needed for conducted experiment.
 
-# plt.show()
+    Args:
+        testing_path (str): path to the txt file, where result of the statistical testing will be saved.
+
+    """
+    data = load_tuned_models_data()
+
+    with open(testing_path, "w", encoding="utf-8") as f:
+        for clf in ["knn", "svm", "rf", "dt"]:
+            model_names = [key for key in data.keys() if clf in key]
+            f.write(compare_models(data, "Accuracy", model_names, table_style="latex"))
+            f.write("\n")
+
+        model_names = [key for key in data.keys() if "lab" in key] + ["no_aug"]
+        f.write(compare_models(data, "Accuracy", model_names, table_style="latex"))
+        f.write("\n")
+
+
+def visualize_scores(plot_path):
+    """
+    Creates the bar plot for the tuned model parameters in state-of-art method 
+    and deep learing methon without augmentation.
+
+    Args:
+        plot_path(str):  path to the png file, where bar plot of scores will be saved
+    
+    """
+    data = load_tuned_models_data()
+    labels = list(data.keys())
+    metrics = ['Precision', 'Recall', 'F1 score', 'Accuracy']
+    n_metrics = len(metrics)
+    n_labels = len(labels)
+    colors = ['orchid', 'mediumpurple', 'skyblue', 'teal']
+
+    averaged_data = {}
+    for key, metric_values in data.items():
+        averaged_data[key] = {metric: np.mean(values) for metric, values in metric_values.items()}
+
+    df_avg = pd.DataFrame.from_dict(averaged_data, orient='index')
+
+    fig, ax = plt.subplots(figsize=(16, 6)) 
+
+    width = 0.15 
+
+    x = np.arange(n_labels) 
+
+    for i, metric in enumerate(metrics):
+        offset = width * (i - (n_metrics - 1) / 2)
+        ax.bar(x + offset, df_avg[metric], width, label=metric, color=colors[i % len(colors)])
+
+    ax.set_ylabel('Uśredniona Wartość Metryki')
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, rotation=45, ha='right') 
+    ax.legend(title='Metryka', loc='lower right')
+    ax.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    ax.set_title("Average metrics values of all folds for final models comparison")
+
+    plt.savefig(plot_path, dpi=300, bbox_inches='tight')

@@ -12,6 +12,7 @@ from src.tuning import run_tuning
 from src.fold_assignments import k_fold_assignment
 from src.deep_learning_approach import run_deep_learning
 from src.model_free_augmentation import run_augmentation
+from src.testing import load_and_generate_all_scores, perform_statistical_testing, visualize_scores
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -25,6 +26,9 @@ model_free_folds_assignment_path = config["config1"]["model_free_folds_assignmen
 target_size = int(config["config1"]["target_size"])
 offset = int(config["config1"]["offset"])
 current_approach = config["config1"]["current_approach"]
+summary_scores_path = config["config1"]["summary_scores_path"]
+testing_path = config["config1"]["testing_path"]
+plot_path = config["config1"]["plot_path"]
 
 extract_dataset_to_csv(
     root_dir=dataset_path, model_path=model_path, output_csv_path=csv_path
@@ -41,3 +45,7 @@ run_deep_learning(
     offset_val=offset,
     current_approach=current_approach,
 )
+
+load_and_generate_all_scores(summary_scores_path)
+perform_statistical_testing(testing_path)
+visualize_scores(plot_path)
