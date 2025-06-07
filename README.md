@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ###  3. Configure paths in config.ini
 
-Open `config/pca.ini` and update the paths to match your environment:
+Open `config.ini` and update the paths to match your environment:
 
 - `mediapipe_model_path` - download the `.task` model file from the official MediaPipe website: https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker?hl=pl
 
