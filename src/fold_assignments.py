@@ -7,16 +7,17 @@ Saves k fold assignments into csv in order to compare DL and ML approach.
 import pandas as pd
 from sklearn.model_selection import RepeatedStratifiedKFold
 
-def k_fold_assignment(csv_file):
+def k_fold_assignment(csv_file, csv_output):
     """
     This function performs a stratified 5-fold split of the input dataset 
     and saves the fold assignment for each file into a CSV file.
 
     Parameters:
-    csv_file (str): Path to the input CSV file. 
+    csv_file (str): Path to the input CSV file.
+    csv_output (str): Path to the output CSV fie.
 
     Output:
-    - Saves 'fold_assignments.csv' to data folder.
+    - Saves fold assigments into csv_output file.
     """
 
     df_full = pd.read_csv(csv_file)
@@ -43,4 +44,4 @@ def k_fold_assignment(csv_file):
             })
 
     df_folds = pd.DataFrame(results)
-    df_folds.to_csv("data/fold_assignments.csv", index=False)
+    df_folds.to_csv(csv_output, index=False)

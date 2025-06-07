@@ -38,6 +38,10 @@ def run_augmentation(original_data_path, augmented_data_path, target_size):
     on images specified in original_data_path and saves them in augmented_data_path directory.
     Images are divided into folders describing class withing each directory.
     Result image size is specified by target_size.
+    Args:
+        original_data_path: Path to orginal dataset folder.
+        augmented_data_path: Path to save augmented images.
+        target_size: Desired image size (height and width) after resizing.
     Returns:
         None
     '''

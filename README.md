@@ -49,8 +49,6 @@ Open `config/pca.ini` and update the paths to match your environment:
 
 - `extracted_features_csv_file_path  ` path and filename for the output CSV file where the extracted features will be saved.
 
-- `images_path` - path to the dataset folder containing subfolders, each subfolder represents a different class label (personal season)
-
 - `model_free_augmented_images_path` - path to the dataset folder which will contain model-free augmented images. Folder should contain subfolders, each subfolder represents a different class label (personal season)
 
 - `folds_assignment_path` - path to the csv file with images assigned to training folds - used when model training without data augmentation is performed
@@ -61,7 +59,7 @@ Open `config/pca.ini` and update the paths to match your environment:
 
 - `offset` - parameter used to perform multiple experiment runs. Should be set to 0 in the first trial and to 5 if the second run is done
 
-- ``
+- `current_approach` - parameter used to specify current approach to train the model.
 
 ### 4. Run main.py file
 
@@ -69,3 +67,4 @@ Open `config/pca.ini` and update the paths to match your environment:
 ```bash
 python main.py
 ```
+Results of the experiment will be saved in `scores` folder.

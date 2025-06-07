@@ -11,6 +11,13 @@ The folder contains two CSV files that assign images to each fold for k-fold cro
 - `fold_assignments.csv` — used to ensure consistent comparisons between machine learning and deep learning approaches.
 - `model_free_fold_assignments.csv` — used to ensure consistent data separation, independent of any specific modeling approach.
 
+## main.py
+
+Main pipeline script for facial feature extraction, data augmentation, model tuning, 
+and deep learning training.
+
+All paths and parameters are loaded from the [config1] section of the config.ini file.
+
 ## src/utils
 
 This module provides helper functions for facial image processing, including white balancing and color extraction.
@@ -246,9 +253,10 @@ FUNCTIONS
 
         Parameters:
         csv_file (str): Path to the input CSV file.
+        csv_output (str): Path to the output CSV fie.
 
         Output:
-        - Saves 'fold_assignments.csv' to data folder.
+        - Saves fold assigments into csv_output file.
 
 ## model_free_augmentation
 
@@ -267,7 +275,20 @@ FUNCTIONS
         Returns:
             None
 
-## deep_learning_approach
+    run_augmentation(original_data_path, augmented_data_path, target_size)
+    Function runs model free image data augmentation using Albumentations library
+    on images specified in original_data_path and saves them in augmented_data_path directory.
+    Images are divided into folders describing class withing each directory.
+    Result image size is specified by target_size.
+    Args:
+        original_data_path: Path to orginal dataset folder.
+        augmented_data_path: Path to save augmented images.
+        target_size: Desired image size (height and width) after resizing.
+    Returns:
+        None
+    '''
+
+## scr/deep_learning_approach
 
 This script:
 
@@ -279,7 +300,7 @@ This script:
 
 FUNCTIONS
 
-    adjust_folds_assignment_file(assignment_file_input_path, assignment_file_output_path, prefixes_list)
+     adjust_folds_assignment_file(assignment_file_input_path, assignment_file_output_path, prefixes_list)
         Function modifies prepares the folds assignment for the augmented data.
         Args:
             assignment_file_path: path to a .csv file with folds assignment information
@@ -295,8 +316,24 @@ FUNCTIONS
         Returns:
             model: VGG16 model
 
-    split_data_test_train(assignment_file_path, k=5)
-        Splits images details (file path, label),  provided as pandas Dataframe, into train and test sets details pandas Dataframes,
+    run_deep_learning(images_path, model_free_images_path, folds_assignment_path, model_free_folds_assignment_path, offset_val=0, current_approach='basic_shuffle_with_seed')
+        Function runs training of the VGG16 model for PCoA task.
+        Args:
+            images_path: path to original images
+            model_free_images_path: path to images with model free image augmentaation applied
+            folds_assignment_path: path to the csv file containing fold assigment information
+            model_free_folds_assignment_path: path to the csv file containing fold assignment information when using model free image augmentation
+            offset_val: integer value needed when experiment is run twice to change the numeration of folds.
+            current_approach: current approach to train model.
+            Value should be set to "basic_shuffle_with_seed" when training without data augmentation applied is intended.
+            Value should be set to "model_free_shuffle_with_seed" when training with data augmentation applied is intended.
+            Should be set to 0 or 5. By default set to 0.
+
+        Returns:
+            None
+
+    split_data_test_train(assignment_file_path, fold, offset=0)
+        Splits images details (file path, label), provided as pandas Dataframe, into train and test sets details pandas Dataframes,
         taking into account the fold number k
         Args:
             k: number of current fold
