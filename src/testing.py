@@ -271,7 +271,7 @@ def visualize_scores(plot_path):
     and deep learing methon without augmentation.
 
     Args:
-        plot_path(str):  path to the png file, where bar plot of scores will be saved
+        plot_path(str):  path to the png file, where bar plot of scores will be saved.
     
     """
     data = load_tuned_models_data()

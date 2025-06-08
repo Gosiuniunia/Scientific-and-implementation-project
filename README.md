@@ -74,3 +74,4 @@ Open `config.ini` and update the paths to match your environment:
 python main.py
 ```
 Results of the experiment will be saved in `scores` folder.
+Summary results, statistical testing and visualizations will also be perofrmed and stored in the specified files.

@@ -384,3 +384,28 @@ FUNCTIONS
             return_scores (bool, optional): Whether the scores should be returned. Defaults to False.
         Returns:
             acc_scores, pre_scores, rec_scores, f1_scores (list[float], optional): Metrics values lists.
+
+    load_tuned_models_data()
+        Loads all of the model's metrics values for chosen hyperparamethers and deep learning scores.
+
+        Returns:
+            data (dict[dict]): Dictonary of all scores for chosen models.
+
+    load_and_generate_all_scores(summary_scores_path)
+        Loads and generates scores for all models for hyperparamethers tuning and deep learning comparison.
+
+        Args:
+            summary_scores_path (str): path to the txt file, where the summary of all scores will be saved.
+
+    perform_statistical_testing(testing_path)
+        Performs all statistical testing needed for conducted experiment.
+
+        Args:
+            testing_path (str): path to the txt file, where result of the statistical testing will be saved.
+
+    visualize_scores(plot_path)
+        Creates the bar plot for the tuned model parameters in state-of-art method 
+        and deep learing methon without augmentation.
+
+        Args:
+            plot_path(str):  path to the png file, where bar plot of scores will be saved.
