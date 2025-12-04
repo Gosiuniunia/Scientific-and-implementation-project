@@ -1,0 +1,57 @@
+import numpy as np
+import gradio as gr
+from core.enums import *
+
+class PCOAImage:
+    def __init__(self, image: np.ndarray, path: str):
+        self.image = image
+        self.path = path
+
+    def validate_image(self, image: np.ndarray) -> bool:
+        # Check if image is in png or jpg format
+        if image is None:
+            return False
+        return True
+    
+    def preprocess_image(self, image: np.ndarray) -> np.ndarray:
+        # Here put the preprocessing logic
+        return image
+
+class PCOAApp:
+    def __init__(self):
+        self.photo_uploaded = PhotoUploadStatus.NOT_UPLOADED
+        self.photo_validated = PhotoValidationStatus.NOT_VALIDATED
+        self.prediction_done = PredictionStatus.NOT_DONE
+        self.predicted_types = {}
+
+    def set_prediction_done(self, status: PredictionStatus):
+        self.prediction_done = status
+
+    def predict_color_type(self, image: PCOAImage) -> ColorType:
+        # Here put the prediction model & logic
+        return ColorType.SPRING
+    
+    def build_ui(self):
+        with gr.Blocks() as demo:
+            # App title
+            gr.Markdown("# Personal Color Analysis System 🎨")
+
+            with gr.Row():
+                with gr.Column():
+                    # Input: Upload image
+                    img_input = gr.Image(label="Upload Your Photo", type="numpy")
+
+                    # Button to trigger analysis
+                    analyze_button = gr.Button("Analyze Color")
+                    analyze_button.click(fn=lambda x: True, inputs=img_input, outputs=[])
+
+                if self.prediction_done == PredictionStatus.DONE:
+                    with gr.Column():
+                        # Output: Display color type and example matching colors
+                        gr.Markdown(f"## Your Personal Color Type is: {self.predicted_types}")
+                        color_output = gr.ColorPicker(label="Dominant Color 1")
+                        color_output2 = gr.ColorPicker(label="Dominant Color 2")
+                        color_output3 = gr.ColorPicker(label="Dominant Color 3")
+        return demo
+
+
