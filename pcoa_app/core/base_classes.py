@@ -7,6 +7,9 @@ class PCOAImage:
         self.image = image
         self.path = path
 
+    def get_image(self) -> np.ndarray:
+        return self.image
+
     def validate_image(self, image: np.ndarray) -> bool:
         # Check if image is in png or jpg format
         if image is None:
@@ -31,6 +34,9 @@ class PCOAApp:
         # Here put the prediction model & logic
         return ColorType.SPRING
     
+    def show_uploaded_image(self, image: PCOAImage) -> np.ndarray:
+        return image.get_image()
+    
     def build_ui(self):
         with gr.Blocks() as demo:
             # App title
@@ -40,6 +46,7 @@ class PCOAApp:
                 with gr.Column():
                     # Input: Upload image
                     img_input = gr.Image(label="Upload Your Photo", type="numpy")
+                    img_input.change(fn=self.show_uploaded_image, inputs=img_input)
 
                     # Button to trigger analysis
                     analyze_button = gr.Button("Analyze Color")
