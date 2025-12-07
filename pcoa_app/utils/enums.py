@@ -21,3 +21,8 @@ class PhotoUploadStatus(Enum):
 class PhotoValidationStatus(Enum):
     NOT_VALIDATED = 0
     VALIDATED = 1
+
+@unique
+class PhotoPreprocessingStatus(Enum):
+    NOT_VALIDATED = 0
+    VALIDATED = 1

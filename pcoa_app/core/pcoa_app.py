@@ -1,24 +1,9 @@
 import numpy as np
 import gradio as gr
+from PIL import Image, ImageDraw
+import io
 from core.enums import *
 
-class PCOAImage:
-    def __init__(self, image: np.ndarray, path: str):
-        self.image = image
-        self.path = path
-
-    def get_image(self) -> np.ndarray:
-        return self.image
-
-    def validate_image(self, image: np.ndarray) -> bool:
-        # Check if image is in png or jpg format
-        if image is None:
-            return False
-        return True
-    
-    def preprocess_image(self, image: np.ndarray) -> np.ndarray:
-        # Here put the preprocessing logic
-        return image
 
 class PCOAApp:
     def __init__(self):
@@ -60,5 +45,7 @@ class PCOAApp:
                         color_output2 = gr.ColorPicker(label="Dominant Color 2")
                         color_output3 = gr.ColorPicker(label="Dominant Color 3")
         return demo
+    
+
 
 
